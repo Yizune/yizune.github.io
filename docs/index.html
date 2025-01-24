@@ -1,76 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="Images/sword.png" type="image/sword-icon">
+    <script src="Scripts/script.js"></script>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
-    <script src="Scripts/script.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stevan Likusic | Game Developer</title>
 </head>
-<body>
-    <!-- Header section example -->
-    <div class="header container">
-        <p>This is a test header section aligned within the container</p>
-    </div>
+<body id = "body">
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1 class="site-title">Stevan Likusic</h1>
+            <nav class="nav-links">
+                <a href="#welcome">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button class="mode-button" onclick="darkModeFunction()">
+                <img src="Images/dark_mode_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Dark Mode">
+            </button>
+        </div>
+    </header>
 
-    <!-- Project section with two items per row -->
-    <div class="projects container">
+    <!-- Welcome Section -->
+    <section id="welcome" class="welcome">
+        <div class="container">
+            <h2>Welcome to My Portfolio</h2>
+            <p>A passionate game developer ready to bring ideas to life.</p>
+        </div>
+    </section>
 
-        <div class="project-box">
-            <div class="project-image-wrapper">
-                <div class="project-image">
-                    <img class="sour-security-img" src="Images/CosmicCrusaders.png" alt="SourSecurityImage">
+    <!-- About Me Section -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-text">
+                <div class="about-content">
+                    <h2>About Me</h2>
+                    <p>
+                        <strong>Hi, I'm Stevan Likusic, a 21-year-old game programmer and developer originally from Serbia, now based in Stockholm, Sweden.</strong> 
+                        Ever since I was a kid, I've been passionate about games, mostly immersing myself in 
+                        <strong>big competitive multiplayer experiences</strong> while also cherishing the moments of peace that come with 
+                        <strong>single-player games with great stories.</strong>
+                    </p>
+                    <p>
+                        As a student in my final year at <strong>Futuregames</strong>, I have dedicated myself to improving my skills and deepening my knowledge 
+                        as a game developer. I specialize mostly in <strong>systems and logistics</strong>, but I enjoy exploring all aspects of game development
+                        as I'm quite curious about everything and I love learning new things!
+                    </p>
+                    <p>
+                        Beyond game development, I also enjoy playing games, listening to music, and spending quality time with friends. 
+                        My passion for web and app development naturally led me to create this portfolio—combining my love for design, coding, and creativity all in one place. At the end of the day, 
+                        I'm just someone who loves what I do, always eager to learn, improve, and have fun along the way.
+                    </p>
+                    <p>
+                        Feel like learning more about me? Connect with me through the <strong>links</strong> below and make sure to check out my <strong>resume</strong>! 
+                    </p>
+                    <div class="about-links">
+                        <a href="Images/CV (1).pdf" target="_blank" class="resume-btn">Resume</a>
+                        <a href="mailto:stevan.likusic.24@gmail.com" class="icon-btn"><img src="Images/email-svgrepo-com.svg" alt="Email"></a>
+                        <a href="https://www.linkedin.com/in/stevan-likusic-884946300/" target="_blank" class="icon-btn"><img src="Images/linkedin-circle-svgrepo-com.svg" alt="LinkedIn"></a>
+                        <a href="https://github.com/Yizune" target="_blank" class="icon-btn"><img src="Images/github-142-svgrepo-com.svg" alt="GitHub"></a>
+                    </div>
                 </div>
             </div>
-            <div class="project-content">
-                <h3>Project Title 1</h3>
-                <p>A short description of the project goes here. It explains what the project is about in a few lines.</p>
+            <div class="about-image">
+                <img src="Images/myself.png" alt="Myself">
             </div>
         </div>
-        
-        <div class="project-box">
-            <div class="project-image-wrapper">
-                <div class="project-image">
-                    <img class="sour-security-img" src="Images/WingMan.png" alt="SourSecurityImage">
-                </div>
-            </div>
-            <div class="project-content">
-                <h3>Project Title 2</h3>
-                <p>A short description of the second project goes here. It explains what the project is about in a few lines.</p>
-            </div>
-        </div>
+    </section>
 
-        <div class="project-box">
-            <div class="project-image-wrapper">
-                <div class="project-image">
-                    <img class="sour-security-img" src="Images/ProjectAsylum.png" alt="SourSecurityImage">
-                </div>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="project-box">
+                <img src="Images/CosmicCrusaders.png" alt="Project 1">
+                <h3>Cosmic Crusaders</h3>
             </div>
-            <div class="project-content">
-                <h3>Project Title 2</h3>
-                <p>A short description of the second project goes here. It explains what the project is about in a few lines.</p>
-            </div>
-        </div>
-
-        <div class="project-box">
-            <div class="project-image-wrapper">
-                <div class="project-image">
-                    <img class="sour-security-img" src="Images/SourSecurity.png" alt="SourSecurityImage">
-                </div>
-            </div>
-            <div class="project-content">
-                <h3>Project Title 2</h3>
-                <p>A short description of the second project goes here. It explains what the project is about in a few lines.</p>
+            <div class="project-box">
+                <img src="Images/WingMan.png" alt="Project 2">
+                <h3>WingMan</h3>
             </div>
         </div>
-        
-        <!-- Add more project-box elements as needed -->
-    </div>
+    </section>
 
-    <!-- Footer section example -->
-    <div class="footer container">
-        <p>This is a footer aligned within the container</p>
-    </div>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>My Skills</h2>
+            <ul>
+                <li>Unreal Engine (Blueprints & C++)</li>
+                <li>Unity Development</li>
+                <li>Game Design Principles</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:stevan@example.com">stevan@example.com</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/stevan" target="_blank">linkedin.com/in/stevan</a></p>
+        </div>
+    </section>
 </body>
 </html>
