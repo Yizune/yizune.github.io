@@ -221,31 +221,79 @@ body {
     }
 }
 
+
 .projects {
-    text-align: center;
-    padding: 60px 20px;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        background-color: $secondary-color;
+        border-radius: 15px;
+        padding: 50px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+    }
+
     h2 {
         font-size: 2.5rem;
+        color: $text-dark;
+        margin-bottom: 50px;
+        text-align: center;
     }
-    .project-box {
-        background: $primary-color;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        display: inline-block;
-        margin: 20px;
-        
-        img {
-            width: 100%;
-            height: auto;
+
+    .project {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        margin-bottom: 40px;
+
+        &:nth-child(odd) {
+            flex-direction: row;
         }
-        h3 {
-            padding: 10px;
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .project-text {
+            flex: 1;
+            padding: 40px;
+            background: $primary-color;
             color: $text-light;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left;
+
+            h3 {
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+                color: $accent-color;
+            }
+
+            p {
+                font-size: 1.2rem;
+                line-height: 1.6;
+            }
+        }
+
+        .project-image {
+            flex: 1;
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 15px;
+            }
         }
     }
 }
+
+
+
 
 .skills {
     text-align: center;
