@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Smooth scrolling for nav links
     document.querySelectorAll('.nav-links a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -12,24 +11,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-function darkModeFunction() {
-    const element = document.getElementById("body");
-    
-    if (element.classList.contains("darkmode")) {
-        element.classList.remove("darkmode");
-        localStorage.setItem("darkMode", "false");
-        console.log("Switched to light mode");
-    } else {
-        element.classList.add("darkmode");
-        localStorage.setItem("darkMode", "true");
+function toggleMode() {
+    const body = document.getElementById("body");
+    const modeIcon = document.getElementById("mode-icon");
+
+    if (body.classList.contains("lightmode")) {
+        body.classList.remove("lightmode");
+        localStorage.setItem("lightMode", "false");
+        modeIcon.src = "Images/dark_mode_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg";  
         console.log("Switched to dark mode");
+    } else {
+        body.classList.add("lightmode");
+        localStorage.setItem("lightMode", "true");
+        modeIcon.src = "Images/light_mode_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg";  
+        console.log("Switched to light mode");
     }
 }
 
-window.onload = function() {
 
-    const darkModeEnabled = localStorage.getItem("darkMode") === "true";
-    if (darkModeEnabled) {
-        document.getElementById("body").classList.add("darkmode");
+window.onload = function() {
+    const lightModeEnabled = localStorage.getItem("lightMode") === "true";
+    const modeIcon = document.getElementById("mode-icon");
+
+    if (lightModeEnabled) {
+        document.getElementById("body").classList.add("lightmode");
+        modeIcon.src = "Images/light_mode_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg";  
+    } else {
+        modeIcon.src = "Images/dark_mode_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg";  
     }
 };
+

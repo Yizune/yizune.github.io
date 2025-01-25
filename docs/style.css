@@ -1,9 +1,8 @@
 body {
-  font-family: "Roboto", sans-serif;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
+  background-color: #dbdbdb;
   color: #F1F5F9;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 body::before {
   content: "";
@@ -28,7 +27,7 @@ body::before {
 
 .header {
   background-color: #1E293B;
-  color: white;
+  color: #F1F5F9;
   padding: 10px 0;
   position: fixed;
   top: 0;
@@ -77,14 +76,19 @@ body::before {
   align-items: center;
   justify-content: center;
   padding: 10px;
+  transition: all 0.3s ease;
 }
 .mode-button img {
   width: 35px;
   height: 35px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 .mode-button:hover img {
-  filter: brightness(70%);
+  transform: scale(1.1);
+  filter: brightness(80%);
+}
+.mode-button:active img {
+  transform: scale(0.95);
 }
 
 .welcome {
@@ -241,4 +245,84 @@ body::before {
 }
 .contact p {
   font-size: 1.2rem;
+}
+
+.lightmode {
+  background-color: #FFFFFF;
+  color: #1E201E;
+}
+.lightmode::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("Images/EldenRing.png") no-repeat center center fixed;
+  background-size: cover;
+  z-index: -1;
+  filter: brightness(80%);
+}
+.lightmode .header {
+  background-color: #FFFFFF;
+  color: #1E293B;
+}
+.lightmode .nav-links a {
+  color: #1E293B;
+}
+.lightmode .nav-links a:hover {
+  color: #3B82F6;
+}
+.lightmode .mode-button:hover img {
+  filter: brightness(50%);
+}
+.lightmode .welcome h2 {
+  color: #1E293B;
+}
+.lightmode .welcome p {
+  color: #1E201E;
+}
+.lightmode .about-section .about-container {
+  background-color: rgba(226, 232, 240, 0.7);
+}
+.lightmode .about-section .about-text {
+  background: #FFFFFF;
+  color: #1E201E;
+}
+.lightmode .about-section .about-text h2 {
+  color: #2563EB;
+}
+.lightmode .about-links .resume-btn {
+  background: #2563EB;
+  border: 2px solid #82a6f4;
+  color: #FFFFFF;
+}
+.lightmode .about-links .resume-btn:hover {
+  background: #5484ef;
+  border-color: #b1c7f8;
+}
+.lightmode .about-links .icon-btn {
+  background: #FFFFFF;
+  border: 2px solid #2563EB;
+}
+.lightmode .about-links .icon-btn:hover {
+  background: #2563EB;
+  border-color: #82a6f4;
+}
+.lightmode .about-links .icon-btn img {
+  width: 28px;
+  height: 28px;
+}
+.lightmode .projects .project-box {
+  background: rgba(226, 232, 240, 0.7);
+  color: #1E293B;
+}
+.lightmode .projects .project-box h3 {
+  color: #1E293B;
+}
+.lightmode .skills h2, .lightmode .contact h2 {
+  color: #1E293B;
+}
+.lightmode .skills p, .lightmode .skills ul li, .lightmode .contact p, .lightmode .contact ul li {
+  color: #1E201E;
 }/*# sourceMappingURL=style.css.map */
