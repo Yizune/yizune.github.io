@@ -98,6 +98,31 @@ body::before {
   align-items: center;
   justify-content: center;
   text-align: center;
+  flex-direction: column;
+}
+.welcome .welcome-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+.welcome .welcome-divider .line {
+  width: 300px;
+  height: 4px;
+  background-color: white;
+  margin: 0 15px;
+  border-radius: 50px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+.welcome .welcome-divider .sword-icon {
+  width: 40px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
 }
 .welcome h2 {
   font-size: 3.5rem;
@@ -190,6 +215,7 @@ body::before {
 .about-section .about-links .icon-btn img {
   width: 28px;
   height: 28px;
+  filter: invert(1);
 }
 .about-section .about-image img {
   max-width: 450px;
@@ -219,7 +245,7 @@ body::before {
   overflow: hidden;
 }
 .projects h2, .projects h4 {
-  color: #061a3b;
+  color: #F1F5F9;
   text-align: center;
 }
 .projects h2 {
@@ -347,7 +373,7 @@ body::before {
 }
 .skills h2 {
   font-size: 2.5rem;
-  color: #061a3b;
+  color: #F1F5F9;
   margin-bottom: 80px;
 }
 .skills .skills-category {
@@ -357,7 +383,7 @@ body::before {
   font-size: 1.8rem;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #061a3b;
+  color: #F1F5F9;
   border-bottom: 2px solid rgba(0, 0, 0, 0.3);
   padding-bottom: 10px;
   text-align: left;
@@ -403,7 +429,7 @@ body::before {
 }
 .contact h2 {
   font-size: 2.5rem;
-  color: #061a3b;
+  color: #F1F5F9;
   margin-bottom: 80px;
 }
 .contact .contact-grid {
@@ -493,6 +519,12 @@ html, body {
 .lightmode .mode-button:hover img {
   filter: brightness(50%);
 }
+.lightmode .welcome .welcome-divider .line {
+  background-color: #1E293B;
+}
+.lightmode .welcome .welcome-divider .sword-icon {
+  filter: none;
+}
 .lightmode .welcome h2 {
   color: #1E293B;
 }
@@ -529,6 +561,10 @@ html, body {
 .lightmode .about-links .icon-btn img {
   width: 28px;
   height: 28px;
+  filter: invert(0);
+}
+.lightmode .projects h2, .lightmode .projects h4 {
+  color: #1E293B;
 }
 .lightmode .projects .project-divider {
   border-top: 2px solid rgba(0, 0, 0, 0.2);
@@ -551,6 +587,7 @@ html, body {
   background-color: rgba(226, 232, 240, 0.7);
 }
 .lightmode .skills .skills-category h3 {
+  color: #1E293B;
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
 }
 .lightmode .skills h2 {

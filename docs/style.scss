@@ -114,15 +114,46 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
+    flex-direction: column;
+
+    .welcome-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        opacity: 0; // Starts hidden
+        animation: fadeIn 1s ease-in-out forwards; // Fade-in effect
     
+        .line {
+            width: 300px;
+            height: 4px;
+            background-color: white;
+            margin: 0 15px;
+            border-radius: 50px;
+            opacity: 0; // Starts hidden
+            animation: fadeIn 1s ease-in-out forwards; // Apply the same fade-in
+        }
+    
+        .sword-icon {
+            width: 40px;
+            height: auto;
+            filter: brightness(0) invert(1); // White by default
+            opacity: 0; // Starts hidden
+            animation: fadeIn 1s ease-in-out forwards; // Smooth fade-in
+        }
+    }
+
     h2 {
         font-size: 3.5rem;
         font-weight: bold;
     }
+
     p {
         font-size: 1.7rem;
     }
 }
+
+
 
 .about-section {
     display: flex;
@@ -215,6 +246,7 @@ body {
             img {
                 width: 28px;
                 height: 28px;
+                filter: invert(1);
             }
         }
     }
@@ -249,7 +281,7 @@ body {
     }
 
     h2, h4 {
-        color: $text-dark;
+        color: $text-light;
         text-align: center;
     }
 
@@ -396,7 +428,7 @@ body {
 
     h2 {
         font-size: 2.5rem;
-        color: $text-dark;
+        color: $text-light;
         margin-bottom: 80px;
     }
 
@@ -407,7 +439,7 @@ body {
             font-size: 1.8rem;
             font-weight: bold;
             margin-bottom: 20px;
-            color: $text-dark;
+            color: $text-light;
             border-bottom: 2px solid rgba(0, 0, 0, 0.3);
             padding-bottom: 10px;
             text-align: left;
@@ -459,7 +491,7 @@ body {
 
     h2 {
         font-size: 2.5rem;
-        color: $text-dark;
+        color: $text-light;
         margin-bottom: 80px;
     }
 
@@ -577,6 +609,15 @@ $light-link-hover: #3B82F6;
     }
 
     .welcome {
+        .welcome-divider {
+            .line {
+                background-color: $light-link;
+            }
+    
+            .sword-icon {
+                filter: none; 
+            }
+        }
         h2 {
             color: $light-link;
         }
@@ -624,11 +665,16 @@ $light-link-hover: #3B82F6;
             img {
                 width: 28px;
                 height: 28px;
+                filter: invert(0);
             }
         }
     }
 
     .projects {
+
+        h2, h4{
+            color: $light-link;
+        }
 
         .project-divider{
             border-top: 2px solid rgba(0, 0, 0, 0.2);
@@ -661,6 +707,7 @@ $light-link-hover: #3B82F6;
 
         .skills-category{
             h3{
+                color: $light-link;
                 border-bottom: 2px solid rgba(0, 0, 0, 0.2);
             }
         }
