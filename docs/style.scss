@@ -190,15 +190,6 @@ body {
         text-align: left;
         width: 100%;
 
-        h2 {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 40px;
-            color: $accent-color;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-
         p {
             font-size: 1.4rem;
             font-weight: 500; 
@@ -406,12 +397,6 @@ body {
                     margin-top: 10px !important;
                     padding: 0 !important;
                 }
-                h4 {
-                    font-size: 1.1rem;
-                    color: $text-light;
-                    text-align: left;
-                    margin-bottom: 50px !important;
-                }
             }
 
             &:hover h3 {
@@ -588,13 +573,13 @@ html, body {
 
 
 // Core color palette for light mode
-$light-bg: #FFFFFF;
+$light-bg: #F4F4F4; 
 $light-text: #1E201E;
 $light-primary: #FFFFFF;
 $light-secondary: rgba(#E2E8F0, 0.7);
-$light-accent: #2563EB;
+$light-accent: #1E88A8;
 $light-link: #1E293B;
-$light-link-hover: #3B82F6;
+$light-link-hover: #125E75;
 
 
 .lightmode {
@@ -649,6 +634,11 @@ $light-link-hover: #3B82F6;
         }
     }
 
+
+
+
+
+
     .about-section {
         .about-container {
             background-color: $light-secondary;
@@ -656,71 +646,96 @@ $light-link-hover: #3B82F6;
 
         .about-text {
             background: $light-primary;
-            color: $light-text;
 
-            h2 {
-                color: $light-accent;
+
+            p {
+                color: darken($light-text, 10%); 
+                text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
             }
-        }
-    }
 
-    .about-links {
-        .resume-btn {
-            background: $light-accent;
-            border: 2px solid lighten($light-accent, 20%);
-            color: $light-bg;
-
-            &:hover {
-                background: lighten($light-accent, 10%);
-                border-color: lighten($light-accent, 30%);
+            p strong {
+                color: $light-link-hover; 
             }
         }
 
-        .icon-btn {
-            background: $light-primary;
-            border: 2px solid $light-accent;
+        .profile-pic {
+            border: 3px solid $light-accent;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
 
-            &:hover {
+        .about-links {
+            .text-btn {
                 background: $light-accent;
-                border-color: lighten($light-accent, 20%);
+                border: 2px solid lighten($light-accent, 20%);
+                color: $light-bg;
+
+                &:hover {
+                    background: lighten($light-accent, 10%);
+                    border-color: lighten($light-accent, 30%);
+                }
             }
 
-            img {
-                width: 28px;
-                height: 28px;
-                filter: invert(0);
+            .icon-btn {
+                background: $light-primary;
+                border: 2px solid $light-accent;
+
+                &:hover {
+                    background: $light-accent;
+                    border-color: lighten($light-accent, 20%);
+                }
+
+                img {
+                    filter: invert(0);
+                }
             }
         }
     }
+
+
+
+
 
     .projects {
-
-        h2, h4{
+        h2, h4 {
             color: $light-link;
         }
 
-        .project-divider{
+        .project-divider {
             border-top: 2px solid rgba(0, 0, 0, 0.2);
         }
 
-        .projects-container{
+        .projects-container {
             background-color: $light-secondary;
         }
 
-        .project-text{
-            background: $light-bg;
+        .project-card {
+            background: $light-primary;
             color: $light-text;
-        }
 
-        .project-box {
-            background: $light-secondary;
-            color: $light-link;
-        }
+            .project-content{
+                background-color: $light-primary;
+            }
 
-        .project-box h3{
-            color: $light-link;
+            .main-title h3 {
+                color: $light-accent;
+                transition: color 0.3s ease; 
+            }
+
+            &:hover .project-content .main-title h3 {
+                color: darken($light-accent, 20%) !important;
+            }
+
+            p{
+                color: $light-text;
+            }
         }
     }
+
+
+
+
+
+
 
     .skills {
 
@@ -743,6 +758,10 @@ $light-link-hover: #3B82F6;
             color: $light-text;
         }
     }
+
+
+
+
 
     .contact {
 
@@ -778,8 +797,6 @@ $light-link-hover: #3B82F6;
         padding: 10px 0;
     }
 }
-
-
 
 
 

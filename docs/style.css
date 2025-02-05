@@ -166,14 +166,6 @@ body::before {
   text-align: left;
   width: 100%;
 }
-.about-section .about-text h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 40px;
-  color: #3B82F6;
-  margin: 0 !important;
-  padding: 0 !important;
-}
 .about-section .about-text p {
   font-size: 1.4rem;
   font-weight: 500;
@@ -357,12 +349,6 @@ body::before {
   margin-top: 10px !important;
   padding: 0 !important;
 }
-.projects .project-card .project-content .main-title h4 {
-  font-size: 1.1rem;
-  color: #F1F5F9;
-  text-align: left;
-  margin-bottom: 50px !important;
-}
 .projects .project-card .project-content:hover h3 {
   color: #9dc0fa;
 }
@@ -509,7 +495,7 @@ html, body {
 }
 
 .lightmode {
-  background-color: #FFFFFF;
+  background-color: #F4F4F4;
   color: #1E201E;
 }
 .lightmode::before {
@@ -532,7 +518,7 @@ html, body {
   color: #1E293B;
 }
 .lightmode .nav-links a:hover {
-  color: #3B82F6;
+  color: #125E75;
 }
 .lightmode .mode-button:hover img {
   filter: brightness(50%);
@@ -554,31 +540,36 @@ html, body {
 }
 .lightmode .about-section .about-text {
   background: #FFFFFF;
-  color: #1E201E;
 }
-.lightmode .about-section .about-text h2 {
-  color: #2563EB;
+.lightmode .about-section .about-text p {
+  color: #050605;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
 }
-.lightmode .about-links .resume-btn {
-  background: #2563EB;
-  border: 2px solid #82a6f4;
-  color: #FFFFFF;
+.lightmode .about-section .about-text p strong {
+  color: #125E75;
 }
-.lightmode .about-links .resume-btn:hover {
-  background: #5484ef;
-  border-color: #b1c7f8;
+.lightmode .about-section .profile-pic {
+  border: 3px solid #1E88A8;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-.lightmode .about-links .icon-btn {
+.lightmode .about-section .about-links .text-btn {
+  background: #1E88A8;
+  border: 2px solid #4dbddf;
+  color: #F4F4F4;
+}
+.lightmode .about-section .about-links .text-btn:hover {
+  background: #26abd3;
+  border-color: #78cde7;
+}
+.lightmode .about-section .about-links .icon-btn {
   background: #FFFFFF;
-  border: 2px solid #2563EB;
+  border: 2px solid #1E88A8;
 }
-.lightmode .about-links .icon-btn:hover {
-  background: #2563EB;
-  border-color: #82a6f4;
+.lightmode .about-section .about-links .icon-btn:hover {
+  background: #1E88A8;
+  border-color: #4dbddf;
 }
-.lightmode .about-links .icon-btn img {
-  width: 28px;
-  height: 28px;
+.lightmode .about-section .about-links .icon-btn img {
   filter: invert(0);
 }
 .lightmode .projects h2, .lightmode .projects h4 {
@@ -590,16 +581,22 @@ html, body {
 .lightmode .projects .projects-container {
   background-color: rgba(226, 232, 240, 0.7);
 }
-.lightmode .projects .project-text {
+.lightmode .projects .project-card {
   background: #FFFFFF;
   color: #1E201E;
 }
-.lightmode .projects .project-box {
-  background: rgba(226, 232, 240, 0.7);
-  color: #1E293B;
+.lightmode .projects .project-card .project-content {
+  background-color: #FFFFFF;
 }
-.lightmode .projects .project-box h3 {
-  color: #1E293B;
+.lightmode .projects .project-card .main-title h3 {
+  color: #1E88A8;
+  transition: color 0.3s ease;
+}
+.lightmode .projects .project-card:hover .project-content .main-title h3 {
+  color: #0f4251 !important;
+}
+.lightmode .projects .project-card p {
+  color: #1E201E;
 }
 .lightmode .skills .skills-container {
   background-color: rgba(226, 232, 240, 0.7);
@@ -618,7 +615,7 @@ html, body {
   background-color: rgba(226, 232, 240, 0.7);
 }
 .lightmode .contact .contact-container .contact-item {
-  background-color: #FFFFFF;
+  background-color: #F4F4F4;
   color: #1E201E;
 }
 .lightmode .contact .contact-container .contact-item img {
