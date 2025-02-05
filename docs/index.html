@@ -13,18 +13,20 @@
 
     <!-- Header Section -->
     <header class="header">
-        <div class="container">
+        <div class="header-container">
             <h1 class="site-title">Stevan Likusic</h1>
-            <nav class="nav-links">
-                <a href="#welcome">Home</a>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
-            </nav>
-            <button id="mode-toggle" class="mode-button" onclick="toggleMode()">
-                <img id="mode-icon" src="Images/DarkMode.svg" alt="Dark Mode">
-            </button>            
+            <div class="nav-container">
+                <nav class="nav-links">
+                    <a href="#welcome">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <button id="mode-toggle" class="mode-button" onclick="toggleMode()">
+                    <img id="mode-icon" src="Images/DarkMode.svg" alt="Dark Mode">
+                </button>
+            </div>          
         </div>
     </header>
 
@@ -41,162 +43,150 @@
         </div>
     </section>
 
-<!-- About Me Section -->
-<section id="about" class="about-section">
-    <div class="about-container">
-        <div class="about-text">
-            <div class="about-content">
-                <h2>About Me</h2>
-                <p>
-                    <strong>Hi, I'm Stevan Likusic, a 21-year-old game programmer and developer originally from Serbia, now based in Stockholm, Sweden.</strong> 
-                    Ever since I was a kid, I've been passionate about games, mostly immersing myself in 
-                    <strong>big competitive multiplayer experiences</strong> while also cherishing the moments of peace that come with 
-                    <strong>single-player games with great stories.</strong>
-                </p>
-                <p>
-                    As a student in my final year at <strong>Futuregames</strong>, I have dedicated myself to improving my skills and deepening my knowledge 
-                    as a game developer. I specialize mostly in <strong>systems and logic</strong>, but I enjoy exploring all aspects of game development
-                    as I'm quite curious about everything and I love learning new things!
-                </p>
-                <p>
-                    Beyond game development, I also enjoy playing games, listening to music, and spending quality time with friends. 
-                    My passion for web and app development naturally led me to create this portfolio—combining my love for design, coding, and creativity all in one place. At the end of the day, 
-                    I'm just someone who loves what I do, always eager to learn, improve, and have fun along the way.
-                </p>
-                <p>
-                    Feel like learning more about me? Connect with me through the <strong>links</strong> below and make sure to check out my <strong>resume</strong>! 
-                </p>
-                <div class="about-links">
-                    <a href="Images/CV.pdf" target="_blank" class="resume-btn">Resume</a>
-                    <a href="mailto:stevan.likusic.24@gmail.com" class="icon-btn">
-                        <img src="Images/email-svgrepo-com.svg" alt="Email">
-                    </a>
-                    <a href="https://www.linkedin.com/in/stevan-likusic-884946300/" target="_blank" class="icon-btn">
-                        <img src="Images/linkedin-circle-svgrepo-com.svg" alt="LinkedIn">
-                    </a>
-                    <a href="https://github.com/Yizune" target="_blank" class="icon-btn">
-                        <img src="Images/github-142-svgrepo-com.svg" alt="GitHub">
-                    </a>
+
+
+    <!-- About Me Section -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-text">
+                <img src="Images/aboutme1.jpg" alt="Stevan Likusic" class="profile-pic"> 
+                <div class="about-content"> 
+                    <p>
+                        <strong>Hey, my name is Stevan Likusic!</strong> I'm a game programmer passionate about 
+                        systems and gameplay development! I love writing clean, efficient code and diving into 
+                        new challenges that push my skills further. Whether it's refining mechanics or building 
+                        something from the ground up, I'm all about creating smooth, engaging experiences 
+                        through code!
+                    </p>
+                    <div class="about-links">
+                        <a href="about.html" class="text-btn">About Me</a>
+                        <a href="Images/GameProgrammingCV.pdf" class="text-btn">Resume</a>
+                        <a href="mailto:stevan.likusic.24@gmail.com" class="icon-btn">
+                            <img src="Images/email-svgrepo-com.svg" alt="Email">
+                        </a>
+                        <a href="https://www.linkedin.com/in/stevan-likusic-884946300/" target="_blank" class="icon-btn">
+                            <img src="Images/linkedin-circle-svgrepo-com.svg" alt="LinkedIn">
+                        </a>
+                        <a href="https://github.com/Yizune" target="_blank" class="icon-btn">
+                            <img src="Images/github-142-svgrepo-com.svg" alt="GitHub">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="about-image">
-            <img src="Images/myself.png" alt="Myself">
-        </div>
-    </div>
-</section>
+    </section>
+
+
 
 
     <!-- Projects Section -->
     <section id="projects" class="projects">
-        <div class="projects-container">
-            <h2>My Projects</h2>
-            <h4>Explore my projects showcased here.</h4>
+            <div class="projects-container">
+                <h2>My Projects</h2>
+                <h4>Explore my projects showcased here.</h4>
 
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <a href="ilander.html" class="project-card">
+                        <div class="project-image">
+                            <img src="Images/iLander.png" alt="iLander">
+                            <div class="project-overlay">
+                                <span>
+                                    <img src="Images/group.svg" alt="group"> 1
+                                </span>
+                                <span>
+                                    <img src="Images/time.svg" alt="group"> 1 Week
+                                </span>
+                                <span>
+                                    <img src="Images/tool.svg" alt="group"> Unity
+                                </span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="main-title">
+                                <h3>iLander</h3>
+                                <h4>Gameplay Programmer</h4>
+                            </div>
+                            <p>A 2D cooperative obstacle dodging game where players navigate dynamic levels.</p>
+                        </div>
+                    </a>
 
-            <div class="project-row">
-                <div class="project-content">
-                    <div class="project-image">
-                        <img src="Images/iLander.png" alt="iLander">
-                    </div>
-                    <div class="project-text">
-                        <h3>iLander</h3>
-                        <p><strong>- Solo Project</strong></p>
-                        <p>
-                            WingMan is a <strong>2D Side-Scrolling Cooperative Obstacle Dodger</strong> where players control agile planes, 
-                            maneuver through dynamic levels, and strategically destroy obstacles. Work together with a friend to navigate 
-                            treacherous skies, dodge deadly hazards, and survive in this challenging, auto-scrolling adventure!
-                        </p>
-                        <ul class="project-features">
-                            <li>🛩️ Two-player cooperative gameplay</li>
-                            <li>🚀 Navigate through challenging obstacle courses</li>
-                            <li>🎨 Stylish pixel-art aesthetic</li>
-                        </ul>
-                        <a href="ilander.html" class="read-more-btn">Read More</a>
-                    </div>
+                    <!-- Project 2 -->
+                    <a href="#" class="project-card">
+                        <div class="project-image">
+                            <img src="Images/CosmicCrusaders.png" alt="Cosmic Crusaders">
+                            <div class="project-overlay">
+                                <span>
+                                    <img src="Images/group.svg" alt="group"> 1
+                                </span>
+                                <span>
+                                    <img src="Images/time.svg" alt="group"> 1 Week
+                                </span>
+                                <span>
+                                    <img src="Images/tool.svg" alt="group"> Unity
+                                </span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="main-title">
+                                <h3>Cosmic Crusaders</h3>
+                                <h4>Gameplay Programmer</h4>
+                            </div>
+                            <p>A fast-paced arcade shooter set in deep space with intense action.</p>
+                        </div>
+                    </a>
+
+                    <!-- Project 3 -->
+                    <a href="#" class="project-card">
+                        <div class="project-image">
+                            <img src="Images/WingMan.png" alt="WingMan">
+                            <div class="project-overlay">
+                                <span>
+                                    <img src="Images/group.svg" alt="group"> 1
+                                </span>
+                                <span>
+                                    <img src="Images/time.svg" alt="group"> 1 Week
+                                </span>
+                                <span>
+                                    <img src="Images/tool.svg" alt="group"> Unity
+                                </span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="main-title">
+                                <h3>WingMan</h3>
+                                <h4>Gameplay Programmer</h4>
+                            </div>
+                            <p>2D platformer where players cooperate to overcome obstacles.</p>
+                        </div>
+                    </a>
+
+                    <!-- Project 4 -->
+                    <a href="#" class="project-card">
+                        <div class="project-image">
+                            <img src="Images/ProjectAsylum.png" alt="Project Asylum">
+                            <div class="project-overlay">
+                                <span>
+                                    <img src="Images/group.svg" alt="group"> 1
+                                </span>
+                                <span>
+                                    <img src="Images/time.svg" alt="group"> 1 Week
+                                </span>
+                                <span>
+                                    <img src="Images/tool.svg" alt="group"> Unity
+                                </span>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="main-title">
+                                <h3>Project Asylum</h3>
+                                <h4>Gameplay/Sounds Programmer</h4>
+                            </div>
+                            <p>A psychological horror game featuring puzzle mechanics and immersive storytelling.</p>
+                        </div>
+                    </a>
                 </div>
             </div>
-
-            <div class="project-row">
-                <div class="project-content">
-                    <div class="project-text">
-                        <h3>Cosmic Crusaders</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                    <div class="project-image">
-                        <img src="Images/CosmicCrusaders.png" alt="Cosmic Crusaders">
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-row">
-                <div class="project-content">
-                    <div class="project-image">
-                        <img src="Images/WingMan.png" alt="WingMan">
-                    </div>
-                    <div class="project-text">
-                        <h3>WingMan</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-row">
-                <div class="project-content">
-                    <div class="project-text">
-                        <h3>Project Asylum</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                    <div class="project-image">
-                        <img src="Images/ProjectAsylum.png" alt="Project Asylum">
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-row">
-                <div class="project-content">
-                    <div class="project-image">
-                        <img src="Images/SourSecurity.png" alt="Sour Security">
-                    </div>
-                    <div class="project-text">
-                        <h3>Sour Security</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-            </div>
-
-            <hr class="project-divider">
-
-            <h2>Highlighted Project</h2>
-            <h4>My solo project in UE5.</h4>
-            <div class="project-row">
-                <div class="project-content">
-                    <div class="project-image">
-                        <img src="Images/coming.png" alt="Coming Soon">
-                    </div>
-                    <div class="project-text">
-                        <h3>Coming Soon</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-            </div>
-
-            <hr class="project-divider">
-
-            <h2>Other Projects</h2>
-            <h4>My other web development projects.</h4>
-            <div class="project-row">
-                <div class="project-content">
-                    <div class="project-image">
-                        <img src="Images/Finance.png" alt="Finance Tracker">
-                    </div>
-                    <div class="project-text">
-                        <h3>Personal Finance Tracker</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
     </section>
 
 
@@ -369,7 +359,7 @@
         <div class="contact-container">
             <h2>Contact</h2>
             <div class="contact-grid">
-                <a href="Images/CV (1).pdf" target="_blank" class="contact-item">
+                <a href="Images/GameProgrammingCV.pdf" target="_blank" class="contact-item">
                     <img src="Images/resume.svg" alt="Resume"> My Resume
                 </a>
                 <a href="mailto:stevan.likusic.24@gmail.com" class="contact-item">
