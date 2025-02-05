@@ -186,7 +186,7 @@ body::before {
 }
 .project-banner .project-image img {
   width: 100%;
-  height: 400px;
+  height: 700px;
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
