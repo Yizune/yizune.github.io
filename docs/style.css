@@ -136,6 +136,7 @@ body::before {
 }
 .welcome p {
   font-size: 1.7rem;
+  font-weight: 500;
 }
 
 .about-section {
@@ -170,7 +171,7 @@ body::before {
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 1.7;
-  max-width: 550px;
+  max-width: 1100px;
   color: white;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
@@ -277,11 +278,6 @@ body::before {
   gap: 50px;
   justify-content: center;
   padding: 20px;
-}
-@media (max-width: 768px) {
-  .projects .projects-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
 }
 .projects .project-card {
   display: block;
@@ -724,4 +720,120 @@ html, body {
 
 .footer {
   animation: fadeIn 1.5s ease-in-out;
+}
+
+@media (max-width: 1272px) {
+  .about-container {
+    width: 90% !important;
+    max-width: 1200px !important;
+    padding: 20px !important;
+    margin-top: 20px !important;
+  }
+  .about-text {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+  .profile-pic {
+    width: 80% !important;
+    max-width: 280px !important;
+    margin-right: 0 !important;
+    margin-bottom: 20px !important;
+    align-self: center !important;
+  }
+  .about-content {
+    width: 100% !important;
+    max-width: 1000px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    align-items: center;
+    margin-top: 20px !important;
+    order: 2 !important;
+  }
+  .about-links {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    gap: 15px !important;
+    margin-top: 20px !important;
+    order: 3 !important;
+  }
+}
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .contact-grid {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .about-container {
+    width: 90% !important;
+    max-width: 600px !important;
+    padding: 20px !important;
+    margin-top: 20px !important;
+  }
+  .about-text {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+  .profile-pic {
+    width: 80% !important;
+    max-width: 280px !important;
+    margin-right: 0 !important;
+    margin-bottom: 20px !important;
+    align-self: center !important;
+  }
+  .about-content {
+    width: 100% !important;
+    max-width: 600px !important;
+    text-align: center !important;
+    margin-top: 20px !important;
+    order: 2 !important;
+  }
+  .about-links {
+    display: flex !important;
+    flex-direction: wrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    gap: 15px !important;
+    margin-top: 20px !important;
+    order: 3 !important;
+    /* First Row: About Me & Resume Buttons */
+    /* Second Row: Icons */
+  }
+  .about-links .button-group {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    width: 100% !important;
+  }
+  .about-links #button {
+    width: 45% !important;
+    max-width: 200px !important;
+    text-align: center !important;
+  }
+  .about-links .icon-group {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    flex-basis: 100% !important; /* Forces this group to the next line */
+    margin-top: 10px !important;
+  }
+  .about-links #iconbutton {
+    width: 30% !important;
+    max-width: 60px !important;
+    text-align: center !important;
+  }
 }/*# sourceMappingURL=style.css.map */

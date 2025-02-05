@@ -157,6 +157,7 @@ body {
 
     p {
         font-size: 1.7rem;
+        font-weight: 500; 
     }
 }
 
@@ -194,7 +195,7 @@ body {
             font-size: 1.4rem;
             font-weight: 500; 
             line-height: 1.7;
-            max-width: 550px; 
+            max-width: 1100px; 
             color: lighten($text-light, 10%); 
             text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
         }
@@ -319,10 +320,6 @@ body {
         gap: 50px;
         justify-content: center;
         padding: 20px;
-
-        @media (max-width: 768px) {
-            grid-template-columns: repeat(1, 1fr);
-        }
     }
 
     .project-card {
@@ -800,6 +797,11 @@ $light-link-hover: #125E75;
 
 
 
+
+
+
+
+
 // Animations
 @keyframes fadeIn {
     from {
@@ -857,6 +859,7 @@ $light-link-hover: #125E75;
     }
 }
 
+
 .welcome {
     h2, p {
         animation: fadeIn 1s ease-in-out;
@@ -907,3 +910,242 @@ $light-link-hover: #125E75;
 .footer {
     animation: fadeIn 1.5s ease-in-out;
 }
+
+
+
+
+
+//Media
+@media (max-width: 1272px) {
+    .about-container {
+        width: 90% !important; 
+        max-width: 1200px !important;
+        padding: 20px !important; 
+        margin-top: 20px !important; 
+    }
+
+    .about-text {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    .profile-pic {
+        width: 80% !important;  
+        max-width: 280px !important;  
+        margin-right: 0 !important; 
+        margin-bottom: 20px !important;
+        align-self: center !important;  
+    }
+
+    .about-content {
+        width: 100% !important;
+        max-width: 1000px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        align-items: center;
+        margin-top: 20px !important;
+        order: 2 !important; 
+    }
+
+    .about-links {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        gap: 15px !important;
+        margin-top: 20px !important;
+        order: 3 !important;
+    }
+}
+
+
+
+
+@media (max-width: 768px) {
+        .projects-grid {
+            grid-template-columns: repeat(1, 1fr) !important; 
+        }
+
+        .contact-grid {
+            grid-template-columns: repeat(1, 1fr) !important; 
+        }
+
+        .about-container {
+            width: 90% !important; 
+            max-width: 600px !important; 
+            padding: 20px !important; 
+            margin-top: 20px !important; 
+        }
+
+        .about-text {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+            text-align: center !important;
+        }
+
+        .profile-pic {
+            width: 80% !important;  
+            max-width: 280px !important;  
+            margin-right: 0 !important; 
+            margin-bottom: 20px !important;
+            align-self: center !important;  
+        }
+
+        .about-content {
+            width: 100% !important;
+            max-width: 600px !important;
+            text-align: center !important;
+            margin-top: 20px !important;
+            order: 2 !important; 
+        }
+
+        .about-links {
+            display: flex !important;
+            flex-direction: wrap !important;
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+            gap: 15px !important;
+            margin-top: 20px !important;
+            order: 3 !important; 
+
+        /* First Row: About Me & Resume Buttons */
+        .button-group {
+            display: flex !important;
+            justify-content: center !important;
+            gap: 15px !important;
+            width: 100% !important;
+        }
+
+        #button {
+            width: 45% !important;
+            max-width: 200px !important;
+            text-align: center !important;
+        }
+
+        /* Second Row: Icons */
+        .icon-group {
+            display: flex !important;
+            justify-content: center !important;
+            gap: 10px !important;
+            flex-basis: 100% !important; /* Forces this group to the next line */
+            margin-top: 10px !important;
+        }
+
+        #iconbutton {
+            width: 30% !important;
+            max-width: 60px !important;
+            text-align: center !important;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+// @media (max-width: 1272px) {
+//     .about-container {
+//         width: 90% !important; /* Reduce the width so it's not full screen */
+//         max-width: 600px !important; /* Prevent it from becoming too wide */
+//         padding: 20px !important; /* Add padding for spacing */
+//         margin-top: 20px !important; /* Give space from the top */
+//     }
+
+//     .about-text {
+//         display: flex !important;
+//         flex-direction: column !important;
+//         align-items: center !important;
+//         justify-content: center !important;
+//         width: 100% !important;
+//         text-align: center !important;
+//     }
+
+//     .profile-pic {
+//         width: 80% !important;  
+//         max-width: 280px !important;  
+//         margin-right: 0 !important; /* Remove previous spacing */
+//         margin-bottom: 20px !important;
+//         align-self: center !important;  
+//     }
+
+//     .about-content {
+//         width: 100% !important;
+//         max-width: 600px !important;
+//         text-align: center !important;
+//         margin-top: 20px !important;
+//         order: 2 !important; /* Ensures text comes after image */
+//     }
+
+//     .about-links {
+//         display: flex !important;
+//         flex-direction: column !important;
+//         align-items: center !important;
+//         justify-content: center !important;
+//         width: 100% !important;
+//         gap: 15px !important;
+//         margin-top: 20px !important;
+//         order: 3 !important; /* Ensures buttons come last */
+//     }
+// }
+
+// @media (max-width: 768px) {
+//     .about-container {
+//         width: 90% !important; /* Reduce the width so it's not full screen */
+//         max-width: 600px !important; /* Prevent it from becoming too wide */
+//         padding: 20px !important; /* Add padding for spacing */
+//         margin-top: 20px !important; /* Give space from the top */
+//     }
+
+//     .about-text {
+//         display: flex !important;
+//         flex-direction: column !important;
+//         align-items: center !important;
+//         justify-content: center !important;
+//         width: 100% !important;
+//         text-align: center !important;
+//     }
+
+//     .profile-pic {
+//         width: 80% !important;  
+//         max-width: 280px !important;  
+//         margin-right: 0 !important; /* Remove previous spacing */
+//         margin-bottom: 20px !important;
+//         align-self: center !important;  
+//     }
+
+//     .about-content {
+//         width: 100% !important;
+//         max-width: 600px !important;
+//         text-align: center !important;
+//         margin-top: 20px !important;
+//         order: 2 !important; /* Ensures text comes after image */
+//     }
+
+//     .about-links {
+//         display: flex !important;
+//         flex-direction: column !important;
+//         align-items: center !important;
+//         justify-content: center !important;
+//         width: 100% !important;
+//         gap: 15px !important;
+//         margin-top: 20px !important;
+//         order: 3 !important; /* Ensures buttons come last */
+//     }
+// }
+
