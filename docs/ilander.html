@@ -1,11 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="Images/sword.png" type="image/sword-icon">
+    <script src="Scripts/script.js"></script>
+    <link rel="stylesheet" href="project-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iLander | Game Project</title>
+    <title>Nebula Navigator | Project</title>
 </head>
-<body>
-    <p>Hello world!</p>
+<body id="body">
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-container">
+            <h1 class="site-title">Nebula Navigator</h1>
+            <div class="nav-container">
+                <nav class="nav-links">
+                    <a href="#welcome">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <button id="mode-toggle" class="mode-button" onclick="toggleMode()">
+                    <img id="mode-icon" src="Images/DarkMode.svg" alt="Dark Mode">
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Project Banner -->
+        <div class="project-banner">
+            <div class="project-image">
+                <img src="Images/iLander.png" alt="Nebula Navigator">
+                <div class="project-title">Nebula Navigator</div>
+            </div>
+        </div>
+
+        <!-- Project Information -->
+        <section class="project-info">
+            <div class="info-box">
+                <h3>About</h3>
+                <p>
+                    <strong>Nebula Navigator</strong> is a fast-paced <strong>co-op 2D platformer-shooter</strong> where players navigate deadly space corridors, dodging obstacles and 
+                    blasting through hazards. Designed in <strong>Unity with C#</strong>, it blends <strong>precision movement, shooting mechanics, and power-ups</strong> for a fun yet 
+                    challenging experience.
+                </p>
+            </div>
+            <div class="info-box">
+                <h3>Project Details</h3>
+                <ul>
+                    <li><strong>My Role:</strong> Game Programmer</li>
+                    <li><strong>Engine:</strong> Unity</li>
+                    <li><strong>Language:</strong> C#</li>
+                    <li><strong>Development Time:</strong> 1 week</li>
+                </ul>
+            </div>
+        </section>
+
+
+        <!-- Project Description -->
+        <section class="project-description">
+            <h2>Nebula Navigator</h2>
+            <h3>Introduction</h3>
+            <p>
+                <strong>Nebula Navigator</strong> is my <strong>first game development assignment</strong>, created to solidify my understanding of 
+                <strong>core game mechanics, movement, shooting, and level structuring</strong> in Unity. The game is a 
+                <strong>2D cooperative space platformer</strong>, where two players must <strong>fly, dodge, and shoot their way through tight corridors</strong> filled with obstacles.
+            </p>
+
+            <h3>Gameplay and Features</h3>
+            <ul>
+                <li><strong>Co-op gameplay:</strong> Two players work together to clear obstacles and progress.</li>
+                <li><strong>Flight-based movement:</strong> Navigate tight spaces using <strong>WASD/Arrow keys</strong>.</li>
+                <li><strong>Shooting mechanic:</strong> Destroy obstacles with <strong>precise projectile shots</strong>.</li>
+                <li><strong>Power-ups:</strong>
+                    <ul>
+                        <li><strong>Speed Boost:</strong> Temporarily increases movement speed.</li>
+                        <li><strong>Slow Boost:</strong> Temporarily slows movement for better control.</li>
+                        <li><strong>Multi-Shot:</strong> Enables <strong>multiple projectiles</strong> for a short duration.</li>
+                    </ul>
+                </li>
+                <li><strong>Physics-based interactions:</strong> Players bounce off obstacles, adding an <strong>unpredictable challenge</strong>.</li>
+                <li><strong>Game loop:</strong> Players <strong>progress through levels</strong> until both are eliminated, leading to a restart.</li>
+            </ul>
+
+            <h3>Development Process & Lessons Learned</h3>
+            <ul>
+                <li><strong>Physics & Movement Mastery</strong> - Learned how to <strong>use rigidbodies, velocity control, and smooth movement mechanics</strong>.</li>
+                <li><strong>Game Flow & UI</strong> - Implemented menus, <strong>pause functionality, and scene transitions</strong>.</li>
+                <li><strong>Debugging & Iteration</strong> - Overcame issues with <strong>collision handling, shooting cooldowns, and movement behavior</strong>.</li>
+            </ul>
+
+            <p>
+                While relatively simple, this game <strong>established my foundation in game development</strong>, 
+                teaching me how to structure mechanics, balance challenges, and optimize player experience.
+            </p>
+        </section>
+
+
+        <!-- Project Gallery -->
+        <section class="project-gallery">
+            <h3>Gallery</h3>
+            <div class="gallery-grid">
+                <img src="Images/Ilander1.jpg" alt="Gameplay Screenshot 1">
+                <img src="Images/Ilander2.jpg" alt="Gameplay Screenshot 2">
+                <img src="Images/Ilander3.jpg" alt="Gameplay Screenshot 3">
+            </div>
+        </section>
+
+        <!-- Project Links -->
+        <section class="project-links">
+            <h3>Explore More</h3>
+            <a href="https://github.com/Yizune/Ilander" target="_blank" class="button">GitHub</a>
+            <a href="https://store.steampowered.com/app/Ilander" target="_blank" class="button">Itch.io</a>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 Stevan Likusic - All Rights Reserved</p>
+    </footer>
+
 </body>
 </html>

@@ -1,4 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const transitionOverlay = document.querySelector(".transition-overlay");
+
+    setTimeout(() => {
+        transitionOverlay.classList.remove("active");
+    }, 500); 
+
+    document.querySelectorAll("a").forEach(link => {
+        if (link.hostname === window.location.hostname) {
+            link.addEventListener("click", event => {
+                event.preventDefault();
+                transitionOverlay.classList.add("active");
+
+                setTimeout(() => {
+                    window.location.href = link.href;
+                }, 500); 
+            });
+        }
+    });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.nav-links a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
