@@ -1,3 +1,36 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll(".code-toggle");
+    let openSnippet = null;
+    let activeButton = null;
+
+    buttons.forEach(button => {
+        button.addEventListener("click", function() {
+            const targetId = this.getAttribute("data-target");
+            const targetSnippet = document.getElementById(targetId);
+
+            if (openSnippet && openSnippet !== targetSnippet) {
+                openSnippet.style.display = "none";
+                activeButton.classList.remove("active"); 
+            }
+
+            if (targetSnippet.style.display === "block") {
+                targetSnippet.style.display = "none"; 
+                this.classList.remove("active");
+                openSnippet = null;
+                activeButton = null;
+            } else {
+                targetSnippet.style.display = "block";
+                this.classList.add("active");
+                openSnippet = targetSnippet;
+                activeButton = this;
+            }
+        });
+    });
+});
+
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const transitionOverlay = document.querySelector(".transition-overlay");
 

@@ -13,8 +13,10 @@
 
     <!-- Header Section -->
     <header class="header">
+        <a href="index.html" class="back-button">
+            <img src="Images/chevron_left_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Back"> Go Back
+        </a>
         <div class="header-container">
-            <a href="index.html" class="back-button">Go Back</a> 
             <h1 class="site-title">Nebula Navigator</h1>
             <div class="nav-container">
                 <nav class="nav-links">
@@ -50,7 +52,26 @@
         <div class="project-banner">
             <div class="project-image">
                 <img src="Images/iLander.png" alt="Nebula Navigator">
-                <div class="project-title">Nebula Navigator</div>
+
+                <div class="project-title">
+                    <span class="title">Nebula Navigator</span>
+                    <div class="overlay-icons">
+                        <a href="https://github.com/Yizune" target="_blank">
+                            <img src="Images/github-142-svgrepo-com.svg" alt="GitHub">
+                        </a>
+                        <a href="Images/GameProgrammingCV.pdf" target="_blank">
+                            <img src="Images/resume.svg" alt="Resume">
+                        </a>
+                        <a href="https://www.linkedin.com/in/stevan-likusic-884946300/" target="_blank">
+                            <img src="Images/linkedin-circle-svgrepo-com.svg" alt="LinkedIn">
+                        </a>
+                        <a href="https://store.steampowered.com/app/Ilander" target="_blank">
+                            <img src="Images/itch-io-svgrepo-com.svg" alt="Itch.io">
+                        </a>
+                    </div>
+                </div>
+                
+
             </div>
         </div>
 
@@ -69,10 +90,10 @@
             <div class="info-box">
                 <h3>Project Details</h3>
                 <ul>
-                    <li><strong>My Role:</strong> Gameplay Programmer</li>
-                    <li><strong>Team Size:</strong> 1</li>
-                    <li><strong>Engine:</strong> Unity (C#)</li>
-                    <li><strong>Development Time:</strong> 1 week</li>
+                    <li><img src="Images/person_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Role Icon"> <strong>My Role:</strong>Gameplay Programmer</li>
+                    <li><img src="Images/group.svg" alt="Team Icon"> <strong>Team Size:</strong>1</li>
+                    <li><img src="Images/tool.svg" alt="Engine Icon"> <strong>Engine:</strong>Unity (C#)</li>
+                    <li><img src="Images/time.svg" alt="Time Icon"> <strong>Development Time:</strong>1 week</li>
                 </ul>
             </div>
         </section>
@@ -115,6 +136,246 @@
                 While relatively simple, this game <strong>established my foundation in game development</strong>, 
                 teaching me how to structure mechanics, balance challenges, and optimize player experience on a basic level.
             </p>
+
+            <section class="project-code">
+                <h3>Code</h3>
+                <p>View key scripts used in Nebula Navigator.</p>
+                <div class="code-buttons">
+                    <button class="code-toggle" data-target="playerMovement">PlayerMovement.cs</button>
+                    <button class="code-toggle" data-target="shooting">Shooting.cs</button>
+                    <button class="code-toggle" data-target="gameRestarter">GameRestarter.cs</button>
+                    <button class="code-toggle" data-target="pauseGame">PauseGame.cs</button>
+                    <button class="code-toggle" data-target="fasterBoost">FasterBoost.cs</button>
+                </div>
+                
+                <div class="code-container">
+                    <pre id="playerMovement" class="code-snippet">
+            <code>
+            using System.Collections;
+            using System.Collections.Generic;
+            using UnityEngine;
+            using System;
+            using UnityEngine.InputSystem;
+            
+            public class PlayerMovement : MonoBehaviour
+            {
+                public float speed;
+                public Rigidbody2D rb;
+                private float horizontal;
+                private float vertical;
+                Vector2 lastVelocity;
+                public float speedUp;
+            
+                private void Start()
+                {
+                    rb = GetComponent<Rigidbody2D>();
+                }
+            
+                void Update()
+                {
+                    rb.AddForce(new Vector2(horizontal * speed, vertical * speed) * Time.deltaTime * speedUp);
+                }
+            
+                private void FixedUpdate()
+                {
+                    lastVelocity = rb.velocity;
+                }
+            
+                public void Move(InputAction.CallbackContext callbackContext)
+                {
+                    horizontal = callbackContext.ReadValue<Vector2>().x;
+                    vertical = callbackContext.ReadValue<Vector2>().y;
+                }
+            
+                private void OnCollisionEnter2D(Collision2D collision)
+                {
+                    if (collision.gameObject.CompareTag("Player1") || collision.gameObject.CompareTag("Player2"))
+                    {
+                        var speed = lastVelocity.magnitude;
+                        var direction = Vector2.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
+                        rb.velocity = direction * Mathf.Max(speed, 2f);
+                    }
+                }
+            }
+            </code>
+                    </pre>
+            
+                    <pre id="shooting" class="code-snippet">
+            <code>
+            using System.Collections;
+            using System.Collections.Generic;
+            using UnityEngine;
+            using UnityEngine.InputSystem;
+            
+            public class Shooting : MonoBehaviour
+            {
+                public Transform shootingPoint;
+                public GameObject bulletPrefab;
+                public float bulletCD = 0.5f;
+                public bool shooting;
+                public float timeAfterShooting = 0;
+            
+                private void Start()
+                {
+                    shooting = false;
+                }
+            
+                private void Update()
+                {
+                    timeAfterShooting -= Time.deltaTime;
+                }
+            
+                public void Shoot(InputAction.CallbackContext shoot)
+                {
+                    if (shoot.performed && timeAfterShooting <= 0.0f)
+                    {
+                        timeAfterShooting = bulletCD;
+                        Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
+                    }
+                }
+            }
+            </code>
+                    </pre>
+            
+                    <pre id="gameRestarter" class="code-snippet">
+            <code>
+            using System.Collections;
+            using System.Collections.Generic;
+            using UnityEngine;
+            using UnityEngine.SceneManagement;
+            
+            public class GameRestarter : MonoBehaviour
+            {
+                public GameObject Player1;
+                public GameObject Player2;
+                public string Respawn;
+            
+                private bool player1Dead = false;
+                private bool player2Dead = false;
+            
+                void Update()
+                {
+                    CheckPlayerStates();
+                }
+            
+                void CheckPlayerStates()
+                {
+                    if (Player1 == null || !Player1.activeSelf)
+                    {
+                        player1Dead = true;
+                    }
+                    if (Player2 == null || !Player2.activeSelf)
+                    {
+                        player2Dead = true;
+                    }
+            
+                    if (player1Dead && player2Dead)
+                    {
+                        Debug.Log("Both players have died. Restarting scene.");
+                        SceneManager.LoadScene(Respawn);
+                    }
+                }
+            }
+            </code>
+                    </pre>
+            
+                    <pre id="pauseGame" class="code-snippet">
+            <code>
+            using System.Collections;
+            using System.Collections.Generic;
+            using UnityEngine;
+            
+            public class PauseGame : MonoBehaviour
+            {
+                public GameObject pauseMenuUI;
+                private static bool gameIsPaused = false;
+            
+                private void Start()
+                {
+                    pauseMenuUI.SetActive(false);
+                }
+            
+                void Update()
+                {
+                    if (Input.GetKeyDown(KeyCode.Escape))
+                    {
+                        if (gameIsPaused) Resume();   
+                        else Pause();
+                    }
+                }
+            
+                public void Resume()
+                {
+                    gameIsPaused = false;
+                    Time.timeScale = 1f;
+                    pauseMenuUI.SetActive(false);
+                }
+            
+                void Pause()
+                {
+                    gameIsPaused = true;
+                    Time.timeScale = 0f;
+                    pauseMenuUI.SetActive(true);
+                }
+            }
+            </code>
+                    </pre>
+            
+                    <pre id="fasterBoost" class="code-snippet">
+            <code>
+            using System.Collections;
+            using System.Collections.Generic;
+            using UnityEngine;
+            using UnityEngine.InputSystem;
+            
+            public class FasterBoost : MonoBehaviour
+            {
+                public float boostedSpeed;
+                public float standardSpeed;
+                private PlayerMovement playerMovement;
+                public GameObject player;
+                private bool boosting;
+                public float boostTimer;
+                public float boostAmmount;
+            
+                private void Awake()
+                {
+                    playerMovement = player.GetComponent<PlayerMovement>();
+                }
+            
+                void Start()
+                {
+                    boosting = false;
+                }
+            
+                void Update()
+                {
+                    if (boosting)
+                    {
+                        boostTimer += Time.deltaTime;
+                        if (boostTimer > boostAmmount)
+                        {
+                            playerMovement.speed = standardSpeed;
+                            boosting = false;
+                            boostTimer = 0;
+                        }
+                    }
+                }
+            
+                private void OnTriggerEnter2D(Collider2D collision)
+                {
+                    if (collision.CompareTag("Faster"))
+                    {
+                        playerMovement.speed = boostedSpeed;
+                        boosting = true;
+                    }
+                }
+            }
+            </code>
+                    </pre>
+            
+                </div>
+            </section>            
         </section>
 
 
