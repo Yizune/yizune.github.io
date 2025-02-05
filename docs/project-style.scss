@@ -119,30 +119,72 @@ body {
     }
 }
 
+
+.welcome {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+
+    .welcome-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        opacity: 0; 
+        animation: fadeIn 1s ease-in-out forwards; 
+    
+        .line {
+            width: 306px;
+            height: 4px;
+            background-color: white;
+            margin: 0 15px;
+            border-radius: 50px;
+            opacity: 0; 
+            animation: fadeIn 1s ease-in-out forwards; 
+        }
+    
+        .sword-icon {
+            width: 40px;
+            height: auto;
+            filter: brightness(0) invert(1); 
+            opacity: 0; 
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+    }
+
+    h2 {
+        font-size: 3.5rem;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 1.7rem;
+        font-weight: 500; 
+    }
+}
+
+
+
+
 .container {
     max-width: $max-width;
     width: 100%;
     margin: 0 auto;
-    //padding: 0 20px;
-
     background-color: $secondary-color;
     border-radius: 15px;
-    padding: 40px;
+    padding: 0 40px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     overflow: hidden;
 }
 
-.page-content {
-    margin-top: 100px;
-}
 
-
-
-// === PROJECT BANNER FIXES ===
 .project-banner {
     width: 100%;
     max-width: $max-width;
-    margin: 150px auto 0;
+    margin: 40px auto 50px;
     overflow: hidden;
     position: relative; 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
@@ -178,25 +220,32 @@ body {
 
 
 .project-description {
-    max-width: 1150x;
+    max-width: 1200px;
     width: 100%;
-    padding: 20px;
-    background: $primary-color;
+    padding: 30px;
+    box-sizing: border-box;
+    //background: $primary-color;
     color: $text-light;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 50px;
+
+    background: linear-gradient(135deg, rgba(30,41,59,1) 0%, rgba(55,65,81,1) 100%);
+    //background: linear-gradient(90deg, #ffffff, #c2c9cc); Light mode gradiant
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+    transition: box-shadow 0.3s ease-in-out;
 
     h2 {
         font-size: 2.2rem;
         color: $accent-color;
         margin-bottom: 15px;
         text-align: center;
+        margin-bottom: 100px;
     }
 
     h3 {
         font-size: 1.6rem;
         color: $accent-color;
-        margin-top: 20px;
+        margin-top: 50px;
     }
 
     p, ul {
@@ -225,7 +274,6 @@ body {
 
 
 
-// === PROJECT INFO SECTION ===
 .project-info {
     display: flex;
     justify-content: space-between;
@@ -234,16 +282,28 @@ body {
 
     .info-box {
         flex: 1;
-        background: $primary-color;
+        //background: $primary-color;
         border-radius: 10px;
         padding: 20px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+
+        background: linear-gradient(135deg, rgba(30,41,59,1) 0%, rgba(55,65,81,1) 100%);
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+        transition: box-shadow 0.3s ease-in-out;
     }
 
     h3 {
         font-size: 1.8rem;
         color: $accent-color;
         margin-bottom: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        position: relative;
+        display: inline-block;
+        background: linear-gradient(90deg, #3B82F6, #60A5FA);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all 0.3s ease-in-out;
     }
 
     p, ul {
@@ -258,11 +318,6 @@ body {
 }
 
 
-
-
-
-
-// === PROJECT GALLERY ===
 .project-gallery {
     text-align: center;
     padding: 50px 0;
@@ -287,37 +342,164 @@ body {
 }
 
 
-
-
-// === PROJECT LINKS ===
 .project-links {
+    max-width: 1200px;
+    width: 100%;
+    padding: 50px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(30,41,59,1) 0%, rgba(55,65,81,1) 100%);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
     text-align: center;
-    padding: 50px 0;
+    margin: 50px auto 40px;
+    box-sizing: border-box;
 
-    .button {
-        display: inline-block;
-        margin: 10px;
-        padding: 12px 24px;
-        background: $accent-color;
-        color: white;
+    h3 {
+        font-size: 2rem;
+        color: $accent-color;
+        margin-bottom: 50px;
         font-weight: bold;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 1.2rem;
-        transition: background 0.3s ease;
+    }
 
-        &:hover {
-            background: lighten($accent-color, 10%);
+    p {
+        font-size: 1.3rem;
+        color: $text-light;
+        font-weight: 500;
+        margin-bottom: 40px;
+    }
+
+    .explore-links {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+
+        .button-row {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .button {
+            display: inline-block;
+            width: 220px; 
+            padding: 15px 20px;
+            font-size: 1.3rem; 
+            font-weight: bold;
+            background: $accent-color;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            transition: background 0.3s ease, transform 0.2s ease;
+
+            &:hover {
+                background: lighten($accent-color, 10%);
+                transform: scale(1.05);
+            }
         }
     }
 }
 
-// === FOOTER ===
+
 .footer {
-    width: 100%;
-    background: black;
+    width: 100%;  
+    background: $primary-color;
     color: $text-light;
+    font-size: 1rem;
     text-align: center;
-    padding: 15px;
-    margin-top: 50px;
+    padding: 5px 0;
+    position: relative; 
+    margin-top: 100px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+
+
+// Animations
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.welcome {
+    h2, p {
+        animation: fadeIn 1s ease-in-out;
+    }
+}
+
+
+
+
+.section-divider {
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #3B82F6, #60A5FA);
+    margin: 30px 0;
+    border-radius: 10px;
+    animation: glowing-line 2s infinite alternate;
+}
+
+@keyframes glowing-line {
+    0% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
+    100% { box-shadow: 0 0 15px rgba(59, 130, 246, 1); }
 }
