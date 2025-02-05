@@ -969,84 +969,119 @@ $light-link-hover: #125E75;
 
 
 @media (max-width: 768px) {
-        .projects-grid {
-            grid-template-columns: repeat(1, 1fr) !important; 
-        }
+    .projects-grid {
+        grid-template-columns: repeat(1, 1fr) !important; 
+    }
 
-        .contact-grid {
-            grid-template-columns: repeat(1, 1fr) !important; 
-        }
+    .contact-grid {
+        grid-template-columns: repeat(1, 1fr) !important; 
+    }
 
-        .about-container {
-            width: 90% !important; 
-            max-width: 600px !important; 
-            padding: 20px !important; 
-            margin-top: 20px !important; 
-        }
+    .about-container {
+        width: 90% !important; 
+        max-width: 600px !important; 
+        padding: 20px !important; 
+        margin-top: 20px !important; 
+    }
 
-        .about-text {
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            justify-content: center !important;
-            width: 100% !important;
-            text-align: center !important;
-        }
+    .about-text {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
 
-        .profile-pic {
-            width: 80% !important;  
-            max-width: 280px !important;  
-            margin-right: 0 !important; 
-            margin-bottom: 20px !important;
-            align-self: center !important;  
-        }
+    .profile-pic {
+        width: 80% !important;  
+        max-width: 280px !important;  
+        margin-right: 0 !important; 
+        margin-bottom: 20px !important;
+        align-self: center !important;  
+    }
 
-        .about-content {
-            width: 100% !important;
-            max-width: 600px !important;
-            text-align: center !important;
-            margin-top: 20px !important;
-            order: 2 !important; 
-        }
+    .about-content {
+        width: 100% !important;
+        max-width: 600px !important;
+        text-align: center !important;
+        margin-top: 20px !important;
+        order: 2 !important; 
+    }
 
-        .about-links {
-            display: flex !important;
-            flex-direction: wrap !important;
-            align-items: center !important;
-            justify-content: center !important;
-            width: 100% !important;
-            gap: 15px !important;
-            margin-top: 20px !important;
-            order: 3 !important; 
+    .about-links {
+        display: flex !important;
+        flex-direction: wrap !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        gap: 15px !important;
+        margin-top: 20px !important;
+        order: 3 !important; 
 
-        /* First Row: About Me & Resume Buttons */
-        .button-group {
-            display: flex !important;
-            justify-content: center !important;
-            gap: 15px !important;
-            width: 100% !important;
-        }
+    /* First Row: About Me & Resume Buttons */
+    .button-group {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 15px !important;
+        width: 100% !important;
+    }
 
-        #button {
-            width: 45% !important;
-            max-width: 200px !important;
-            text-align: center !important;
-        }
+    #button {
+        width: 45% !important;
+        max-width: 200px !important;
+        text-align: center !important;
+    }
 
-        /* Second Row: Icons */
-        .icon-group {
-            display: flex !important;
-            justify-content: center !important;
-            gap: 10px !important;
-            flex-basis: 100% !important; /* Forces this group to the next line */
-            margin-top: 10px !important;
-        }
+    /* Second Row: Icons */
+    .icon-group {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        flex-basis: 100% !important; /* Forces this group to the next line */
+        margin-top: 10px !important;
+    }
 
-        #iconbutton {
-            width: 30% !important;
-            max-width: 60px !important;
-            text-align: center !important;
-        }
+    #iconbutton {
+        width: 30% !important;
+        max-width: 60px !important;
+        text-align: center !important;
+    }
+}
+}
+
+
+@media (max-width: 430px) {
+    .about-container {
+        width: 95% !important;
+        padding: 15px !important;
+    }
+
+    .about-text {
+        text-align: center !important;
+    }
+
+    .profile-pic {
+        width: 100% !important;
+        max-width: 250px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .about-content {
+        max-width: 350px !important;
+        text-align: center !important;
+    }
+
+    /* Stack everything vertically for phones */
+    .about-links {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+    }
+
+    .about-links a {
+        width: 100% !important;
+        max-width: 250px !important;
     }
 }
 
