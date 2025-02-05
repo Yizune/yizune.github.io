@@ -37,6 +37,26 @@ body::before {
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box;
+  position: relative;
+}
+.header .back-button {
+  position: absolute;
+  left: 20px;
+  color: #F1F5F9;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.header .back-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+.header .back-button:active {
+  transform: scale(0.95);
 }
 .header .site-title {
   font-size: 1.5rem;
