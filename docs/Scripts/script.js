@@ -53,17 +53,26 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.nav-links a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            document.querySelector(targetId).scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+        const href = anchor.getAttribute('href');
+
+        const isInternal = !href.startsWith('http://') && !href.startsWith('https://');
+
+        if (isInternal) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
-        });
+        }
     });
 });
 
