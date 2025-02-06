@@ -354,6 +354,7 @@ body {
         text-align: center;
         color: $text-light;
         margin-bottom: 50px;
+        font-weight: 500; 
     }
 
     .projects-grid {
@@ -507,6 +508,7 @@ body {
                 display: flex;
                 align-items: center;
                 gap: 15px;
+                font-weight: 500;
 
                 .skill-icon {
                     width: 32px;  

@@ -274,6 +274,7 @@ body::before {
   text-align: center;
   color: #F1F5F9;
   margin-bottom: 50px;
+  font-weight: 500;
 }
 .projects .projects-grid {
   display: grid;
@@ -406,6 +407,7 @@ body::before {
   display: flex;
   align-items: center;
   gap: 15px;
+  font-weight: 500;
 }
 .skills .skills-category ul li .skill-icon {
   width: 32px;

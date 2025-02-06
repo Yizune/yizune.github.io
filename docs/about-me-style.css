@@ -54,6 +54,7 @@ body::before {
   padding: 8px 12px;
   border-radius: 5px;
   transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 .header .back-button img {
   width: 20px;
@@ -221,6 +222,7 @@ body::before {
   font-size: 1.3rem;
   line-height: 1.6;
   margin-bottom: 10px;
+  font-weight: 500;
 }
 
 .contact-button {
@@ -291,6 +293,7 @@ body::before {
 .hobby-item p {
   font-size: 1.2rem;
   color: #F1F5F9;
+  font-weight: 500;
 }
 .hobby-item:hover {
   background: rgba(255, 255, 255, 0.2);
@@ -328,6 +331,7 @@ body::before {
 }
 .strengths-weaknesses .strength-weakness-container .strengths li, .strengths-weaknesses .strength-weakness-container .weaknesses li {
   margin-bottom: 15px;
+  font-weight: 500;
 }
 .strengths-weaknesses .strength-weakness-container .strengths h3, .strengths-weaknesses .strength-weakness-container .weaknesses h3 {
   font-size: 1.5rem;
@@ -370,6 +374,7 @@ body::before {
   font-size: 1.3rem;
   color: #F1F5F9;
   margin-bottom: 40px;
+  font-weight: 500;
 }
 .contact .contact-container {
   display: flex;
@@ -448,6 +453,17 @@ html, body {
   background-color: #FFFFFF;
   color: #1E293B;
 }
+.lightmode .header .back-button {
+  background: #b4b4b4;
+  color: #1E293B;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.lightmode .header .back-button img {
+  filter: invert(1);
+}
+.lightmode .header .back-button:hover {
+  background: #999999;
+}
 .lightmode .nav-links a {
   color: #1E293B;
 }
@@ -474,7 +490,7 @@ html, body {
   color: #1E201E;
 }
 .lightmode .hero-container {
-  background: linear-gradient(135deg, rgb(182, 182, 182) 0%, rgb(236, 236, 236) 100%);
+  background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgb(200, 210, 215) 100%);
 }
 .lightmode .hero-text {
   color: #1E201E;
@@ -489,7 +505,7 @@ html, body {
   background: #0b3a49;
 }
 .lightmode .hobbies .hobbies-container {
-  background: linear-gradient(135deg, rgb(182, 182, 182) 0%, rgb(236, 236, 236) 100%);
+  background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgb(200, 210, 215) 100%);
 }
 .lightmode .hobbies h2 {
   color: #125E75;
@@ -507,7 +523,7 @@ html, body {
   filter: invert(1);
 }
 .lightmode .strengths-weaknesses {
-  background: linear-gradient(135deg, rgb(182, 182, 182) 0%, rgb(236, 236, 236) 100%);
+  background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgb(200, 210, 215) 100%);
 }
 .lightmode .strengths-weaknesses h2 {
   color: #125E75;
@@ -530,7 +546,7 @@ html, body {
   filter: invert(1);
 }
 .lightmode .contact {
-  background: linear-gradient(135deg, rgb(182, 182, 182) 0%, rgb(236, 236, 236) 100%);
+  background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgb(200, 210, 215) 100%);
 }
 .lightmode .contact h2 {
   color: #125E75;

@@ -54,6 +54,7 @@ body::before {
   padding: 8px 12px;
   border-radius: 5px;
   transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 .header .back-button img {
   width: 20px;
@@ -313,6 +314,7 @@ body::before {
   font-size: 1.1rem;
   color: white;
   margin-bottom: 20px;
+  font-weight: 500;
 }
 .project-description .project-code .code-buttons {
   display: flex;
@@ -504,6 +506,134 @@ html, body {
   padding: 0;
   width: 100%;
   box-sizing: border-box;
+}
+
+.lightmode {
+  background-color: #F4F4F4;
+  color: #1E201E;
+}
+.lightmode::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("Images/EldenRing.png") no-repeat center center fixed;
+  background-size: cover;
+  z-index: -1;
+  filter: brightness(85%);
+}
+.lightmode .section-divider {
+  background: linear-gradient(90deg, #1E88A8, #125E75);
+}
+.lightmode .header {
+  background-color: #FFFFFF;
+  color: #1E293B;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.lightmode .header .back-button {
+  background: #b4b4b4;
+  color: #1E293B;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.lightmode .header .back-button img {
+  filter: invert(1);
+}
+.lightmode .header .back-button:hover {
+  background: #999999;
+}
+.lightmode .nav-links a {
+  color: #1E293B;
+}
+.lightmode .nav-links a:hover {
+  color: #125E75;
+}
+.lightmode .mode-button:hover img {
+  filter: brightness(60%);
+}
+.lightmode .container {
+  background-color: rgba(226, 232, 240, 0.7);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.lightmode .project-banner {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.lightmode .project-banner .project-image img {
+  filter: brightness(95%);
+}
+.lightmode .project-banner .project-title {
+  background: rgba(255, 255, 255, 0.85);
+  color: #1E201E;
+}
+.lightmode .project-banner .project-title .overlay-icons a {
+  background: rgba(0, 0, 0, 0.1);
+}
+.lightmode .project-banner .project-title .overlay-icons a img {
+  filter: brightness(0);
+}
+.lightmode .project-banner .project-title .overlay-icons a:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+.lightmode .project-description {
+  background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgb(200, 210, 215) 100%);
+  color: #1E201E;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+.lightmode .project-description h2, .lightmode .project-description h3 {
+  color: #1E88A8;
+}
+.lightmode .project-description .download-button {
+  background: #1E88A8;
+}
+.lightmode .project-description .download-button:hover {
+  background: #16657d;
+}
+.lightmode .project-description .project-code p {
+  color: #1E201E;
+}
+.lightmode .project-description .project-code .code-toggle {
+  color: #1E88A8;
+  border-color: #1E88A8;
+}
+.lightmode .project-description .project-code .code-toggle:hover, .lightmode .project-description .project-code .code-toggle.active {
+  background: #1E88A8;
+  color: #FFFFFF;
+}
+.lightmode .project-description .project-code .code-snippet {
+  background: rgba(0, 0, 0, 0.05);
+  color: #1E201E;
+}
+.lightmode .project-info .info-box {
+  background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgb(200, 210, 215) 100%);
+  color: #1E201E;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+.lightmode .project-info h3 {
+  background: linear-gradient(90deg, #1E88A8, #4dbddf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.lightmode .project-links {
+  background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgb(200, 210, 215) 100%);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+.lightmode .project-links h3 {
+  color: #1E88A8;
+}
+.lightmode .project-links p {
+  color: #1E201E;
+}
+.lightmode .project-links .button {
+  background: #1E88A8;
+}
+.lightmode .project-links .button:hover {
+  background: #26abd3;
+}
+.lightmode .footer {
+  background: #FFFFFF;
+  color: #1E201E;
+  border-top: 1px solid rgba(226, 232, 240, 0.7);
 }
 
 @keyframes fadeIn {
