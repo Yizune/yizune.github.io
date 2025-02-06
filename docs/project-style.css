@@ -224,6 +224,7 @@ body::before {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 .project-banner .project-image .project-title .overlay-icons a img {
   width: 24px;
@@ -279,6 +280,25 @@ body::before {
 }
 .project-description ul li ul li {
   font-weight: normal;
+}
+.project-description .download-container {
+  text-align: left;
+  margin-top: 20px;
+}
+.project-description .download-button {
+  display: inline-block;
+  background: #3B82F6;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+.project-description .download-button:hover {
+  background: #1E50C3;
 }
 .project-description .project-code {
   padding-top: 20px;
@@ -461,6 +481,7 @@ body::before {
   border-radius: 8px;
   text-align: center;
   transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 .project-links .explore-links .button:hover {
   background: #6ca1f8;

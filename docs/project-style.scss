@@ -272,6 +272,7 @@ body {
                     background: rgba(255, 255, 255, 0.1);
                     border-radius: 50%;
                     transition: background 0.3s ease, transform 0.2s ease;
+                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
         
                     img {
                         width: 24px;
@@ -345,6 +346,28 @@ body {
                 }
             }
         }
+    }
+
+    .download-container {
+        text-align: left;
+        margin-top: 20px;
+    }
+    
+    .download-button {
+        display: inline-block;
+        background: #3B82F6; 
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding: 12px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: background 0.3s ease-in-out;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    }
+    
+    .download-button:hover {
+        background: #1E50C3;
     }
 
     // Code Section Adjustments
@@ -555,6 +578,7 @@ body {
             border-radius: 8px;
             text-align: center;
             transition: background 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 
             &:hover {
                 background: lighten($accent-color, 10%);

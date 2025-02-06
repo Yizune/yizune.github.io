@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="Images/sword.png" type="image/sword-icon">
+    <script src="Scripts/script.js"></script>
+    <link rel="stylesheet" href="about-me-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stevan Likusic | About Me</title>
+</head>
+<body id="body">
+    
+
+    <!-- Header Section -->
+    <header class="header">
+        <a href="index.html" class="back-button">
+            <img src="Images/chevron_left_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Back"> Go Back
+        </a>
+        <div class="header-container">
+            <h1 class="site-title">Stevan Likusic</h1>
+            <div class="nav-container">
+                <nav class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="https://github.com/Yizune" target="_blank">GitHub</a>
+                    <a href="Images/GameProgrammingCV.pdf" target="_blank">Resume</a>
+                    <a href="https://www.linkedin.com/in/stevan-likusic-884946300/" target="_blank">LinkedIn</a>
+                </nav>
+                <button id="mode-toggle" class="mode-button" onclick="toggleMode()">
+                    <img id="mode-icon" src="Images/DarkMode.svg" alt="Dark Mode">
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Welcome Section -->
+    <section id="welcome" class="welcome">
+        <div class="welcome-divider">
+            <div class="line"></div>
+            <img src="Images/sword.png" alt="Sword Icon" class="sword-icon">
+            <div class="line"></div>
+        </div>
+        <h2>Welcome to About Me!</h2>
+        <p>A look into who I am.</p>
+    </section>
+
+
+    <div class="container">
+
+
+        <!-- Hero Section (About Me) -->
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-image">
+                    <img src="Images/myself.png" alt="Stevan Likusic">
+                </div>
+                <div class="hero-text">
+                    <h1>Hey, I'm Stevan Likusic!</h1>
+                    <p>
+                        I'm a game programmer and developer originally from Serbia, now based in Stockholm, Sweden.
+                        Ever since I was a kid, I've been passionate about games, mostly immersing myself in competitive multiplayer 
+                        experiences while also cherishing single-player adventures with great stories.
+                    </p>
+                    <p>
+                        Currently in my final year at Futuregames, I specialize in systems and logic but love exploring all 
+                        aspects of game development. I'm curious, eager to learn, and always looking for new challenges!
+                    </p>
+                    <p>
+                        Outside of development, I enjoy playing games, listening to music, and spending quality time with my friends and family. 
+                        I also love traveling, discovering new places, and unwinding with a great book, comic, or show!
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="https://www.linkedin.com/in/stevan-likusic-884946300/" class="contact-button linkedin">
+                            <img src="Images/linkedin-circle-svgrepo-com.svg" alt="LinkedIn"> LinkedIn
+                        </a>
+                        <a href="Images/GameProgrammingCV.pdf" class="contact-button resume">
+                            <img src="Images/resume.svg" alt="Resume"> Resume
+                        </a>
+                        <a href="https://github.com/Yizune" class="contact-button github">
+                            <img src="Images/github-142-svgrepo-com.svg" alt="GitHub"> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Hobbies & Interests -->
+        <section class="hobbies">
+            <div class="hobbies-container">
+            <h2>Hobbies & Interests</h2>
+                <div class="hobby-grid">
+                    <div class="hobby-item">
+                        <img src="Images/sports_esports_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Gaming">
+                        <p><strong>Gaming</strong> - I mostly play competitive multiplayer games but also enjoy story-driven indie experiences.</p>
+                    </div>
+                    <div class="hobby-item">
+                        <img src="Images/music_note_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Music">
+                        <p><strong>Music</strong> - Huge fan of old-school metal and rock, but I enjoy listening to just about anything.</p>
+                    </div>
+                    <div class="hobby-item">
+                        <img src="Images/book_5_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Reading">
+                        <p><strong>Reading</strong> - Mostly into manga and comics, but I also love fantasy and adventure novels.</p> 
+                    </div>
+                    <div class="hobby-item">
+                        <img src="Images/tv_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Watching Shows">
+                        <p><strong>Watching</strong> - Big fan of animated shows, superhero movies, and other great series.</p>
+                    </div>
+                    <div class="hobby-item">
+                        <img src="Images/favorite_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Favorite Game">
+                        <p><strong>Favorite Game</strong> - Mostly into League of Legends, but lately, I've been enjoying Marvel Rivals.</p>
+                    </div>
+                    <div class="hobby-item">
+                        <img src="Images/favorite_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Favorite Show">
+                        <p><strong>Favorite Show</strong> - Definitely Demon Slayer—it's been my favorite since its release!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Strengths & Weaknesses -->
+        <section class="strengths-weaknesses">
+            <h2>Strengths & Weaknesses</h2>
+            <div class="strength-weakness-container">
+                <!-- Strengths -->
+                <div class="strengths">
+                    <h3>Strengths <span class="icon"><img src="Images/trending_up_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="up"></span></h3>
+                    <ul>
+                        <li><strong>Problem-solving</strong> - I enjoy breaking down complex challenges and finding efficient solutions, whether in gameplay mechanics or debugging.</li>
+                        <li><strong>Quick learner</strong> - I adapt fast and pick up new tools, concepts, and workflows with ease.</li>
+                        <li><strong>Open-minded & easy-going</strong> - I thrive in team environments, value collaboration, and enjoy learning from different perspectives.</li>
+                        <li><strong>Research-driven</strong> - I love diving deep into topics I'm passionate about, ensuring I fully understand and apply what I learn.</li>
+                        <li><strong>Creative thinker</strong> - I approach problems from different angles and enjoy experimenting with new ideas.</li>
+                    </ul>
+                </div>
+        
+                <!-- Weaknesses -->
+                <div class="weaknesses">
+                    <h3>Weaknesses <span class="icon"><img src="Images/trending_down_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="up"></span></h3>
+                    <ul>
+                        <li><strong>Perfectionism</strong> - I tend to refine details more than necessary, sometimes spending too much time on minor aspects.</li>
+                        <li><strong>Taking on too much</strong> - I often juggle multiple projects, which can make prioritization challenging.</li>
+                        <li><strong>Self-critical</strong> - I set high expectations for myself, which can sometimes slow me down.</li>
+                        <li><strong>Prefers structure</strong> - I work best with clear goals and deadlines but am learning to be more flexible.</li>
+                        <li><strong>Overthinks solutions</strong> - I sometimes spend too long analyzing different approaches instead of quickly iterating.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <section class="contact">
+            <h2>Contact</h2>
+            <p>You can find my contact information below.</p>
+            <div class="contact-container">
+                <a href="https://www.linkedin.com/in/stevan-likusic-884946300/" target="_blank" class="contact-button">
+                    <img src="Images/linkedin-circle-svgrepo-com.svg" alt="LinkedIn"> LinkedIn
+                </a>
+                <a href="Images/GameProgrammingCV.pdf" target="_blank" class="contact-button">
+                    <img src="Images/resume.svg" alt="Resume"> Resume
+                </a>
+                <a href="https://github.com/Yizune" target="_blank" class="contact-button">
+                    <img src="Images/github-142-svgrepo-com.svg" alt="GitHub"> GitHub
+                </a>
+            </div>
+        </section>        
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Stevan Likusic. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

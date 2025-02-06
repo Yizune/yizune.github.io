@@ -1,0 +1,498 @@
+body {
+  background-color: #dbdbdb;
+  color: #F1F5F9;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("Images/DarkSouls.png") no-repeat center center fixed;
+  background-size: cover;
+  z-index: -1;
+  filter: brightness(50%);
+}
+
+.header {
+  background-color: #1E293B;
+  color: #F1F5F9;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+}
+.header .header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+.header .back-button {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%) scale(1.05);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #F1F5F9;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.header .back-button img {
+  width: 20px;
+  margin-right: 5px;
+}
+.header .back-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+.header .back-button:active {
+  transform: translateY(-50%) scale(0.95);
+}
+.header .site-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  padding-left: 0;
+}
+.header .nav-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.header .nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.header .nav-links a {
+  text-decoration: none;
+  color: #F1F5F9;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.header .nav-links a:hover {
+  color: #3B82F6;
+}
+
+.mode-button {
+  margin-left: 20px;
+  margin-left: 0px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+.mode-button img {
+  width: 35px;
+  height: 35px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: brightness(80%);
+}
+.mode-button:hover img {
+  transform: scale(1.1);
+  filter: brightness(100%);
+}
+.mode-button:active img {
+  transform: scale(0.95);
+}
+
+.welcome {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+.welcome .welcome-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+.welcome .welcome-divider .line {
+  width: 306px;
+  height: 4px;
+  background-color: white;
+  margin: 0 15px;
+  border-radius: 50px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+.welcome .welcome-divider .sword-icon {
+  width: 40px;
+  height: auto;
+  filter: brightness(0) invert(1);
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+.welcome h2 {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+.welcome p {
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 50px auto;
+  background-color: rgba(100, 116, 139, 0.7);
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+.hero-container {
+  background: linear-gradient(135deg, rgb(20, 31, 49) 0%, rgb(37, 60, 100) 100%);
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+.hero-image img {
+  width: 280px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.hero-text {
+  flex: 2;
+  color: #F1F5F9;
+}
+.hero-text .hero-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: left;
+  margin-top: 20px;
+}
+.hero-text h1 {
+  margin-top: 0 !important;
+  font-size: 2.5rem;
+  color: #3B82F6;
+  margin-bottom: 15px;
+}
+.hero-text p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.contact-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 230px;
+  padding: 12px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  color: white;
+  background: rgb(26, 89, 172);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+}
+.contact-button img {
+  width: 22px;
+  height: 22px;
+  margin-right: 8px;
+  filter: invert(100%);
+}
+.contact-button:hover {
+  transform: scale(1.05);
+  background: #0b63f3;
+}
+
+.hobbies-container {
+  background: linear-gradient(135deg, rgb(20, 31, 49) 0%, rgb(37, 60, 100) 100%);
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  text-align: center;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.hobbies-container h2 {
+  font-size: 2rem;
+  color: #3B82F6;
+  margin-bottom: 30px;
+}
+
+.hobby-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.hobby-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+.hobby-item img {
+  width: 40px;
+  height: 40px;
+}
+.hobby-item p {
+  font-size: 1.2rem;
+  color: #F1F5F9;
+}
+.hobby-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.strengths-weaknesses {
+  background: linear-gradient(135deg, rgb(20, 31, 49) 0%, rgb(37, 60, 100) 100%);
+  border-radius: 15px;
+  padding: 60px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.strengths-weaknesses h2 {
+  font-size: 2rem;
+  color: #3B82F6;
+  margin-bottom: 60px;
+}
+.strengths-weaknesses .strength-weakness-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: stretch;
+}
+.strengths-weaknesses .strength-weakness-container .strengths, .strengths-weaknesses .strength-weakness-container .weaknesses {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+.strengths-weaknesses .strength-weakness-container .strengths li, .strengths-weaknesses .strength-weakness-container .weaknesses li {
+  margin-bottom: 15px;
+}
+.strengths-weaknesses .strength-weakness-container .strengths h3, .strengths-weaknesses .strength-weakness-container .weaknesses h3 {
+  font-size: 1.5rem;
+  color: #3B82F6;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.strengths-weaknesses .strength-weakness-container .strengths h3 .icon img, .strengths-weaknesses .strength-weakness-container .weaknesses h3 .icon img {
+  width: 36px;
+  height: auto;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.strengths-weaknesses .strength-weakness-container .strengths ul, .strengths-weaknesses .strength-weakness-container .weaknesses ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+.strengths-weaknesses .strength-weakness-container .strengths:hover, .strengths-weaknesses .strength-weakness-container .weaknesses:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.contact {
+  background: linear-gradient(135deg, rgb(20, 31, 49) 0%, rgb(37, 60, 100) 100%);
+  border-radius: 15px;
+  padding: 60px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  margin-top: 60px;
+}
+.contact h2 {
+  font-size: 2rem;
+  color: #3B82F6;
+  margin-bottom: 40px;
+}
+.contact p {
+  font-size: 1.3rem;
+  color: #F1F5F9;
+  margin-bottom: 40px;
+}
+.contact .contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.contact .contact-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  padding: 15px 20px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  background: rgb(26, 89, 172);
+  color: white;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+.contact .contact-button img {
+  width: 28px;
+  height: auto;
+  filter: invert(1);
+  margin-right: 12px;
+}
+.contact .contact-button:hover {
+  background: #0b63f3;
+  transform: scale(1.05);
+}
+.contact .contact-button:active {
+  transform: scale(0.95);
+}
+
+.footer {
+  width: 100%;
+  background: #1E293B;
+  color: #F1F5F9;
+  font-size: 1rem;
+  text-align: center;
+  padding: 5px 0;
+  position: relative;
+  margin-top: 100px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.welcome h2, .welcome p {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.section-divider {
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #3B82F6, #60A5FA);
+  margin: 30px 0;
+  border-radius: 10px;
+  animation: glowing-line 2s infinite alternate;
+}
+
+@keyframes glowing-line {
+  0% {
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 15px rgb(59, 130, 246);
+  }
+}/*# sourceMappingURL=about-me-style.css.map */

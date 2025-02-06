@@ -24,7 +24,7 @@
                     <a href="https://github.com/Yizune" target="_blank">GitHub</a>
                     <a href="Images/GameProgrammingCV.pdf" target="_blank">Resume</a>
                     <a href="https://www.linkedin.com/in/stevan-likusic-884946300/" target="_blank">LinkedIn</a>
-                    <a href="https://store.steampowered.com/app/Ilander" target="_blank">Itch.io</a>
+                    <a href="https://futuregames.itch.io/cosmic-crusaders" target="_blank">Itch.io</a>
                 </nav>
                 <button id="mode-toggle" class="mode-button" onclick="toggleMode()">
                     <img id="mode-icon" src="Images/DarkMode.svg" alt="Dark Mode">
@@ -32,7 +32,6 @@
             </div>
         </div>
     </header>
-
 
     <!-- Welcome Section -->
     <section id="welcome" class="welcome">
@@ -42,9 +41,8 @@
             <div class="line"></div>
         </div>
         <h2>Cosmic Crusaders</h2>
-        <p>     </p>
+        <p> </p>
     </section>
-
 
     <!-- Main Content -->
     <div class="container">
@@ -66,322 +64,326 @@
                         <a href="https://www.linkedin.com/in/stevan-likusic-884946300/" target="_blank">
                             <img src="Images/linkedin-circle-svgrepo-com.svg" alt="LinkedIn">
                         </a>
-                        <a href="https://store.steampowered.com/app/Ilander" target="_blank">
+                        <a href="https://futuregames.itch.io/cosmic-crusaders" target="_blank">
                             <img src="Images/itch-io-svgrepo-com.svg" alt="Itch.io">
                         </a>
                     </div>
                 </div>
-                
-
             </div>
         </div>
 
         <div class="section-divider"></div>
 
+
+        
         <!-- Project Information -->
         <section class="project-info">
             <div class="info-box">
                 <h3>About</h3>
                 <p>
-                    <strong>Nebula Navigator</strong> is a <strong>co-op 2D platformer-shooter</strong> where players navigate deadly space corridors, dodging obstacles and 
-                    blasting through hazards. Designed in <strong>Unity with C#</strong>, it blends <strong>precision movement, shooting mechanics, and power-ups</strong> for a fun yet 
-                    challenging experience.
+                    <strong>Cosmic Crusaders</strong> is a <strong>co-op action game</strong> where two players control a bear-riding frog and a shooter companion on a small planet. 
+                    One player controls movement, while the other rotates the gun to fight off endless waves of enemies.
+                    Inspired by endless runners, the game tests <strong>teamwork and reaction speed</strong> as players survive for as long as possible.
                 </p>
             </div>
             <div class="info-box">
                 <h3>Project Details</h3>
                 <ul>
-                    <li><img src="Images/person_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Role Icon"> <strong>My Role:</strong>Gameplay Programmer</li>
-                    <li><img src="Images/group.svg" alt="Team Icon"> <strong>Team Size:</strong>13</li>
-                    <li><img src="Images/tool.svg" alt="Engine Icon"> <strong>Engine:</strong>Unity (C#)</li>
-                    <li><img src="Images/time.svg" alt="Time Icon"> <strong>Development Time:</strong>3 week</li>
+                    <li><img src="Images/person_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Role Icon"> <strong>My Role:</strong> Gameplay Programmer (AI, UI & Systems)</li>
+                    <li><img src="Images/group.svg" alt="Team Icon"> <strong>Team Size:</strong> 13</li>
+                    <li><img src="Images/tool.svg" alt="Engine Icon"> <strong>Engine:</strong> Unity (C#)</li>
+                    <li><img src="Images/time.svg" alt="Time Icon"> <strong>Development Time:</strong> 3 weeks</li>
                 </ul>
             </div>
         </section>
 
-
-        <!-- Project Description -->
         <section class="project-description">
-            <h2>Nebula Navigator</h2>
+            <h2>Cosmic Crusaders</h2>
+            
             <h3>Introduction</h3>
             <p>
-                <strong>Nebula Navigator</strong> is my <strong>first game development assignment</strong>, created to solidify my understanding of 
-                <strong>core game mechanics, movement, shooting, and level structuring</strong> in Unity. The game is a 
-                <strong>2D cooperative space platformer</strong>, where two players must <strong>fly, dodge, and shoot their way through tight corridors</strong> filled with obstacles.
+                Cosmic Crusaders is a cooperative survival game where two players control a bear and a frog, working together to fend off endless waves of enemies on a small planetary surface. The bear is responsible for movement, steering the team across the planet, while the frog controls the gun, rotating it to shoot at enemies. Movement and shooting are automatic, meaning players must focus on coordination and reaction speed to survive.
             </p>
-
+        
             <h3>Gameplay and Features</h3>
             <ul>
-                <li><strong>Co-op gameplay:</strong> Two players work together to clear obstacles and progress.</li>
-                <li><strong>Flight-based movement:</strong> Navigate tight spaces using <strong>WASD/Arrow keys</strong>.</li>
-                <li><strong>Shooting mechanic:</strong> Destroy obstacles with <strong>precise projectile shots using Space/K key</strong>.</li>
-                <li><strong>Power-ups:</strong>
+                <li><strong>Co-op Gameplay:</strong> Two players share control of a single team—one moves, the other shoots.</li>
+                <li><strong>Endless Combat:</strong> Enemies spawn continuously, creating an ever-increasing challenge.</li>
+                <li><strong>Planetary Navigation:</strong> Players move along a spherical planet.</li>
+                <li><strong>Power-Ups:</strong>
                     <ul>
                         <li><strong>Speed Boost:</strong> Temporarily increases movement speed.</li>
-                        <li><strong>Slow Boost:</strong> Temporarily slows movement for better control.</li>
-                        <li><strong>Multi-Shot:</strong> Enables <strong>multiple projectiles</strong> for a short duration.</li>
+                        <li><strong>Shield:</strong> Grants temporary invincibility.</li>
+                        <li><strong>Healing:</strong> Restores lost health (but only if health is not full).</li>
                     </ul>
                 </li>
-                <li><strong>Physics-based interactions:</strong> Players bounce off each other, adding an <strong>unpredictable challenge, especially in tight spaces</strong>.</li>
-                <li><strong>Game loop:</strong> Players <strong>progress through levels</strong> until both are eliminated, leading to a restart.</li>
+                <li><strong>AI Enemies:</strong> Enemies track, chase, and attack players dynamically.</li>
+                <li><strong>Game Loop:</strong> The game continues until players are defeated.</li>
             </ul>
-
-            <h3>Development Process & Lessons Learned</h3>
-            <ul>
-                <li><strong>Physics & Movement</strong> - Learned how to <strong>use rigidbodies, velocity control, and smooth movement mechanics</strong>.</li>
-                <li><strong>Game Flow & UI</strong> - Implemented menus, <strong>pause functionality, and scene transitions</strong>.</li>
-                <li><strong>Debugging & Iteration</strong> - Overcame issues with <strong>collision handling, basic shooting, and movement behavior</strong>.</li>
-            </ul>
-
+        
+            <h3>Development Process, My Contributions & Lessons Learned</h3>
             <p>
-                While relatively simple, this game <strong>established my foundation in game development</strong>, 
-                teaching me how to structure mechanics, balance challenges, and optimize player experience on a basic level.
+                As a gameplay programmer on Cosmic Crusaders, I was responsible for various core systems, particularly those related to combat, UI, and enemy behavior. Below are some key areas I worked on:
+            </p>
+        
+            <ul>
+                <li><strong>Health System:</strong> Created a shared health system for players and enemies with health bars, damage handling, and healing mechanics.</li>
+                <li><strong>Combat & AI Behavior:</strong> Developed enemy AI to detect, chase, and attack players dynamically.</li>
+                <li><strong>UI & Game Flow:</strong> Implemented the start menu, pause menu, and loading screen mechanics.</li>
+                <li><strong>Power-Up Logic:</strong> Designed the healing system to prevent overhealing and developed shield and speed boost mechanics.</li>
+                <li><strong>Scene Transitions:</strong> Implemented the system for switching between scenes.</li>
+                <li><strong>General Assistance:</strong> Helped other team members debug and refine scripts.</li>
+            </ul>
+        
+            <p>
+                This project improved my understanding of AI behavior, event-driven mechanics, and structuring game logic efficiently. It also taught me how to work within a larger team and coordinate development tasks effectively.
             </p>
 
+            <p>
+                <strong>Download the files below </strong>to find out and read more about my personal contributions during this game project.
+            </p>
+
+            <div class="download-container">
+                <a href="Files//FG23GP, Group Project 1/FG23GP, Group Project 1.zip" download class="download-button" download>
+                    Download Personal Contributions
+                </a>
+            </div>
+
+        
             <section class="project-code">
                 <h3>Code</h3>
-                <p>View key scripts used in Nebula Navigator.</p>
+                <p>View key scripts I worked on in Cosmic Crusaders.</p>
                 <div class="code-buttons">
-                    <button class="code-toggle" data-target="playerMovement">PlayerMovement.cs</button>
-                    <button class="code-toggle" data-target="shooting">Shooting.cs</button>
-                    <button class="code-toggle" data-target="gameRestarter">GameRestarter.cs</button>
-                    <button class="code-toggle" data-target="pauseGame">PauseGame.cs</button>
-                    <button class="code-toggle" data-target="fasterBoost">FasterBoost.cs</button>
+                    <button class="code-toggle" data-target="damaging">Damaging.cs</button>
+                    <button class="code-toggle" data-target="health">Health.cs</button>
+                    <button class="code-toggle" data-target="healthbar">Healthbar.cs</button>
+                    <button class="code-toggle" data-target="rotateTowardsTarget">RotateTowardsTarget.cs</button>
+                    <button class="code-toggle" data-target="healing">Healing.cs</button>
+                    <button class="code-toggle" data-target="loadingScreen">LoadingScreen.cs</button>
+                    <button class="code-toggle" data-target="rangeEvent">InRangeEvent.cs</button>
+                    <button class="code-toggle" data-target="sceneSwitcher">SceneSwitcher.cs</button>
                 </div>
-                
+        
                 <div class="code-container">
-                    <pre id="playerMovement" class="code-snippet">
-            <code>
-            using System.Collections;
-            using System.Collections.Generic;
-            using UnityEngine;
-            using System;
-            using UnityEngine.InputSystem;
-            
-            public class PlayerMovement : MonoBehaviour
-            {
-                public float speed;
-                public Rigidbody2D rb;
-                private float horizontal;
-                private float vertical;
-                Vector2 lastVelocity;
-                public float speedUp;
-            
-                private void Start()
-                {
-                    rb = GetComponent<Rigidbody2D>();
-                }
-            
-                void Update()
-                {
-                    rb.AddForce(new Vector2(horizontal * speed, vertical * speed) * Time.deltaTime * speedUp);
-                }
-            
-                private void FixedUpdate()
-                {
-                    lastVelocity = rb.velocity;
-                }
-            
-                public void Move(InputAction.CallbackContext callbackContext)
-                {
-                    horizontal = callbackContext.ReadValue<Vector2>().x;
-                    vertical = callbackContext.ReadValue<Vector2>().y;
-                }
-            
-                private void OnCollisionEnter2D(Collision2D collision)
-                {
-                    if (collision.gameObject.CompareTag("Player1") || collision.gameObject.CompareTag("Player2"))
-                    {
-                        var speed = lastVelocity.magnitude;
-                        var direction = Vector2.Reflect(lastVelocity.normalized, collision.contacts[0].normal);
-                        rb.velocity = direction * Mathf.Max(speed, 2f);
-                    }
-                }
-            }
-            </code>
-                    </pre>
-            
-                    <pre id="shooting" class="code-snippet">
-            <code>
-            using System.Collections;
-            using System.Collections.Generic;
-            using UnityEngine;
-            using UnityEngine.InputSystem;
-            
-            public class Shooting : MonoBehaviour
-            {
-                public Transform shootingPoint;
-                public GameObject bulletPrefab;
-                public float bulletCD = 0.5f;
-                public bool shooting;
-                public float timeAfterShooting = 0;
-            
-                private void Start()
-                {
-                    shooting = false;
-                }
-            
-                private void Update()
-                {
-                    timeAfterShooting -= Time.deltaTime;
-                }
-            
-                public void Shoot(InputAction.CallbackContext shoot)
-                {
-                    if (shoot.performed && timeAfterShooting <= 0.0f)
-                    {
-                        timeAfterShooting = bulletCD;
-                        Instantiate(bulletPrefab, shootingPoint.position, transform.rotation);
-                    }
-                }
-            }
-            </code>
-                    </pre>
-            
-                    <pre id="gameRestarter" class="code-snippet">
-            <code>
-            using System.Collections;
-            using System.Collections.Generic;
-            using UnityEngine;
-            using UnityEngine.SceneManagement;
-            
-            public class GameRestarter : MonoBehaviour
-            {
-                public GameObject Player1;
-                public GameObject Player2;
-                public string Respawn;
-            
-                private bool player1Dead = false;
-                private bool player2Dead = false;
-            
-                void Update()
-                {
-                    CheckPlayerStates();
-                }
-            
-                void CheckPlayerStates()
-                {
-                    if (Player1 == null || !Player1.activeSelf)
-                    {
-                        player1Dead = true;
-                    }
-                    if (Player2 == null || !Player2.activeSelf)
-                    {
-                        player2Dead = true;
-                    }
-            
-                    if (player1Dead && player2Dead)
-                    {
-                        Debug.Log("Both players have died. Restarting scene.");
-                        SceneManager.LoadScene(Respawn);
-                    }
-                }
-            }
-            </code>
-                    </pre>
-            
-                    <pre id="pauseGame" class="code-snippet">
-            <code>
-            using System.Collections;
-            using System.Collections.Generic;
-            using UnityEngine;
-            
-            public class PauseGame : MonoBehaviour
-            {
-                public GameObject pauseMenuUI;
-                private static bool gameIsPaused = false;
-            
-                private void Start()
-                {
-                    pauseMenuUI.SetActive(false);
-                }
-            
-                void Update()
-                {
-                    if (Input.GetKeyDown(KeyCode.Escape))
-                    {
-                        if (gameIsPaused) Resume();   
-                        else Pause();
-                    }
-                }
-            
-                public void Resume()
-                {
-                    gameIsPaused = false;
-                    Time.timeScale = 1f;
-                    pauseMenuUI.SetActive(false);
-                }
-            
-                void Pause()
-                {
-                    gameIsPaused = true;
-                    Time.timeScale = 0f;
-                    pauseMenuUI.SetActive(true);
-                }
-            }
-            </code>
-                    </pre>
-            
-                    <pre id="fasterBoost" class="code-snippet">
-            <code>
-            using System.Collections;
-            using System.Collections.Generic;
-            using UnityEngine;
-            using UnityEngine.InputSystem;
-            
-            public class FasterBoost : MonoBehaviour
-            {
-                public float boostedSpeed;
-                public float standardSpeed;
-                private PlayerMovement playerMovement;
-                public GameObject player;
-                private bool boosting;
-                public float boostTimer;
-                public float boostAmmount;
-            
-                private void Awake()
-                {
-                    playerMovement = player.GetComponent<PlayerMovement>();
-                }
-            
-                void Start()
-                {
-                    boosting = false;
-                }
-            
-                void Update()
-                {
-                    if (boosting)
-                    {
-                        boostTimer += Time.deltaTime;
-                        if (boostTimer > boostAmmount)
-                        {
-                            playerMovement.speed = standardSpeed;
-                            boosting = false;
-                            boostTimer = 0;
+                    <pre id="healing" class="code-snippet">
+                    <code>
+                    // Healing.cs - Controls health pickups
+                    using UnityEngine;
+        
+                    public class Healing : MonoBehaviour {
+                        Health playerHealth;
+                        [SerializeField] private int healAmount = 20;
+                        private Collider orbCollider;
+                        bool canHeal;
+        
+                        private void Start() {
+                            playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+                            orbCollider = GetComponent<Collider>();
+                        }
+        
+                        private void OnTriggerEnter(Collider collider) {
+                            if (IsPlayer(collider) && playerHealth.currentHealth < playerHealth.maxHealth) {
+                                int remainingHeal = Mathf.Min(healAmount, playerHealth.maxHealth - playerHealth.currentHealth);
+                                playerHealth.ChangeHealth(remainingHeal);
+                            }
+                        }
+        
+                        private bool IsPlayer(Collider collider) {
+                            return collider.CompareTag("Player");
+                        }
+        
+                        private void Update() {
+                            orbCollider.enabled = playerHealth.currentHealth < playerHealth.maxHealth;
                         }
                     }
-                }
-            
-                private void OnTriggerEnter2D(Collider2D collision)
-                {
-                    if (collision.CompareTag("Faster"))
-                    {
-                        playerMovement.speed = boostedSpeed;
-                        boosting = true;
-                    }
-                }
-            }
-            </code>
+                    </code>
                     </pre>
-            
+        
+                    <pre id="loadingScreen" class="code-snippet">
+                    <code>
+                    // LoadingScreen.cs - Handles level loading UI
+                    using UnityEngine;
+                    using UnityEngine.UI;
+                    using UnityEngine.SceneManagement;
+                    using System.Collections;
+        
+                    public class LoadingScreen : MonoBehaviour {
+                        [SerializeField] private GameObject loadingScreen;
+                        [SerializeField] private Slider loadingSlider;
+                        [SerializeField] private float sceneLoadTime;
+                        [SerializeField] private Button continueButton;
+                        private bool canLoadScene = false;
+        
+                        private void Start() {
+                            loadingScreen.SetActive(false);
+                            continueButton.interactable = false;
+                        }
+        
+                        public void LoadLevel(int levelToLoad) {
+                            StartCoroutine(LoadLevelEnum(levelToLoad));
+                        }
+        
+                        IEnumerator LoadLevelEnum(int levelToLoad) {
+                            loadingScreen.SetActive(true);
+                            loadingSlider.value = 0.3f;
+        
+                            yield return new WaitForSeconds(sceneLoadTime);
+                            loadingSlider.value = 1.0f;
+                            continueButton.interactable = true;
+                            canLoadScene = true;
+                        }
+        
+                        public void LoadSceneWithButton(int levelToLoad) {
+                            if (canLoadScene) SceneManager.LoadScene(levelToLoad);
+                        }
+                    }
+                    </code>
+                    </pre>
+        
+                    <pre id="rangeEvent" class="code-snippet">
+                    <code>
+                    // InRangeEvent.cs - Triggers events based on player proximity
+                    using UnityEngine;
+                    using UnityEngine.Events;
+        
+                    public class InRangeEvent : MonoBehaviour {
+                        [SerializeField] LayerMask includeLayer;
+                        [SerializeField] float range;
+                        public UnityEvent onInRange;
+                        public UnityEvent onOutRange;
+                        bool isInRange = false;
+        
+                        private void Update() {
+                            Collider[] colliders = Physics.OverlapSphere(transform.position, range, includeLayer);
+                            if (colliders.Length > 0) {
+                                onInRange.Invoke();
+                                isInRange = true;
+                            } else if (isInRange) {
+                                onOutRange.Invoke();
+                                isInRange = false;
+                            }
+                        }
+                    }
+                    </code>
+                    </pre>
+
+                    <pre id="damaging" class="code-snippet">
+                    <code>
+                    // Damaging.cs - Handles applying damage to health components
+                    using UnityEngine;
+                    using UnityEngine.Events;
+        
+                    public class Damaging : MonoBehaviour {
+                        [SerializeField] private int damageAmount = -10;
+                        [SerializeField] private LayerMask includeLayer;
+                        public UnityEvent onDoDamage;
+                        
+                        private void OnTriggerEnter(Collider collider) {
+                            if ((includeLayer & (1 << collider.gameObject.layer)) != 0) {
+                                if (collider.TryGetComponent(out Health health)) {
+                                    health.ChangeHealth(damageAmount);
+                                    onDoDamage.Invoke();
+                                }
+                            }
+                        }
+                    }
+                    </code>
+                    </pre>
+        
+                    <pre id="health" class="code-snippet">
+                    <code>
+                    // Health.cs - Manages health changes, healing, and death
+                    using UnityEngine;
+                    using UnityEngine.Events;
+        
+                    public class Health : MonoBehaviour {
+                        [SerializeField] public int maxHealth;
+                        [HideInInspector] public int currentHealth;
+                        public UnityEvent onTakeDamage, onDeath, onHealthReceived;
+        
+                        void Awake() { currentHealth = maxHealth; }
+        
+                        public void ChangeHealth(int changeAmount) {
+                            currentHealth += changeAmount;
+                            if (currentHealth > maxHealth) currentHealth = maxHealth;
+                            if (currentHealth <= 0) {
+                                currentHealth = 0;
+                                onDeath.Invoke();
+                            }
+                            if (changeAmount < 0) onTakeDamage.Invoke();
+                            if (changeAmount > 0) onHealthReceived.Invoke();
+                        }
+                    }
+                    </code>
+                    </pre>
+        
+                    <pre id="healthbar" class="code-snippet">
+                    <code>
+                    // Healthbar.cs - Updates UI slider based on health value
+                    using UnityEngine;
+                    using UnityEngine.UI;
+        
+                    public class Healthbar : MonoBehaviour {
+                        public Slider healthBar;
+                        private Health health;
+        
+                        private void Start() {
+                            health = GetComponent<Health>();
+                            healthBar.maxValue = health.currentHealth;
+                        }
+        
+                        private void Update() {
+                            healthBar.value = health.currentHealth;
+                        }
+                    }
+                    </code>
+                    </pre>
+        
+                    <pre id="rotateTowardsTarget" class="code-snippet">
+                    <code>
+                    // RotateTowardsTarget.cs - Makes enemies face the player
+                    using UnityEngine;
+        
+                    public class RotateTowardsTarget : MonoBehaviour {
+                        [SerializeField] private float lookRadius = 10f;
+                        [SerializeField] private float rotationSpeed = 50;
+                        [SerializeField] private LayerMask includeLayer;
+                        
+                        void FixedUpdate() {
+                            Collider[] colliders = Physics.OverlapSphere(transform.position, lookRadius, includeLayer);
+                            if (colliders.Length > 0) FaceTarget(colliders[0].transform);
+                        }
+        
+                        void FaceTarget(Transform target) {
+                            Quaternion lookRot = Quaternion.LookRotation(target.position - transform.position);
+                            transform.rotation = Quaternion.Slerp(transform.rotation, lookRot, Time.deltaTime * rotationSpeed);
+                        }
+                    }
+                    </code>
+                    </pre>
+        
+                    <pre id="sceneSwitcher" class="code-snippet">
+                    <code>
+                    // SceneSwitcher.cs - Manages transitioning between scenes
+                    using UnityEngine;
+                    using UnityEngine.SceneManagement;
+        
+                    public class SceneSwitcher : MonoBehaviour {
+                        [SerializeField] private int sceneIndex;
+                        
+                        public void SwitchToNextScene() {
+                            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+                            SceneManager.LoadScene(currentSceneIndex + sceneIndex);
+                        }
+                    }
+                    </code>
+                    </pre>
+        
                 </div>
-            </section>            
+            </section>
         </section>
 
-
         <div class="section-divider"></div>
-
 
         <!-- Project Gallery -->
         <!-- <section class="project-gallery">
@@ -395,22 +397,21 @@
 
         <!-- Project Links -->
         <section class="project-links">
-        <h3>Explore More</h3>
-        <p>Learn more about this project, my other projects, and me also!</p>
-        <div class="explore-links">
-            <div class="button-row">
-                <a href="https://github.com/Yizune/Ilander" target="_blank" class="button">GitHub</a>
-                <a href="https://store.steampowered.com/app/Ilander" target="_blank" class="button">Itch.io</a>
+            <h3>Explore More</h3>
+            <p>Check out the game and my contributions!</p>
+            <div class="explore-links">
+                <div class="button-row">
+                    <a href="https://github.com/Yizune" target="_blank" class="button">GitHub</a>
+                    <a href="https://futuregames.itch.io/cosmic-crusaders" target="_blank" class="button">Itch.io</a>
+                </div>
+                <div class="button-row">
+                    <a href="https://www.linkedin.com/in/stevan-likusic-884946300/" target="_blank" class="button">LinkedIn</a>
+                    <a href="Images/GameProgrammingCV.pdf" target="_blank" class="button">Resume</a>
+                </div>
             </div>
-            <div class="button-row">
-                <a href="https://www.linkedin.com/in/stevan-likusic-884946300/" target="_blank" class="button">LinkedIn</a>
-                <a href="Images/GameProgrammingCV.pdf" target="_blank" class="button">Resume</a>
-            </div>
-        </div>
-    </section>
-    
-
+        </section>
     </div>
+
 
     <!-- Footer -->
     <footer class="footer">
