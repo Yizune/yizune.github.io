@@ -543,6 +543,18 @@ html, body {
 .lightmode .header .back-button:hover {
   background: #999999;
 }
+.lightmode .welcome .welcome-divider .line {
+  background-color: #1E293B;
+}
+.lightmode .welcome .welcome-divider .sword-icon {
+  filter: none;
+}
+.lightmode .welcome h2 {
+  color: #1E293B;
+}
+.lightmode .welcome p {
+  color: #1E201E;
+}
 .lightmode .nav-links a {
   color: #1E293B;
 }

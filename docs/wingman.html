@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="Images/sword.png" type="image/sword-icon">
+    <script src="Scripts/script.js"></script>
+    <link rel="stylesheet" href="project-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wingman | Game Project </title>
+</head>
+<body>
+    
+    <!-- Header Section -->
+    <header class="header">
+        <a href="index.html" class="back-button">
+            <img src="Images/chevron_left_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Back"> Go Back
+        </a>
+        <div class="header-container">
+            <h1 class="site-title">Wingman</h1>
+            <div class="nav-container">
+                <nav class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="https://github.com/Yizune" target="_blank">GitHub</a>
+                    <a href="Images/GameProgrammingCV.pdf" target="_blank">Resume</a>
+                    <a href="https://www.linkedin.com/in/stevan-likusic-884946300/" target="_blank">LinkedIn</a>
+                    <a href="https://futuregames.itch.io/wingman" target="_blank">Itch.io</a>
+                </nav>
+                <button id="mode-toggle" class="mode-button" onclick="toggleMode()">
+                    <img id="mode-icon" src="Images/DarkMode.svg" alt="Dark Mode">
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Welcome Section -->
+    <section id="welcome" class="welcome">
+        <div class="welcome-divider">
+            <div class="line"></div>
+            <img src="Images/sword.png" alt="Sword Icon" class="sword-icon">
+            <div class="line"></div>
+        </div>
+        <h2>Wingman</h2>
+        <p> </p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Project Banner -->
+        <div class="project-banner">
+            <div class="project-image">
+                <img src="Images/WingMan.png" alt="Wingman">
+
+                <div class="project-title">
+                    <span class="title">Wingman</span>
+                    <div class="overlay-icons">
+                        <a href="https://github.com/Yizune" target="_blank">
+                            <img src="Images/github-142-svgrepo-com.svg" alt="GitHub">
+                        </a>
+                        <a href="Images/GameProgrammingCV.pdf" target="_blank">
+                            <img src="Images/resume.svg" alt="Resume">
+                        </a>
+                        <a href="https://www.linkedin.com/in/stevan-likusic-884946300/" target="_blank">
+                            <img src="Images/linkedin-circle-svgrepo-com.svg" alt="LinkedIn">
+                        </a>
+                        <a href="https://futuregames.itch.io/wingman" target="_blank">
+                            <img src="Images/itch-io-svgrepo-com.svg" alt="Itch.io">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+
+        
+        <!-- Project Information -->
+        <section class="project-info">
+            <div class="info-box">
+                <h3>About</h3>
+                <p>
+                    <strong>Wingman</strong> is an <strong>arcade-style air racing game</strong> set in a vibrant archipelago. 
+                    Race through canyons, ruins, and windmills across challenging tracks, testing your precision, speed, 
+                    and flight skills. Easy to pick up but hard to master, <strong>Wingman</strong> offers fun for both casual 
+                    and competitive players.
+                </p>               
+            </div>
+            <div class="info-box">
+                <h3>Project Details</h3>
+                <ul>
+                    <li><img src="Images/person_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Role Icon"> <strong>My Role:</strong> Gameplay Programmer (Checkpoints, Timer Systems, UI)</li>
+                    <li><img src="Images/group.svg" alt="Team Icon"> <strong>Team Size:</strong> 15</li>
+                    <li><img src="Images/tool.svg" alt="Engine Icon"> <strong>Engine:</strong> Unity (C#)</li>
+                    <li><img src="Images/time.svg" alt="Time Icon"> <strong>Development Time:</strong> 4 weeks</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="project-description">
+            <h2>Cosmic Crusaders</h2>
+            
+            <h3>Introduction</h3>
+            <p>
+                <strong>Wingman</strong> is an air racing game that challenges players to master their flying 
+                skills across a vibrant archipelago. Players navigate through varied landscapes filled with environmental obstacles 
+                like canyons and windmills while striving to complete time trials and races. With an emphasis on precision and speed, 
+                the game encourages replayability as players aim to beat personal bests and climb the leaderboards.
+            </p>
+        
+            <h3>Gameplay and Features</h3>
+            <ul>
+                <li><strong>Arcade-Style Air Racing:</strong> Engage in fast-paced races across 10 unique tracks filled with environmental challenges.</li>
+                <li><strong>Checkpoint System:</strong> Navigate through dynamic checkpoints that track progress and provide real-time feedback.</li>
+                <li><strong>Time Trial Mode:</strong> Compete against the clock, refining your skills to achieve the fastest lap times.</li>
+                <li><strong>Leaderboard Integration:</strong> Compare your performance with friends and global players through online leaderboards.</li>
+                <li><strong>Dynamic Environments:</strong> Race through canyons, ruins, caves, and more, with varying obstacles and pathways.</li>
+                <li><strong>Cross-Platform Play:</strong> Available on both Android and Windows platforms, optimized for seamless gameplay on each.</li>
+            </ul>
+        
+            <p>
+                As a gameplay programmer on <strong>Wingman</strong>, I was responsible for implementing key systems that enhanced 
+                both the functionality and player experience. My work focused on the checkpoint system, timer functionalities, and UI 
+                integration, ensuring smooth and engaging gameplay. Here's a breakdown of my contributions:
+            </p>
+            
+            <ul>
+                <li><strong>Checkpoint System:</strong> Developed a dynamic checkpoint system to track player progress, differentiate 
+                checkpoint types (start, highlight, goal), and provide visual feedback throughout races.</li>
+                
+                <li><strong>Timer Functionality:</strong> Implemented a precise timing system for races, including time tracking, 
+                formatting for UI display, and penalty time calculations for missed checkpoints.</li>
+            
+                <li><strong>UI Integration:</strong> Created UI components to display checkpoint progress and race timers, ensuring 
+                clear and responsive player feedback.</li>
+            
+                <li><strong>Game Logic & Event Handling:</strong> Built systems for managing race flow, including race starts, 
+                checkpoint validation, and lap tracking, while handling events for race completion and player feedback.</li>
+            
+                <li><strong>Debugging & Team Support:</strong> Assisted team members in debugging scripts and refining gameplay 
+                mechanics to enhance the overall experience.</li>
+            </ul>
+            
+            <p>
+                This project strengthened my skills in system design, event-driven programming, and UI development. It also taught me 
+                valuable lessons in teamwork, communication, and managing complex game logic under tight deadlines. 
+            </p>
+            
+            <p>
+                <strong>Download the files below</strong> to explore my personal contributions during the development of <strong>Wingman</strong>.
+            </p>
+
+            <div class="download-container">
+                <a href="Files/FG23GP, Group Project 2.zip" download class="download-button" download>
+                    Download Personal Contributions
+                </a>
+            </div>
+
+        
+            <section class="project-code">
+                <h3>Code</h3>
+                <p>View key scripts I worked on in Cosmic Crusaders.</p>
+                <div class="code-buttons">
+                    <button class="code-toggle" data-target="damaging">Damaging.cs</button>
+                    <button class="code-toggle" data-target="health">Health.cs</button>
+                    <button class="code-toggle" data-target="healthbar">Healthbar.cs</button>
+                    <button class="code-toggle" data-target="rotateTowardsTarget">RotateTowardsTarget.cs</button>
+                    <button class="code-toggle" data-target="healing">Healing.cs</button>
+                    <button class="code-toggle" data-target="loadingScreen">LoadingScreen.cs</button>
+                    <button class="code-toggle" data-target="rangeEvent">InRangeEvent.cs</button>
+                    <button class="code-toggle" data-target="sceneSwitcher">SceneSwitcher.cs</button>
+                </div>
+        
+                <div class="code-container">
+                    <pre id="healing" class="code-snippet">
+                    <code>
+                    // Healing.cs - Controls health pickups
+                    using UnityEngine;
+        
+                    public class Healing : MonoBehaviour {
+                        Health playerHealth;
+                        [SerializeField] private int healAmount = 20;
+                        private Collider orbCollider;
+                        bool canHeal;
+        
+                        private void Start() {
+                            playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
+                            orbCollider = GetComponent<Collider>();
+                        }
+        
+                        private void OnTriggerEnter(Collider collider) {
+                            if (IsPlayer(collider) && playerHealth.currentHealth < playerHealth.maxHealth) {
+                                int remainingHeal = Mathf.Min(healAmount, playerHealth.maxHealth - playerHealth.currentHealth);
+                                playerHealth.ChangeHealth(remainingHeal);
+                            }
+                        }
+        
+                        private bool IsPlayer(Collider collider) {
+                            return collider.CompareTag("Player");
+                        }
+        
+                        private void Update() {
+                            orbCollider.enabled = playerHealth.currentHealth < playerHealth.maxHealth;
+                        }
+                    }
+                    </code>
+                    </pre>
+        
+                    <pre id="loadingScreen" class="code-snippet">
+                    <code>
+                    // LoadingScreen.cs - Handles level loading UI
+                    using UnityEngine;
+                    using UnityEngine.UI;
+                    using UnityEngine.SceneManagement;
+                    using System.Collections;
+        
+                    public class LoadingScreen : MonoBehaviour {
+                        [SerializeField] private GameObject loadingScreen;
+                        [SerializeField] private Slider loadingSlider;
+                        [SerializeField] private float sceneLoadTime;
+                        [SerializeField] private Button continueButton;
+                        private bool canLoadScene = false;
+        
+                        private void Start() {
+                            loadingScreen.SetActive(false);
+                            continueButton.interactable = false;
+                        }
+        
+                        public void LoadLevel(int levelToLoad) {
+                            StartCoroutine(LoadLevelEnum(levelToLoad));
+                        }
+        
+                        IEnumerator LoadLevelEnum(int levelToLoad) {
+                            loadingScreen.SetActive(true);
+                            loadingSlider.value = 0.3f;
+        
+                            yield return new WaitForSeconds(sceneLoadTime);
+                            loadingSlider.value = 1.0f;
+                            continueButton.interactable = true;
+                            canLoadScene = true;
+                        }
+        
+                        public void LoadSceneWithButton(int levelToLoad) {
+                            if (canLoadScene) SceneManager.LoadScene(levelToLoad);
+                        }
+                    }
+                    </code>
+                    </pre>
+        
+                    <pre id="rangeEvent" class="code-snippet">
+                    <code>
+                    // InRangeEvent.cs - Triggers events based on player proximity
+                    using UnityEngine;
+                    using UnityEngine.Events;
+        
+                    public class InRangeEvent : MonoBehaviour {
+                        [SerializeField] LayerMask includeLayer;
+                        [SerializeField] float range;
+                        public UnityEvent onInRange;
+                        public UnityEvent onOutRange;
+                        bool isInRange = false;
+        
+                        private void Update() {
+                            Collider[] colliders = Physics.OverlapSphere(transform.position, range, includeLayer);
+                            if (colliders.Length > 0) {
+                                onInRange.Invoke();
+                                isInRange = true;
+                            } else if (isInRange) {
+                                onOutRange.Invoke();
+                                isInRange = false;
+                            }
+                        }
+                    }
+                    </code>
+                    </pre>
+
+                    <pre id="damaging" class="code-snippet">
+                    <code>
+                    // Damaging.cs - Handles applying damage to health components
+                    using UnityEngine;
+                    using UnityEngine.Events;
+        
+                    public class Damaging : MonoBehaviour {
+                        [SerializeField] private int damageAmount = -10;
+                        [SerializeField] private LayerMask includeLayer;
+                        public UnityEvent onDoDamage;
+                        
+                        private void OnTriggerEnter(Collider collider) {
+                            if ((includeLayer & (1 << collider.gameObject.layer)) != 0) {
+                                if (collider.TryGetComponent(out Health health)) {
+                                    health.ChangeHealth(damageAmount);
+                                    onDoDamage.Invoke();
+                                }
+                            }
+                        }
+                    }
+                    </code>
+                    </pre>
+        
+                    <pre id="health" class="code-snippet">
+                    <code>
+                    // Health.cs - Manages health changes, healing, and death
+                    using UnityEngine;
+                    using UnityEngine.Events;
+        
+                    public class Health : MonoBehaviour {
+                        [SerializeField] public int maxHealth;
+                        [HideInInspector] public int currentHealth;
+                        public UnityEvent onTakeDamage, onDeath, onHealthReceived;
+        
+                        void Awake() { currentHealth = maxHealth; }
+        
+                        public void ChangeHealth(int changeAmount) {
+                            currentHealth += changeAmount;
+                            if (currentHealth > maxHealth) currentHealth = maxHealth;
+                            if (currentHealth <= 0) {
+                                currentHealth = 0;
+                                onDeath.Invoke();
+                            }
+                            if (changeAmount < 0) onTakeDamage.Invoke();
+                            if (changeAmount > 0) onHealthReceived.Invoke();
+                        }
+                    }
+                    </code>
+                    </pre>
+        
+                    <pre id="healthbar" class="code-snippet">
+                    <code>
+                    // Healthbar.cs - Updates UI slider based on health value
+                    using UnityEngine;
+                    using UnityEngine.UI;
+        
+                    public class Healthbar : MonoBehaviour {
+                        public Slider healthBar;
+                        private Health health;
+        
+                        private void Start() {
+                            health = GetComponent<Health>();
+                            healthBar.maxValue = health.currentHealth;
+                        }
+        
+                        private void Update() {
+                            healthBar.value = health.currentHealth;
+                        }
+                    }
+                    </code>
+                    </pre>
+        
+                    <pre id="rotateTowardsTarget" class="code-snippet">
+                    <code>
+                    // RotateTowardsTarget.cs - Makes enemies face the player
+                    using UnityEngine;
+        
+                    public class RotateTowardsTarget : MonoBehaviour {
+                        [SerializeField] private float lookRadius = 10f;
+                        [SerializeField] private float rotationSpeed = 50;
+                        [SerializeField] private LayerMask includeLayer;
+                        
+                        void FixedUpdate() {
+                            Collider[] colliders = Physics.OverlapSphere(transform.position, lookRadius, includeLayer);
+                            if (colliders.Length > 0) FaceTarget(colliders[0].transform);
+                        }
+        
+                        void FaceTarget(Transform target) {
+                            Quaternion lookRot = Quaternion.LookRotation(target.position - transform.position);
+                            transform.rotation = Quaternion.Slerp(transform.rotation, lookRot, Time.deltaTime * rotationSpeed);
+                        }
+                    }
+                    </code>
+                    </pre>
+        
+                    <pre id="sceneSwitcher" class="code-snippet">
+                    <code>
+                    // SceneSwitcher.cs - Manages transitioning between scenes
+                    using UnityEngine;
+                    using UnityEngine.SceneManagement;
+        
+                    public class SceneSwitcher : MonoBehaviour {
+                        [SerializeField] private int sceneIndex;
+                        
+                        public void SwitchToNextScene() {
+                            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+                            SceneManager.LoadScene(currentSceneIndex + sceneIndex);
+                        }
+                    }
+                    </code>
+                    </pre>
+        
+                </div>
+            </section>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Project Links -->
+        <section class="project-links">
+            <h3>Explore More</h3>
+            <p>Check out the game and my contributions!</p>
+            <div class="explore-links">
+                <div class="button-row">
+                    <a href="https://github.com/Yizune" target="_blank" class="button">GitHub</a>
+                    <a href="https://futuregames.itch.io/wingman" target="_blank" class="button">Itch.io</a>
+                </div>
+                <div class="button-row">
+                    <a href="https://www.linkedin.com/in/stevan-likusic-884946300/" target="_blank" class="button">LinkedIn</a>
+                    <a href="Images/GameProgrammingCV.pdf" target="_blank" class="button">Resume</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+            <p>&copy; 2025 Stevan Likusic. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

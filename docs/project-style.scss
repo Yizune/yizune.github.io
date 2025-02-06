@@ -656,6 +656,25 @@ html, body {
         }
     }
 
+    .welcome {
+        .welcome-divider {
+            .line {
+                background-color: $light-link;
+            }
+    
+            .sword-icon {
+                filter: none; 
+            }
+        }
+        h2 {
+            color: $light-link;
+        }
+        p {
+            color: $light-text;
+        }
+    }
+
+
     .nav-links a {
         color: $light-link;
         &:hover {
