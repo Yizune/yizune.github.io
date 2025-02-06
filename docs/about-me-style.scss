@@ -8,14 +8,7 @@ $accent-color: #3B82F6;
 $dark-accent-color: #0e2a86;
 $something: #243d66;
 
-//Light palette 
-$light-bg: #F4F4F4; 
-$light-text: #1E201E;
-$light-primary: #FFFFFF;
-$light-secondary: rgba(#E2E8F0, 0.7);
-$light-accent: #1E88A8;
-$light-link: #1E293B;
-$light-link-hover: #125E75;
+
 
 $max-width: 1200px;
 
@@ -256,20 +249,21 @@ body {
 .hero-text {
     flex: 2;
     color: $text-light;
+    margin-bottom: 20px;
 
     .hero-buttons {
         display: flex;
         gap: 15px;
         flex-wrap: wrap;
         justify-content: left;
-        margin-top: 20px;
+        margin-top: 40px;
     }
 
     h1 {
         margin-top: 0 !important;
         font-size: 2.5rem;
         color: $accent-color;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
     }
 
     p {
@@ -327,7 +321,7 @@ body {
 }
 
 .hobbies-container h2 {
-    font-size: 2rem;
+    font-size: 2.25rem;
     color: $accent-color;
     margin-bottom: 30px;
 }
@@ -383,7 +377,7 @@ body {
     margin-bottom: 60px;
 
     h2 {
-        font-size: 2rem;
+        font-size: 2.25rem;
         color: $accent-color;
         margin-bottom: 60px;
     }
@@ -449,7 +443,7 @@ body {
     margin-top: 60px;
 
     h2 {
-        font-size: 2rem;
+        font-size: 2.25rem;
         color: $accent-color;
         margin-bottom: 40px;
     }
@@ -501,10 +495,6 @@ body {
     }
 }
 
-
-
-
-
 .footer {
     width: 100%;  
     background: $primary-color;
@@ -522,6 +512,183 @@ html, body {
     width: 100%;
     box-sizing: border-box;
 }
+
+
+
+
+
+
+//Light palette 
+$light-bg: #F4F4F4; 
+$light-text: #1E201E;
+$light-primary: #FFFFFF;
+$light-secondary: rgba(#E2E8F0, 0.7);
+$light-accent: #1E88A8;
+$light-link: #1E293B;
+$light-link-hover: #125E75;
+
+
+.lightmode {
+    background-color: $light-bg;
+    color: $light-text;
+
+    &::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('Images/EldenRing.png') no-repeat center center fixed;
+        background-size: cover;
+        z-index: -1;
+        filter: brightness(80%);
+    }
+
+    .section-divider {
+        background: linear-gradient(90deg, #1E88A8, #125E75);
+    }
+
+    .header {
+        background-color: $light-primary;
+        color: $light-link;
+    }
+
+    .nav-links a {
+        color: $light-link;
+        &:hover {
+            color: $light-link-hover;
+        }
+    }
+
+    .mode-button:hover img {
+        filter: brightness(50%);
+    }
+
+    .welcome {
+        .welcome-divider {
+            .line {
+                background-color: $light-link;
+            }
+            .sword-icon {
+                filter: none;
+            }
+        }
+        h2 {
+            color: $light-link;
+        }
+        p {
+            color: $light-text;
+        }
+    }
+
+    .container {
+        background-color: $light-secondary;
+        color: $light-text;
+    }
+
+    .hero-container {
+        background: linear-gradient(135deg, rgb(182, 182, 182) 0%, rgb(236, 236, 236) 100%);
+    }
+
+    .hero-text {
+        color: $light-text;
+        h1 {
+            color: $light-link-hover;
+        }
+    }
+
+    .hero-buttons {
+        .contact-button {
+            background-color: $light-link-hover;
+
+            &:hover {
+                background: darken($light-link-hover, 10%);
+            }
+        }
+    }
+
+    .hobbies {
+
+        .hobbies-container {
+            background: linear-gradient(135deg, rgb(182, 182, 182) 0%, rgb(236, 236, 236) 100%);
+        }
+
+        h2 {
+            color: $light-link-hover;
+        }
+    
+        .hobby-item {
+            background: rgba(255, 255, 255, 0.5);
+            p {
+                color: $light-text;
+            }
+            &:hover {
+                background: rgba(255, 255, 255, 1);
+            }
+            img {
+                filter: invert(1);
+            }
+        }
+    }
+
+    .strengths-weaknesses {
+        background: linear-gradient(135deg, rgb(182, 182, 182) 0%, rgb(236, 236, 236) 100%);
+
+        h2 {
+            color: $light-link-hover;
+        }
+
+        .strengths,
+        .weaknesses {
+            background: rgba(255, 255, 255, 0.5);
+            color: $light-text;
+    
+            h3 {
+                color: $light-link-hover;
+            }
+    
+            &:hover {
+                background: rgba(255, 255, 255, 1);
+            }
+    
+            img {
+                filter: invert(1);
+            }
+        }
+    
+    }
+
+
+    .contact {
+        background: linear-gradient(135deg, rgb(182, 182, 182) 0%, rgb(236, 236, 236) 100%);
+
+        h2 {
+            color: $light-link-hover;
+        }
+
+        p {
+            color: $light-text;
+        }
+        .contact-container {
+            .contact-button {
+                background: $light-link-hover;
+                &:hover {
+                    background: darken($light-link-hover, 10%);
+                }
+            }
+        }
+    }
+
+    .footer {
+        background: $light-primary;
+        color: $light-text;
+        border-top: 1px solid $light-secondary;
+    }
+}
+
+
+
 
 
 
