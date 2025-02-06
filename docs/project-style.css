@@ -609,6 +609,9 @@ html, body {
   color: #1E201E;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
 }
+.lightmode .project-info .info-box img {
+  filter: invert(1);
+}
 .lightmode .project-info h3 {
   background: linear-gradient(90deg, #1E88A8, #4dbddf);
   -webkit-background-clip: text;
@@ -691,6 +694,34 @@ html, body {
   animation: fadeIn 1s ease-in-out;
 }
 
+.header {
+  animation: slideInDown 1s ease-in-out;
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.footer {
+  animation: slideInUp 1s ease-in-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .section-divider {
   width: 100%;
   height: 4px;
@@ -707,4 +738,19 @@ html, body {
   100% {
     box-shadow: 0 0 15px rgb(59, 130, 246);
   }
+}
+.project-banner {
+  animation: slideInLeft 1.2s ease-in-out;
+}
+
+.project-description {
+  animation: slideInRight 1.2s ease-in-out;
+}
+
+.project-info .info-box {
+  animation: fadeIn 1.3s ease-in-out;
+}
+
+.project-links {
+  animation: fadeSlideIn 1.4s ease-in-out;
 }/*# sourceMappingURL=project-style.css.map */

@@ -710,9 +710,6 @@ $light-link-hover: #125E75;
 
 
 
-
-
-
 // Animations
 @keyframes fadeIn {
     from {
@@ -770,12 +767,56 @@ $light-link-hover: #125E75;
     }
 }
 
-
 .welcome {
     h2, p {
         animation: fadeIn 1s ease-in-out;
     }
 }
+
+
+
+
+
+
+
+
+
+.header {
+    animation: slideInDown 1s ease-in-out;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.footer {
+    animation: slideInUp 1s ease-in-out;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
+
+
+
+
+
 
 
 
@@ -792,4 +833,73 @@ $light-link-hover: #125E75;
 @keyframes glowing-line {
     0% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
     100% { box-shadow: 0 0 15px rgba(59, 130, 246, 1); }
+}
+
+
+
+
+
+
+.hero-container {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero-text {
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.hero-image {
+    animation: slideInRight 1s ease-in-out;
+}
+
+
+
+
+.hobbies-container {
+    animation: fadeSlideIn 1s ease-in-out;
+}
+
+.hobby-item {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.hobby-item:nth-child(1) { animation-delay: 0.2s; }
+.hobby-item:nth-child(2) { animation-delay: 0.4s; }
+.hobby-item:nth-child(3) { animation-delay: 0.6s; }
+.hobby-item:nth-child(4) { animation-delay: 0.8s; }
+
+
+
+
+
+.strengths-weaknesses {
+    animation: fadeSlideIn 1s ease-in-out;
+}
+
+.strengths {
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.weaknesses {
+    animation: slideInRight 1s ease-in-out;
+}
+
+.strengths li, .weaknesses li {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.strengths li:nth-child(1), .weaknesses li:nth-child(1) { animation-delay: 0.2s; }
+.strengths li:nth-child(2), .weaknesses li:nth-child(2) { animation-delay: 0.4s; }
+.strengths li:nth-child(3), .weaknesses li:nth-child(3) { animation-delay: 0.6s; }
+
+
+
+.contact {
+    animation: fadeIn 1s ease-in-out;
+}
+
+.contact-container {
+    animation: slideInUp 1s ease-in-out;
 }
