@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="Images/sword.png" type="image/sword-icon">
+    <script src="Scripts/script.js"></script>
+    <link rel="stylesheet" href="project-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sour Security | Game Project</title>
+</head>
+<body id="body">
+    
+    <!-- Header Section -->
+    <header class="header">
+        <a href="index.html" class="back-button">
+            <img src="Images/chevron_left_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Back"> Go Back
+        </a>
+        <div class="header-container">
+            <h1 class="site-title">Project Asylum</h1>
+            <div class="nav-container">
+                <nav class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="https://github.com/Yizune" target="_blank">GitHub</a>
+                    <a href="Images/GameProgrammingCV.pdf" target="_blank">Resume</a>
+                    <a href="https://www.linkedin.com/in/stevan-likusic-884946300/" target="_blank">LinkedIn</a>
+                    <a href="https://futuregames.itch.io/sour-security" target="_blank">Itch.io</a>
+                </nav>
+                <button id="mode-toggle" class="mode-button" onclick="toggleMode()">
+                    <img id="mode-icon" src="Images/DarkMode.svg" alt="Dark Mode">
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Welcome Section -->
+    <section id="welcome" class="welcome">
+        <div class="welcome-divider">
+            <div class="line"></div>
+            <img src="Images/sword.png" alt="Sword Icon" class="sword-icon">
+            <div class="line"></div>
+        </div>
+        <h2>Project Asylum</h2>
+        <p>An immersive horror experience where the asylum itself becomes your worst enemy.</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+
+        <!-- Project Banner -->
+        <div class="project-banner">
+            <div class="project-image">
+                <img src="Images/ProjectAsylum.png" alt="Project Asylum">
+
+                <div class="project-title">
+                    <span class="title">Project Asylum</span>
+                    <div class="overlay-icons">
+                        <a href="https://github.com/Yizune" target="_blank">
+                            <img src="Images/github-142-svgrepo-com.svg" alt="GitHub">
+                        </a>
+                        <a href="Images/GameProgrammingCV.pdf" target="_blank">
+                            <img src="Images/resume.svg" alt="Resume">
+                        </a>
+                        <a href="https://www.linkedin.com/in/stevan-likusic-884946300/" target="_blank">
+                            <img src="Images/linkedin-circle-svgrepo-com.svg" alt="LinkedIn">
+                        </a>
+                        <a href="https://matthew-gd23.itch.io/project-asylum" target="_blank">
+                            <img src="Images/itch-io-svgrepo-com.svg" alt="Itch.io">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Project Information -->
+        <section class="project-info">
+            <div class="info-box">
+                <h3>About</h3>
+                <p>
+                    <strong>Project Asylum</strong> is a <strong>first-person psychological horror game</strong> where the building 
+                    becomes your enemy. Explore the dynamically changing hallways of this abandoned mental institution, 
+                    uncover secrets with only a UV flashlight, and escape the nightmare alive.
+                </p>               
+            </div>
+            <div class="info-box">
+                <h3>Project Details</h3>
+                <ul>
+                    <li><img src="Images/person_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Role Icon"> <strong>My Role:</strong> Gameplay Programmer (Movement, Sound Implementation, Gameplay Mechanics)</li>
+                    <li><img src="Images/group.svg" alt="Team Icon"> <strong>Team Size:</strong> 15</li>
+                    <li><img src="Images/tool.svg" alt="Engine Icon"> <strong>Engine:</strong> Unreal Engine 5 (Blueprints)</li>
+                    <li><img src="Images/time.svg" alt="Time Icon"> <strong>Development Time:</strong> 7 weeks</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Project Description -->
+        <section class="project-description">
+            <h2>Project Asylum</h2>
+            
+            <h3>Introduction</h3>
+            <p>
+                In <strong>Project Asylum</strong>, you play as an employee sent to verify the demolition of an abandoned mental 
+                institution. But things quickly spiral into chaos as the building itself shifts, traps, and terrifies you. 
+                Equipped with only a UV flashlight, players must navigate eerie hallways, solve environmental puzzles, 
+                and uncover the institution's dark secrets while avoiding unseen dangers lurking in the shadows.
+            </p>
+        
+            <h3>Gameplay and Features</h3>
+            <ul>
+                <li><strong>Dynamic Environment:</strong> The asylum's layout changes in real-time, disorienting players and enhancing tension.</li>
+                <li><strong>Immersive Sound Design:</strong> Sound cues play a vital role, from footsteps to slamming doors and eerie background noises.</li>
+                <li><strong>Interactive Mechanics:</strong> Players interact with objects like flashlights, doors, and prompts to progress.</li>
+                <li><strong>Psychological Horror:</strong> The game focuses on atmosphere and psychological tension rather than jump scares.</li>
+            </ul>
+        
+            <h3>Development Process, My Contributions & Lessons Learned</h3>
+            <p>
+                As a gameplay programmer for <strong>Project Asylum</strong>, I was responsible for implementing key systems 
+                that enhanced immersion and gameplay. Here's a breakdown of my specific contributions:
+            </p>
+            
+            <ul>
+                <li><strong>Movement Mechanics:</strong> Developed smooth movement functions, including sprinting, crouching, 
+                and backwards movement. Integrated camera effects to heighten immersion during sprinting or crouching.</li>
+                
+                <li><strong>Sound Implementation:</strong> Designed and implemented a comprehensive sound system including 
+                footsteps, flashlight sounds, door slams, and environmental cues to increase tension and atmosphere.</li>
+
+                <li><strong>Prompt System Adjustments:</strong> Enhanced the interaction system, allowing players to engage 
+                with objects like flashlights, doors, and notes, providing dynamic gameplay feedback.</li>
+
+                <li><strong>End Game Screen:</strong> Created the end-game UI screen using Blueprints to trigger after completing or failing the game.</li>
+            </ul>
+
+            <p>
+                This project sharpened my skills in Blueprint scripting, event-driven design, and integrating gameplay 
+                mechanics with immersive sound design. It also provided valuable experience collaborating with level 
+                designers and artists to deliver a cohesive horror experience.
+            </p>
+            
+            <p>
+                <strong>Download the files below</strong> to explore my personal contributions during the development of <strong>Project Asylum</strong>.
+            </p>
+
+            <div class="download-container">
+                <a href="Files/FG23GP, Group Project 3.zip" class="download-button" download>
+                    Download Personal Contributions
+                </a>
+            </div>
+
+            <!-- Code Section -->
+            <section class="project-code">
+                <h3>Blueprints & Systems</h3>
+                <p>Explore key Blueprint systems I developed for <strong>Project Asylum</strong>.</p>
+            
+                <!-- Toggle Buttons -->
+                <div class="code-buttons">
+                    <button class="code-toggle" data-target="crouch">Crouching Function</button>
+                    <button class="code-toggle" data-target="sprint">Sprint Function</button>
+                    <button class="code-toggle" data-target="movement">Movement and Backwards Movement Function</button>
+                    <button class="code-toggle" data-target="sound">Footsteps & Flashlight Sound Effects</button>
+                    <button class="code-toggle" data-target="furniture">Furniture Sound Effect</button>
+                    <button class="code-toggle" data-target="doorslam">Door Slam Implementation on the Trigger Box</button>
+                    <button class="code-toggle" data-target="slammeddoor">Slammed Door Function and Sound Effect</button>
+                    <button class="code-toggle" data-target="prompts">Prompts System Adjustment</button>
+                    <button class="code-toggle" data-target="footsteps">Implementation of Footsteps Sound Effect</button>
+                    <button class="code-toggle" data-target="endScreen">End Game Screen</button>
+                </div>
+            
+                <!-- Blueprint Display Area -->
+                <div class="code-container">
+            
+                    <!-- Crouching Function -->
+                    <div id="crouch" class="code-snippet">
+                        <p><strong>Crouching Function:</strong> Blueprint for crouching mechanics with smooth transitions and sound effects to enhance stealth gameplay.</p>
+                        <img src="Code-Images/Crouching  function - Blueprints.png" alt="Crouching Function Blueprint">
+                    </div>
+            
+                    <!-- Sprint Function -->
+                    <div id="sprint" class="code-snippet">
+                        <p><strong>Sprint Function:</strong> Sprinting system with dynamic FOV changes and stamina management, increasing player tension during escape sequences.</p>
+                        <img src="Code-Images/Sprint function - Blueprints.png" alt="Sprint Function Blueprint">
+                    </div>
+            
+                    <!-- Movement and Backwards Movement -->
+                    <div id="movement" class="code-snippet">
+                        <p><strong>Movement and Backwards Movement Function:</strong> Comprehensive movement controls, including backwards walking with unique speed and camera adjustments for suspenseful gameplay.</p>
+                        <img src="Code-Images/Movement and Backwards movement function - Blueprints.png" alt="Movement Function Blueprint">
+                    </div>
+            
+                    <!-- Footsteps & Flashlight Sound Effects -->
+                    <div id="sound" class="code-snippet">
+                        <p><strong>Footsteps & Flashlight Sound Effects:</strong> Dynamic sound design for footsteps and flashlight toggles, reacting to player movement and environmental interactions.</p>
+                        <img src="Code-Images/Footsteps sound effect  - Blueprints.png" alt="Footsteps Sound Effect Blueprint">
+                        <img src="Code-Images/Flashlight sound effect - Blueprints.png" alt="Flashlight Sound Effect Blueprint">
+                    </div>
+            
+                    <!-- Furniture Sound Effect -->
+                    <div id="furniture" class="code-snippet">
+                        <p><strong>Furniture Sound Effect:</strong> Implemented sound effects for moving or interacting with furniture, adding immersion and environmental feedback.</p>
+                        <img src="Code-Images/Furniture sound effect - Blueprints.png" alt="Furniture Sound Effect Blueprint">
+                    </div>
+            
+                    <!-- Door Slam on Trigger Box -->
+                    <div id="doorslam" class="code-snippet">
+                        <p><strong>Door Slam Implementation on the Trigger Box:</strong> Created a trigger-based door slamming mechanic to surprise and unsettle players, paired with sound cues.</p>
+                        <img src="Code-Images/Door slam implementation on the trigger box - Blueprints.png" alt="Door Slam Trigger Blueprint">
+                    </div>
+            
+                    <!-- Slammed Door Function and Sound Effect -->
+                    <div id="slammeddoor" class="code-snippet">
+                        <p><strong>Slammed Door Function and Sound Effect:</strong> Detailed door slamming mechanics with corresponding sound design to increase atmospheric tension.</p>
+                        <img src="Code-Images/Slammed door function and sound effect - Blueprints.png" alt="Slammed Door Function Blueprint">
+                    </div>
+            
+                    <!-- Prompts System Adjustment -->
+                    <div id="prompts" class="code-snippet">
+                        <p><strong>Prompts System Adjustment:</strong> Enhanced interaction prompts for engaging with objects like flashlights, doors, and environmental elements.</p>
+                        <img src="Code-Images/Prompts system adjustment - Blueprints.png" alt="Prompts System Blueprint">
+                    </div>
+            
+                    <!-- Implementation of Footsteps Sound Effect -->
+                    <div id="footsteps" class="code-snippet">
+                        <p><strong>Implementation of Footsteps Sound Effect:</strong> Detailed sound effect system for footsteps that reacts dynamically to player actions and surface types.</p>
+                        <img src="Code-Images/Implementation of Footsteps sound effect  - Blueprints.png" alt="Footsteps Sound Implementation Blueprint">
+                    </div>
+            
+                    <!-- End Game Screen -->
+                    <div id="endScreen" class="code-snippet">
+                        <p><strong>End Game Screen:</strong> Developed the game's end screen UI, displaying player stats and outcomes upon completing the game.</p>
+                        <img src="Code-Images/End Game screen  - Blueprints.png" alt="End Game Screen Blueprint">
+                    </div>
+            
+                </div>
+            </section>
+
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Project Links -->
+        <section class="project-links">
+            <h3>Explore More</h3>
+            <p>Check out the game and my contributions!</p>
+            <div class="explore-links">
+                <div class="button-row">
+                    <a href="https://github.com/Yizune" target="_blank" class="button">GitHub</a>
+                    <a href="https://futuregames.itch.io/sour-security" target="_blank" class="button">Itch.io</a>
+                </div>
+                <div class="button-row">
+                    <a href="https://www.linkedin.com/in/stevan-likusic-884946300/" target="_blank" class="button">LinkedIn</a>
+                    <a href="Images/GameProgrammingCV.pdf" target="_blank" class="button">Resume</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Stevan Likusic. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
