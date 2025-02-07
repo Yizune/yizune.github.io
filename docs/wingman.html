@@ -7,9 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wingman | Game Project </title>
+    <title>Wingman | Game Project</title>
 </head>
-<body>
+<body id="body">
     
     <!-- Header Section -->
     <header class="header">
@@ -99,7 +99,7 @@
         </section>
 
         <section class="project-description">
-            <h2>Cosmic Crusaders</h2>
+            <h2>Wingman</h2>
             
             <h3>Introduction</h3>
             <p>
@@ -160,235 +160,297 @@
         
             <section class="project-code">
                 <h3>Code</h3>
-                <p>View key scripts I worked on in Cosmic Crusaders.</p>
+                <p>View key scripts I worked on in Wingman.</p>
                 <div class="code-buttons">
-                    <button class="code-toggle" data-target="damaging">Damaging.cs</button>
-                    <button class="code-toggle" data-target="health">Health.cs</button>
-                    <button class="code-toggle" data-target="healthbar">Healthbar.cs</button>
-                    <button class="code-toggle" data-target="rotateTowardsTarget">RotateTowardsTarget.cs</button>
-                    <button class="code-toggle" data-target="healing">Healing.cs</button>
-                    <button class="code-toggle" data-target="loadingScreen">LoadingScreen.cs</button>
-                    <button class="code-toggle" data-target="rangeEvent">InRangeEvent.cs</button>
-                    <button class="code-toggle" data-target="sceneSwitcher">SceneSwitcher.cs</button>
+                    <button class="code-toggle" data-target="timer">Timer.cs</button>
+                    <button class="code-toggle" data-target="gameTimerUI">GameTimerUI.cs</button>
+                    <button class="code-toggle" data-target="countdownController">CountdownController.cs</button>
+                    <button class="code-toggle" data-target="checkpoint">Checkpoint.cs</button>
+                    <button class="code-toggle" data-target="checkpointManager">CheckpointManager.cs</button>
+                    <button class="code-toggle" data-target="checkpointUI">CheckpointUI.cs</button>
+                    <button class="code-toggle" data-target="gameManager">GameManager.cs</button>
                 </div>
-        
-                <div class="code-container">
-                    <pre id="healing" class="code-snippet">
-                    <code>
-                    // Healing.cs - Controls health pickups
-                    using UnityEngine;
-        
-                    public class Healing : MonoBehaviour {
-                        Health playerHealth;
-                        [SerializeField] private int healAmount = 20;
-                        private Collider orbCollider;
-                        bool canHeal;
-        
-                        private void Start() {
-                            playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
-                            orbCollider = GetComponent<Collider>();
-                        }
-        
-                        private void OnTriggerEnter(Collider collider) {
-                            if (IsPlayer(collider) && playerHealth.currentHealth < playerHealth.maxHealth) {
-                                int remainingHeal = Mathf.Min(healAmount, playerHealth.maxHealth - playerHealth.currentHealth);
-                                playerHealth.ChangeHealth(remainingHeal);
-                            }
-                        }
-        
-                        private bool IsPlayer(Collider collider) {
-                            return collider.CompareTag("Player");
-                        }
-        
-                        private void Update() {
-                            orbCollider.enabled = playerHealth.currentHealth < playerHealth.maxHealth;
-                        }
-                    }
-                    </code>
-                    </pre>
-        
-                    <pre id="loadingScreen" class="code-snippet">
-                    <code>
-                    // LoadingScreen.cs - Handles level loading UI
-                    using UnityEngine;
-                    using UnityEngine.UI;
-                    using UnityEngine.SceneManagement;
-                    using System.Collections;
-        
-                    public class LoadingScreen : MonoBehaviour {
-                        [SerializeField] private GameObject loadingScreen;
-                        [SerializeField] private Slider loadingSlider;
-                        [SerializeField] private float sceneLoadTime;
-                        [SerializeField] private Button continueButton;
-                        private bool canLoadScene = false;
-        
-                        private void Start() {
-                            loadingScreen.SetActive(false);
-                            continueButton.interactable = false;
-                        }
-        
-                        public void LoadLevel(int levelToLoad) {
-                            StartCoroutine(LoadLevelEnum(levelToLoad));
-                        }
-        
-                        IEnumerator LoadLevelEnum(int levelToLoad) {
-                            loadingScreen.SetActive(true);
-                            loadingSlider.value = 0.3f;
-        
-                            yield return new WaitForSeconds(sceneLoadTime);
-                            loadingSlider.value = 1.0f;
-                            continueButton.interactable = true;
-                            canLoadScene = true;
-                        }
-        
-                        public void LoadSceneWithButton(int levelToLoad) {
-                            if (canLoadScene) SceneManager.LoadScene(levelToLoad);
-                        }
-                    }
-                    </code>
-                    </pre>
-        
-                    <pre id="rangeEvent" class="code-snippet">
-                    <code>
-                    // InRangeEvent.cs - Triggers events based on player proximity
-                    using UnityEngine;
-                    using UnityEngine.Events;
-        
-                    public class InRangeEvent : MonoBehaviour {
-                        [SerializeField] LayerMask includeLayer;
-                        [SerializeField] float range;
-                        public UnityEvent onInRange;
-                        public UnityEvent onOutRange;
-                        bool isInRange = false;
-        
-                        private void Update() {
-                            Collider[] colliders = Physics.OverlapSphere(transform.position, range, includeLayer);
-                            if (colliders.Length > 0) {
-                                onInRange.Invoke();
-                                isInRange = true;
-                            } else if (isInRange) {
-                                onOutRange.Invoke();
-                                isInRange = false;
-                            }
-                        }
-                    }
-                    </code>
-                    </pre>
 
-                    <pre id="damaging" class="code-snippet">
-                    <code>
-                    // Damaging.cs - Handles applying damage to health components
-                    using UnityEngine;
-                    using UnityEngine.Events;
-        
-                    public class Damaging : MonoBehaviour {
-                        [SerializeField] private int damageAmount = -10;
-                        [SerializeField] private LayerMask includeLayer;
-                        public UnityEvent onDoDamage;
+                <div class="code-container">
+                    <pre id="timer" class="code-snippet"><code>
+                        using System;
+                        using System.Collections;
+                        using TMPro;
+                        using UnityEngine;
                         
-                        private void OnTriggerEnter(Collider collider) {
-                            if ((includeLayer & (1 << collider.gameObject.layer)) != 0) {
-                                if (collider.TryGetComponent(out Health health)) {
-                                    health.ChangeHealth(damageAmount);
-                                    onDoDamage.Invoke();
+                        public class Timer : MonoBehaviour {
+                            public event EventHandler<OnTimeElapsedChangedEventArgs> OnTimeElapsedChanged;
+                            public class OnTimeElapsedChangedEventArgs : EventArgs {
+                                public float TimeElapsed;
+                            }
+                        
+                            public float TimeElapsed => _timeElapsed;
+                            private float _timeElapsed;
+                            private float _lastCheckpointTime = 0;
+                            private int _respawnsSinceCheckpoint = 0;
+                            [SerializeField] private int _penaltyForRespawn = 3;
+                            [SerializeField] private GameObject _penaltyTimeObject;
+                            [SerializeField] private TMP_Text _penaltyText;
+                            private bool _isPenaltyDisplayed = false;
+                            private bool _isRunning = false;
+                            GameRecorder gameRecorder;
+                            PlayBackPlayer playbackPlayer;
+                        
+                            private void Start() {
+                                gameRecorder = GameRecorder.instance;
+                                playbackPlayer = FindObjectOfType<PlayBackPlayer>();
+                            }
+                        
+                            private void Update() {
+                                if (!_isRunning) return;
+                                _timeElapsed += Time.deltaTime;
+                                OnTimeElapsedChanged?.Invoke(this, new OnTimeElapsedChangedEventArgs { TimeElapsed = _timeElapsed });
+                            }
+                        
+                            public void StartTimer() {
+                                _isRunning = true;
+                                gameRecorder.StartRecording();
+                                playbackPlayer.StartPlayback();
+                            }
+                        
+                            public void PauseTimer() {
+                                _isRunning = false;
+                                gameRecorder.StopRecording();
+                                playbackPlayer.StopPlayback();
+                            }
+                        
+                            public void ResetTimer() {
+                                _timeElapsed = 0f;
+                                OnTimeElapsedChanged?.Invoke(this, new OnTimeElapsedChangedEventArgs { TimeElapsed = _timeElapsed });
+                            }
+                        
+                            public void RestartTimer() {
+                                ResetTimer();
+                                StartTimer();
+                            }
+                        }
+                                </code></pre>
+                        
+                                <!-- GameTimerUI.cs -->
+                                <pre id="gameTimerUI" class="code-snippet"><code>
+                        using UnityEngine;
+                        using TMPro;
+                        
+                        public class GameTimerUI : MonoBehaviour {
+                            [SerializeField] private TextMeshProUGUI _timerText;
+                            private Timer _gameTimer;
+                            private GameManager _gameManager;
+                            float _endTime = 45f;
+                        
+                            private void Start() {
+                                _gameManager = FindObjectOfType<GameManager>();
+                                _gameTimer = GameManager.Instance.GameTimer;
+                                _gameTimer.OnTimeElapsedChanged += GameTimer_OnTimeElapsedChanged;
+                            }
+                        
+                            private void OnDestroy() {
+                                _gameTimer.OnTimeElapsedChanged -= GameTimer_OnTimeElapsedChanged;
+                            }
+                        
+                            private void GameTimer_OnTimeElapsedChanged(object sender, Timer.OnTimeElapsedChangedEventArgs e) {
+                                int minutes = Mathf.FloorToInt(e.TimeElapsed / 60);
+                                int seconds = Mathf.FloorToInt(e.TimeElapsed % 60);
+                                int milliseconds = Mathf.FloorToInt((e.TimeElapsed * 1000) % 1000);
+                                if (minutes * 60 + seconds >= _endTime) {
+                                    _timerText.color = Color.red;
+                                }
+                                _timerText.text = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, milliseconds / 10);
+                            }
+                        }
+                                </code></pre>
+                        
+                                <!-- CountdownController.cs -->
+                                <pre id="countdownController" class="code-snippet"><code>
+                        using System.Collections;
+                        using TMPro;
+                        using UnityEngine;
+                        
+                        public class CountdownController : MonoBehaviour {
+                            [SerializeField] private int _countdownTime;
+                            [SerializeField] private TextMeshProUGUI _countdownDisplay;
+                            private PlaneMovement _planeMovement;
+                            private PlayerInput _playerInput;
+                            private Timer _timer;
+                        
+                            private void Start() {
+                                _playerInput = FindObjectOfType<PlayerInput>();
+                                _planeMovement = FindObjectOfType<PlaneMovement>();
+                                _timer = FindObjectOfType<Timer>();
+                                StartCoroutine(CountdownToStart());
+                            }
+                        
+                            IEnumerator CountdownToStart() {
+                                yield return new WaitForSeconds(0.1f);
+                                while (_countdownTime >= 1) {
+                                    _countdownDisplay.text = _countdownTime == 1 ? "GO!" : _countdownTime.ToString();
+                                    if (_countdownTime == 1) AfterCountdown();
+                                    else BeforeCountdown();
+                                    _countdownTime--;
+                                    yield return new WaitForSeconds(1f);
+                                }
+                                _countdownDisplay.gameObject.SetActive(false);
+                            }
+                        
+                            private void BeforeCountdown() {
+                                _timer.PauseTimer();
+                                _playerInput.DisableInput();
+                                _planeMovement.DisableMovement();
+                            }
+                        
+                            private void AfterCountdown() {
+                                _playerInput.EnableInput();
+                                _planeMovement.EnableMovement();
+                                _timer.StartTimer();
+                            }
+                        }
+                                </code></pre>
+                        
+                                <!-- Checkpoint.cs -->
+                                <pre id="checkpoint" class="code-snippet"><code>
+                        using System;
+                        using UnityEngine;
+                        
+                        [Serializable]
+                        public class Checkpoint : MonoBehaviour {
+                            [SerializeField] private Material _defaultMaterial;
+                            [SerializeField] private Material _highlightMaterial;
+                            [SerializeField] private Material _goalMaterial;
+                            [SerializeField] private GameObject _flagCanvas;
+                            [SerializeField] private LODGroup _lodGroup;
+                        
+                            public enum CheckpointType { Start, Default, Highlight, End }
+                            private CheckpointType _currentType = CheckpointType.Default;
+                        
+                            public void SetType(CheckpointType type) {
+                                _currentType = type;
+                                switch (type) {
+                                    case CheckpointType.Start:
+                                    case CheckpointType.Default: UpdateMaterial(_defaultMaterial); break;
+                                    case CheckpointType.Highlight: UpdateMaterial(_highlightMaterial); break;
+                                    case CheckpointType.End: UpdateMaterial(_goalMaterial); ShowFlag(); break;
+                                }
+                            }
+                        
+                            private void UpdateMaterial(Material targetMaterial) {
+                                foreach (LOD lod in _lodGroup.GetLODs()) {
+                                    foreach (Renderer lodRenderer in lod.renderers) {
+                                        lodRenderer.sharedMaterial = targetMaterial;
+                                    }
+                                }
+                            }
+                        
+                            private void ShowFlag() {
+                                _flagCanvas.SetActive(true);
+                            }
+                        }
+                                </code></pre>
+                        
+                                <!-- CheckpointManager.cs -->
+                                <pre id="checkpointManager" class="code-snippet"><code>
+                        using System;
+                        using System.Collections.Generic;
+                        using UnityEngine;
+                        
+                        public class CheckpointManager : MonoBehaviour {
+                            public event EventHandler OnPlayerFinished;
+                            [SerializeField] private Checkpoint _startCheckpoint;
+                            [SerializeField] private Checkpoint _endCheckpoint;
+                            [SerializeField] private List<Checkpoint> _checkpoints;
+                            private int _currentCheckpointIndex = -1;
+                        
+                            private void Start() {
+                                EnableCheckpoints();
+                            }
+                        
+                            private void OnTriggerEnter(Collider other) {
+                                Checkpoint collidedCheckpoint = other.GetComponentInParent<Checkpoint>();
+                                if (collidedCheckpoint == null) return;
+                        
+                                if (collidedCheckpoint == GetNextCheckpoint()) {
+                                    _currentCheckpointIndex++;
+                                    ShowNextCheckpoints();
+                                }
+                        
+                                if (collidedCheckpoint == _endCheckpoint && AllCheckpointsVisited()) {
+                                    OnPlayerFinished?.Invoke(this, EventArgs.Empty);
+                                }
+                            }
+                        
+                            private bool AllCheckpointsVisited() {
+                                return _currentCheckpointIndex == _checkpoints.Count - 1;
+                            }
+                        
+                            private void EnableCheckpoints() {
+                                _startCheckpoint.gameObject.SetActive(true);
+                                _endCheckpoint.gameObject.SetActive(true);
+                                foreach (var checkpoint in _checkpoints) checkpoint.gameObject.SetActive(true);
+                            }
+                        
+                            private Checkpoint GetNextCheckpoint() {
+                                return _currentCheckpointIndex == _checkpoints.Count - 1 ? _endCheckpoint : _checkpoints[_currentCheckpointIndex + 1];
+                            }
+                        
+                            private void ShowNextCheckpoints() {
+                                if (_currentCheckpointIndex >= 0) _checkpoints[_currentCheckpointIndex].gameObject.SetActive(false);
+                                if (_currentCheckpointIndex + 1 < _checkpoints.Count) _checkpoints[_currentCheckpointIndex + 1].gameObject.SetActive(true);
+                            }
+                        }
+                                </code></pre>
+                        
+                                <!-- CheckpointUI.cs -->
+                                <pre id="checkpointUI" class="code-snippet"><code>
+                        using TMPro;
+                        using UnityEngine;
+                        
+                        public class CheckpointUI : MonoBehaviour {
+                            [SerializeField] private TextMeshProUGUI checkpointText;
+                            private CheckpointManager checkpointManager;
+                        
+                            private void Start() {
+                                checkpointManager = FindObjectOfType<CheckpointManager>();
+                            }
+                        
+                            private void Update() {
+                                if (checkpointManager != null) {
+                                    checkpointText.text = $"{checkpointManager.GetCheckpointsLeft()} / {checkpointManager.GetTotalCheckpoints()}";
                                 }
                             }
                         }
-                    }
-                    </code>
-                    </pre>
-        
-                    <pre id="health" class="code-snippet">
-                    <code>
-                    // Health.cs - Manages health changes, healing, and death
-                    using UnityEngine;
-                    using UnityEngine.Events;
-        
-                    public class Health : MonoBehaviour {
-                        [SerializeField] public int maxHealth;
-                        [HideInInspector] public int currentHealth;
-                        public UnityEvent onTakeDamage, onDeath, onHealthReceived;
-        
-                        void Awake() { currentHealth = maxHealth; }
-        
-                        public void ChangeHealth(int changeAmount) {
-                            currentHealth += changeAmount;
-                            if (currentHealth > maxHealth) currentHealth = maxHealth;
-                            if (currentHealth <= 0) {
-                                currentHealth = 0;
-                                onDeath.Invoke();
+                                </code></pre>
+                        
+                                <!-- GameManager.cs -->
+                                <pre id="gameManager" class="code-snippet"><code>
+                        using System;
+                        using UnityEngine;
+                        
+                        public class GameManager : MonoBehaviour {
+                            public static GameManager Instance;
+                            public Timer GameTimer => _gameTimer;
+                            private Timer _gameTimer;
+                        
+                            private void Awake() {
+                                if (Instance == null) Instance = this;
+                                else Destroy(gameObject);
+                                _gameTimer = FindObjectOfType<Timer>();
                             }
-                            if (changeAmount < 0) onTakeDamage.Invoke();
-                            if (changeAmount > 0) onHealthReceived.Invoke();
-                        }
-                    }
-                    </code>
-                    </pre>
-        
-                    <pre id="healthbar" class="code-snippet">
-                    <code>
-                    // Healthbar.cs - Updates UI slider based on health value
-                    using UnityEngine;
-                    using UnityEngine.UI;
-        
-                    public class Healthbar : MonoBehaviour {
-                        public Slider healthBar;
-                        private Health health;
-        
-                        private void Start() {
-                            health = GetComponent<Health>();
-                            healthBar.maxValue = health.currentHealth;
-                        }
-        
-                        private void Update() {
-                            healthBar.value = health.currentHealth;
-                        }
-                    }
-                    </code>
-                    </pre>
-        
-                    <pre id="rotateTowardsTarget" class="code-snippet">
-                    <code>
-                    // RotateTowardsTarget.cs - Makes enemies face the player
-                    using UnityEngine;
-        
-                    public class RotateTowardsTarget : MonoBehaviour {
-                        [SerializeField] private float lookRadius = 10f;
-                        [SerializeField] private float rotationSpeed = 50;
-                        [SerializeField] private LayerMask includeLayer;
                         
-                        void FixedUpdate() {
-                            Collider[] colliders = Physics.OverlapSphere(transform.position, lookRadius, includeLayer);
-                            if (colliders.Length > 0) FaceTarget(colliders[0].transform);
-                        }
-        
-                        void FaceTarget(Transform target) {
-                            Quaternion lookRot = Quaternion.LookRotation(target.position - transform.position);
-                            transform.rotation = Quaternion.Slerp(transform.rotation, lookRot, Time.deltaTime * rotationSpeed);
-                        }
-                    }
-                    </code>
-                    </pre>
-        
-                    <pre id="sceneSwitcher" class="code-snippet">
-                    <code>
-                    // SceneSwitcher.cs - Manages transitioning between scenes
-                    using UnityEngine;
-                    using UnityEngine.SceneManagement;
-        
-                    public class SceneSwitcher : MonoBehaviour {
-                        [SerializeField] private int sceneIndex;
+                            private void Start() {
+                                _gameTimer.StartTimer();
+                            }
                         
-                        public void SwitchToNextScene() {
-                            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-                            SceneManager.LoadScene(currentSceneIndex + sceneIndex);
+                            public void EndGame() {
+                                _gameTimer.PauseTimer();
+                                Debug.Log("Game Over");
+                            }
                         }
-                    }
-                    </code>
-                    </pre>
-        
-                </div>
-            </section>
+                                </code></pre>
+                            </div>
+                        </section>
         </section>
 
         <div class="section-divider"></div>
