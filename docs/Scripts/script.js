@@ -82,3 +82,7 @@ function toggleMode() {
         modeIcon.src = "Images/DarkMode.svg";
     }
 }
+
+function showWIPPopup() {
+    alert("Brave Little One is still in progress. The page will be uploaded soon!");
+}
