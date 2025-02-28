@@ -84,5 +84,5 @@ function toggleMode() {
 }
 
 function showWIPPopup() {
-    alert("Brave Little One is still in progress. The page will be uploaded soon!");
+    alert("The game 'Brave Little One' is finished, the page is still in progress and it will be uploaded soon!");
 }
