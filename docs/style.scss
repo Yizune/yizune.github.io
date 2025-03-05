@@ -193,6 +193,7 @@ body {
         padding: 40px;
         text-align: left;
         width: 100%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 
         p {
             margin-top: 0 !important;
@@ -650,7 +651,6 @@ $light-link-hover: #125E75;
 
         .about-text {
             background: $light-primary;
-
 
             p {
                 color: darken($light-text, 10%); 
