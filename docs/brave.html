@@ -141,13 +141,54 @@
                 <p>View key scripts used in Brave Little One.</p>
                 <div class="code-buttons">
                     <button class="code-toggle" data-target="healthComponent">HealthComponent.gd</button>
-                    <button class="code-toggle" data-target="playerMovement">More to come soon...</button>
+                    <button class="code-toggle" data-target="playerScript">Player.gd</button>
+                    <button class="code-toggle" data-target="wizardEnemy">WizardEnemy.gd</button>
+                    <button class="code-toggle" data-target="swordAbility">SwordAbilityController.gd</button>
+                    <button class="code-toggle" data-target="metaProgression">MetaProgression.gd</button>
+                    <button class="code-toggle" data-target="arenaTimeManager">ArenaTimeManager.gd</button>
+                    <button class="code-toggle" data-target="anvilAbilityController">AnvilAbilityController.gd</button>
+                    <button class="code-toggle" data-target="upgradeManager">UpgradeManager.gd</button>
+                    <button class="code-toggle" data-target="experienceManager">ExperienceManager.gd</button>
+                    <button class="code-toggle" data-target="enemyManager">EnemyManager.gd</button>
+                    <button class="code-toggle" data-target="bossEnemy">BossEnemy.gd</button>
+                    <button class="code-toggle" data-target="gameEvents">GameEvents.gd</button>
+                    <button class="code-toggle" data-target="velocityComponent">VelocityComponent.gd</button>
+                    <button class="code-toggle" data-target="vialDropComponent">VialDropComponent.gd</button>
+                    <button class="code-toggle" data-target="screenTransition">ScreenTransition.gd</button>
+                    <button class="code-toggle" data-target="arenaTimeUI">ArenaTimeUI.gd</button>
+                    <button class="code-toggle" data-target="axeAbility">AxeAbility.gd</button>
+                    <button class="code-toggle" data-target="axeAbilityController">AxeAbilityController.gd</button>
+                    <button class="code-toggle" data-target="basicEnemy">BasicEnemy.gd</button>
+                    <button class="code-toggle" data-target="batEnemy">BatEnemy.gd</button>
+                    <button class="code-toggle" data-target="deathComponent">DeathComponent.gd</button>
+                    <button class="code-toggle" data-target="endScreen">EndScreen.gd</button>
+                    <button class="code-toggle" data-target="experienceBar">ExperienceBar.gd</button>
+                    <button class="code-toggle" data-target="experienceVial">ExperienceVial.gd</button>
+                    <button class="code-toggle" data-target="floatingText">FloatingText.gd</button>
+                    <button class="code-toggle" data-target="gameCamera">GameCamera.gd</button>
+                    <button class="code-toggle" data-target="hitFlashComponent">HitFlashComponent.gd</button>
+                    <button class="code-toggle" data-target="hurtboxComponent">HurtboxComponent.gd</button>
+                    <button class="code-toggle" data-target="main">Main.gd</button>
+                    <button class="code-toggle" data-target="mainMenu">MainMenu.gd</button>
+                    <button class="code-toggle" data-target="metaMenu">MetaMenu.gd</button>
+                    <button class="code-toggle" data-target="metaUpgrade">MetaUpgrade.gd</button>
+                    <button class="code-toggle" data-target="metaUpgradeCard">MetaUpgradeCard.gd</button>
+                    <button class="code-toggle" data-target="musicPlayer">MusicPlayer.gd</button>
+                    <button class="code-toggle" data-target="optionsMenu">OptionsMenu.gd</button>
+                    <button class="code-toggle" data-target="pauseMenu">PauseMenu.gd</button>
+                    <button class="code-toggle" data-target="randomStreamPlayer">RandomStreamPlayer.gd</button>
+                    <button class="code-toggle" data-target="randomStreamPlayer2D">RandomStreamPlayer2D.gd</button>
+                    <button class="code-toggle" data-target="swordAbilityController">SwordAbilityController.gd</button>
+                    <button class="code-toggle" data-target="upgradeScreen">UpgradeScreen.gd</button>
+                    <button class="code-toggle" data-target="weightedTable">WeightedTable.gd</button>
+                    <button class="code-toggle" data-target="wizardEnemy">WizardEnemy.gd</button>
                 </div>
+
+
                 
             <div class="code-container">
 
-            <pre id="healthComponent" class="code-snippet">
-                <code>
+        <pre id="healthComponent" class="code-snippet"><code>
             // HealthComponent.gd - Handles player and enemy health
             extends Node
             class_name HealthComponent
@@ -178,15 +219,1310 @@
             func check_death():
             if current_health == 0:
                 died.emit()
-            </code>
-                    </pre>
-
-
+            </code></pre>
+        <pre id="playerScript" class="code-snippet"><code>
+            // Player.gd - Handles movement, abilities, and health
+            extends CharacterBody2D
             
+            @onready var health_component = $HealthComponent
+            @onready var velocity_component = $VelocityComponent
+            @onready var animation_player = $AnimationPlayer
+            @onready var visuals = $Visuals
+            
+            var base_speed = 0
+            
+            func _ready():
+                base_speed = velocity_component.max_speed
+                GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
+                health_component.health_changed.connect(on_health_changed)
+            
+            func _process(delta):
+                var movement_vector = get_movement_vector()
+                var direction = movement_vector.normalized()
+                velocity_component.accelerate_in_direction(direction)
+                velocity_component.move(self)
+            
+                if movement_vector.length() > 0:
+                    animation_player.play("walk")
+                else:
+                    animation_player.play("RESET")
+            
+                var move_sign = sign(movement_vector.x)
+                if move_sign != 0:
+                    visuals.scale = Vector2(move_sign, 1)
+            </code></pre>
+            
+            <pre id="wizardEnemy" class="code-snippet"><code>
+            // WizardEnemy.gd - AI for wizard enemy movement and interactions
+            extends CharacterBody2D
+            
+            @onready var velocity_component = $VelocityComponent
+            @onready var visuals = $Visuals
+            
+            var is_moving = false
+            
+            func _process(delta):
+                if is_moving:
+                    velocity_component.accelerate_to_player()
+                else:
+                    velocity_component.decelerate()
+            
+                velocity_component.move(self)
+            
+                var move_sign = sign(velocity.x)
+                if move_sign != 0:
+                    visuals.scale = Vector2(move_sign, 1)
+            </code></pre>
+            
+            <pre id="swordAbility" class="code-snippet"><code>
+            // SwordAbilityController.gd - Manages sword ability cooldown and targeting
+            extends Node
+            
+            const MAX_RANGE = 150
+            
+            @export var sword_ability: PackedScene
+            
+            var base_damage = 5
+            var additional_damage_percent = 1
+            
+            func _ready():
+                $Timer.timeout.connect(on_timer_timeout)
+                GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
+            
+            func on_timer_timeout():
+                var player = get_tree().get_first_node_in_group("player") as Node2D
+                if player == null:
+                    return
+            
+                var enemies = get_tree().get_nodes_in_group("enemy")
+                enemies.sort_custom(
+                    func(a, b): return a.global_position.distance_squared_to(player.global_position) < b.global_position.distance_squared_to(player.global_position)
+                )
+            
+                if enemies.size() > 0:
+                    var sword_instance = sword_ability.instantiate()
+                    get_tree().get_first_node_in_group("foreground_layer").add_child(sword_instance)
+                    sword_instance.global_position = enemies[0].global_position
+            </code></pre>
+            
+            <pre id="metaProgression" class="code-snippet"><code>
+            // MetaProgression.gd - Handles saving and loading meta progression
+            extends Node
+            
+            const SAVE_FILE_PATH = "user://game.save"
+            
+            var save_data: Dictionary = {
+                "meta_upgrade_currency": 0,
+                "meta_upgrades": {}
+            }
+            
+            func _ready():
+                load_save_file()
+            
+            func load_save_file():
+                if !FileAccess.file_exists(SAVE_FILE_PATH):
+                    return
+                var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.READ)
+                save_data = file.get_var()
+            
+            func save():
+                var file = FileAccess.open(SAVE_FILE_PATH, FileAccess.WRITE)
+                file.store_var(save_data)
+            </code></pre>
+            
+            <pre id="arenaTimeManager" class="code-snippet"><code>
+            // ArenaTimeManager.gd - Manages game difficulty & boss spawning
+            extends Node
+            
+            signal arena_difficulty_increased(arena_difficulty: int)
+            signal boss_spawned
+            
+            const DIFFICULTY_INTERVAL = 5
+            
+            @export var end_screen_scene: PackedScene
+            @onready var timer = $Timer
+            
+            var arena_difficulty = 0
+            var elapsed_time = 0  
+            var boss_already_spawned = false 
+            
+            func _ready():
+                set_timer_for_level()
+                timer.timeout.connect(on_timer_timeout)
+                timer.start()  
+            
+            func set_timer_for_level():
+                if GlobalState.selected_level == "main":  
+                    timer.wait_time = 240
+                elif GlobalState.selected_level == "main2":  
+                    timer.wait_time = 300  
+                elif GlobalState.selected_level == "main3":  
+                    timer.wait_time = 120  
+            
+            func _process(delta):
+                elapsed_time += delta
+            
+                var next_time_target = (arena_difficulty + 1) * DIFFICULTY_INTERVAL
+                if elapsed_time >= next_time_target:
+                    arena_difficulty += 1
+                    arena_difficulty_increased.emit(arena_difficulty)
+            
+                if elapsed_time >= timer.wait_time and not boss_already_spawned:
+                    boss_already_spawned = true
+                    spawn_boss()
+            </code></pre>            
+        <pre id="anvilAbilityController" class="code-snippet"><code>
+            // AnvilAbilityController.gd - Controls the spawning of Anvil abilities
+            extends Node
+            
+            const BASE_RANGE = 100
+            const BASE_DAMAGE = 15
+            
+            @export var anvil_ability_scene: PackedScene
+            
+            var anvil_count = 0
+            
+            func _ready():
+                $Timer.timeout.connect(on_timer_timeout)
+                GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
+            
+            func on_timer_timeout():
+                var player = get_tree().get_first_node_in_group("player") as Node2D
+                if player == null:
+                    return
+            
+                var direction = Vector2.RIGHT.rotated(randf_range(0, TAU))
+                var additional_rotation_degrees = 360.0 / (anvil_count + 1)
+                var anvil_distance = randf_range(0, BASE_RANGE)
+            
+                for i in anvil_count + 1:
+                    var adjusted_direction = direction.rotated(deg_to_rad(i * additional_rotation_degrees))
+                    var spawn_position = player.global_position + (adjusted_direction * anvil_distance)
+            
+                    var query_parameters = PhysicsRayQueryParameters2D.create(player.global_position, spawn_position, 1)
+                    var result = get_tree().root.world_2d.direct_space_state.intersect_ray(query_parameters)
+                    if !result.is_empty():
+                        spawn_position = result["position"]
+            
+                    var anvil_ability = anvil_ability_scene.instantiate()
+                    get_tree().get_first_node_in_group("foreground_layer").add_child(anvil_ability)
+                    anvil_ability.global_position = spawn_position
+                    anvil_ability.hitbox_component.damage = BASE_DAMAGE
+            
+            func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary):
+                if upgrade.id == "anvil_count":
+                    anvil_count = current_upgrades["anvil_count"]["quantity"]
+            </code></pre>
+            
+            <pre id="upgradeManager" class="code-snippet"><code>
+            // UpgradeManager.gd - Handles ability upgrades and upgrade selection
+            extends Node
+            
+            @export var experience_manager: Node
+            @export var upgrade_screen_scene: PackedScene
+            
+            var current_upgrades = {}
+            var upgrade_pool: WeightedTable = WeightedTable.new()
+            
+            var upgrade_axe = preload("res://resources/upgrades/axe.tres")
+            var upgrade_axe_damage = preload("res://resources/upgrades/axe_damage.tres")
+            var upgrade_sword_rate = preload("res://resources/upgrades/sword_rate.tres")
+            var upgrade_sword_damage = preload("res://resources/upgrades/sword_damage.tres")
+            var upgrade_player_speed = preload("res://resources/upgrades/player_speed.tres")
+            var upgrade_anvil = preload("res://resources/upgrades/anvil.tres")
+            var upgrade_anvil_count = preload("res://resources/upgrades/anvil_count.tres")
+            
+            func _ready():
+                upgrade_pool.add_item(upgrade_axe, 10)
+                upgrade_pool.add_item(upgrade_anvil, 10)
+                upgrade_pool.add_item(upgrade_sword_rate, 10)
+                upgrade_pool.add_item(upgrade_sword_damage, 10)
+                upgrade_pool.add_item(upgrade_player_speed, 5)
+            
+                experience_manager.level_up.connect(on_level_up)
+            
+            func apply_upgrade(upgrade: AbilityUpgrade):
+                var has_upgrade = current_upgrades.has(upgrade.id)
+                if !has_upgrade:
+                    current_upgrades[upgrade.id] = {
+                        "resource": upgrade,
+                        "quantity": 1
+                    }
+                else:
+                    current_upgrades[upgrade.id]["quantity"] += 1
+            
+                if upgrade.max_quantity > 0:
+                    var current_quantity = current_upgrades[upgrade.id]["quantity"]
+                    if current_quantity == upgrade.max_quantity:
+                        upgrade_pool.remove_item(upgrade)
+            
+                update_upgrade_pool(upgrade)
+                GameEvents.emit_ability_upgrade_added(upgrade, current_upgrades)
+            
+            func update_upgrade_pool(chosen_upgrade: AbilityUpgrade):
+                if chosen_upgrade.id == upgrade_axe.id:
+                    upgrade_pool.add_item(upgrade_axe_damage, 10)
+                elif chosen_upgrade.id == upgrade_anvil.id:
+                    upgrade_pool.add_item(upgrade_anvil_count, 5)
+            
+            func pick_upgrades():
+                var chosen_upgrades: Array[AbilityUpgrade] = []
+                for i in 2:
+                    if upgrade_pool.items.size() == chosen_upgrades.size():
+                        break
+                    var chosen_upgrade = upgrade_pool.pick_item(chosen_upgrades)
+                    chosen_upgrades.append(chosen_upgrade)
+                return chosen_upgrades
+            
+            func on_level_up(current_level: int):
+                var upgrade_screen_instance = upgrade_screen_scene.instantiate()
+                add_child(upgrade_screen_instance)
+                var chosen_upgrades = pick_upgrades()
+                upgrade_screen_instance.set_ability_upgrades(chosen_upgrades)
+                upgrade_screen_instance.upgrade_selected.connect(apply_upgrade)
+            </code></pre>
+            
+            <pre id="experienceManager" class="code-snippet"><code>
+            // ExperienceManager.gd - Handles XP accumulation and level-ups
+            extends Node
+            
+            signal experience_updated(current_experience: float, target_experience: float)
+            signal level_up(new_level: int)
+            
+            const TARGET_EXPERIENCE_GROWTH = 5
+            
+            var current_experience = 0
+            var current_level = 1
+            var target_experience = 1
+            
+            func _ready():
+                GameEvents.experience_vial_collected.connect(on_experience_vial_collected)
+            
+            func increment_experience(number: float):
+                current_experience = min(current_experience + number, target_experience)
+                experience_updated.emit(current_experience, target_experience)
+                if current_experience == target_experience:
+                    current_level += 1
+                    target_experience += TARGET_EXPERIENCE_GROWTH
+                    current_experience = 0
+                    experience_updated.emit(current_experience, target_experience)
+                    level_up.emit(current_level)
+            
+            func on_experience_vial_collected(number: float):
+                increment_experience(number)
+            </code></pre>
+            
+            <pre id="enemyManager" class="code-snippet"><code>
+            // EnemyManager.gd - Controls enemy spawning and wave mechanics
+            extends Node
+            
+            const SPAWN_RADIUS = 375
+            
+            @export var basic_enemy_scene: PackedScene
+            @export var wizard_enemy_scene: PackedScene
+            @export var bat_enemy_scene: PackedScene
+            @export var arena_time_manager: Node
+            
+            @onready var timer = $Timer
+            
+            var base_spawn_time = 0
+            var enemy_table = WeightedTable.new()
+            var number_to_spawn = 1
+            
+            func _ready():
+                enemy_table.add_item(basic_enemy_scene, 10)
+            
+                base_spawn_time = timer.wait_time
+                timer.timeout.connect(on_timer_timeout)
+                arena_time_manager.arena_difficulty_increased.connect(on_arena_difficulty_increased)
+            
+            func get_spawn_position():
+                var player = get_tree().get_first_node_in_group("player") as Node2D
+                if player == null:
+                    return Vector2.ZERO
+                
+                var spawn_position = Vector2.ZERO
+                var random_direction = Vector2.RIGHT.rotated(randf_range(0, TAU))
+                for i in 4:
+                    spawn_position = player.global_position + (random_direction * SPAWN_RADIUS)
+                    var additional_check_offset = random_direction * 20
+            
+                    var query_parameters = PhysicsRayQueryParameters2D.create(player.global_position, spawn_position + additional_check_offset, 1)
+                    var result = get_tree().root.world_2d.direct_space_state.intersect_ray(query_parameters)
+            
+                    if result.is_empty():
+                        break
+                    else:
+                        random_direction = random_direction.rotated(deg_to_rad(90))
+                
+                return spawn_position
+            
+            func on_timer_timeout():
+                timer.start()
+                
+                var player = get_tree().get_first_node_in_group("player") as Node2D
+                if player == null:
+                    return
+                
+                for i in number_to_spawn:
+                    var enemy_scene = enemy_table.pick_item()
+                    var enemy = enemy_scene.instantiate() as Node2D
+                    
+                    var entities_layer = get_tree().get_first_node_in_group("entities_layer")
+                    entities_layer.add_child(enemy)
+                    enemy.global_position = get_spawn_position()
+            </code></pre>                
+        <pre id="bossEnemy" class="code-snippet"><code>
+            // BossEnemy.gd - Handles boss enemy behavior and health
+            extends CharacterBody2D
+            
+            @onready var health_component = $HealthComponent
+            @onready var velocity_component = $VelocityComponent
+            @onready var visuals = $Visuals
+            @onready var health_bar = $BossHealthBar
+            @onready var hurtbox_component = $HurtboxComponent
+            
+            var is_moving = false
+            var max_health = 1000
+            var current_health = max_health
+            
+            signal died
+            
+            func _ready():
+                hurtbox_component.hit.connect(on_hit)
+                update_health_bar()
+            
+            func _process(delta):
+                if is_moving:
+                    velocity_component.accelerate_to_player()
+                else:
+                    velocity_component.decelerate()
+            
+                velocity_component.move(self)
+            
+                var move_sign = sign(velocity.x)
+                if move_sign != 0:
+                    visuals.scale = Vector2(move_sign, 1)
+            
+            func set_is_moving(moving: bool):
+                is_moving = moving
+            
+            func on_hit(damage):
+                current_health -= damage
+                update_health_bar()
+                print("Boss took damage: ", damage, " | Current Health: ", current_health)
+            
+                if current_health <= 0:
+                    print("Boss is dead!")
+                    emit_signal("died")
+                    queue_free()
+            
+            func update_health_bar():
+                health_bar.value = float(current_health) / max_health * 100
+            </code></pre>
+            
+            <pre id="gameEvents" class="code-snippet"><code>
+            // GameEvents.gd - Global event system for game interactions
+            extends Node
+            
+            signal experience_vial_collected(number: float)
+            signal ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary)
+            signal player_damaged
+            
+            func emit_experience_vial_collected(number: float):
+                experience_vial_collected.emit(number)
+            
+            func emit_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary):
+                ability_upgrade_added.emit(upgrade, current_upgrades)
+            
+            func emit_player_damaged():
+                player_damaged.emit()
+            </code></pre>
+            
+            <pre id="velocityComponent" class="code-snippet"><code>
+            // VelocityComponent.gd - Handles movement and acceleration for characters
+            extends Node
+            
+            @export var max_speed: int = 40
+            @export var acceleration: float = 5
+            
+            var velocity = Vector2.ZERO
+            
+            func accelerate_to_player():
+                var owner_node2d = owner as Node2D
+                if owner_node2d == null:
+                    return
+            
+                var player = get_tree().get_first_node_in_group("player") as Node2D
+                if player == null:
+                    return
+            
+                var direction = (player.global_position - owner_node2d.global_position).normalized()
+                accelerate_in_direction(direction)
+            
+            func accelerate_in_direction(direction: Vector2):
+                var desired_velocity = direction * max_speed
+                velocity = velocity.lerp(desired_velocity, 1 - exp(-acceleration * get_process_delta_time()))
+            
+            func decelerate():
+                accelerate_in_direction(Vector2.ZERO)
+            
+            func move(character_body: CharacterBody2D):
+                character_body.velocity = velocity
+                character_body.move_and_slide()
+                velocity = character_body.velocity
+            </code></pre>
+            
+            <pre id="vialDropComponent" class="code-snippet"><code>
+            // VialDropComponent.gd - Handles experience vial drops from enemies
+            extends Node
+            
+            @export_range(0, 1) var drop_percent: float = .5
+            @export var health_component: Node
+            @export var vial_scene: PackedScene
+            
+            func _ready():
+                (health_component as HealthComponent).died.connect(on_died)
+            
+            func on_died():
+                var adjusted_drop_percent = drop_percent
+                var experience_gain_upgrade_count = MetaProgression.get_upgrade_count("experience_gain")
+                if experience_gain_upgrade_count > 0:
+                    adjusted_drop_percent += .1
+            
+                if randf() > adjusted_drop_percent:
+                    return
+            
+                if vial_scene == null:
+                    return
+            
+                if not owner is Node2D:
+                    return
+            
+                var spawn_position = (owner as Node2D).global_position
+                var vial_instance = vial_scene.instantiate() as Node2D
+                var entities_layer = get_tree().get_first_node_in_group("entities_layer")
+                entities_layer.add_child(vial_instance)
+                vial_instance.global_position = spawn_position
+            </code></pre>
+            
+            <pre id="screenTransition" class="code-snippet"><code>
+            // ScreenTransition.gd - Handles screen transitions and scene changes
+            extends CanvasLayer
+            
+            signal transitioned_halfway
+            
+            var skip_emit = false
+            
+            func transition():
+                $AnimationPlayer.play("default")
+                await transitioned_halfway
+                skip_emit = true
+                $AnimationPlayer.play_backwards("default")
+            
+            func transition_to_scene(scene_path: String):
+                transition()
+                await transitioned_halfway
+            
+                # Ensure scene tree exists before transitioning
+                if get_tree() and get_tree().root:
+                    get_tree().change_scene_to_file(scene_path)
+                else:
+                    print("get_tree() error")
+            
+            func emit_transitioned_halfway():
+                if skip_emit:
+                    skip_emit = false
+                    return
+                transitioned_halfway.emit()
+            </code></pre>
+        <pre id="arenaTimeUI" class="code-snippet"><code>
+            // ArenaTimeUI.gd - Displays elapsed time during gameplay
+            extends CanvasLayer
+            
+            @export var arena_time_manager: Node
+            @onready var label = $%Label
+            
+            func _process(delta):
+                if arena_time_manager == null:
+                    return
+                var time_elapsed = arena_time_manager.get_time_elapsed()
+                label.text = format_seconds_to_string(time_elapsed)
+            
+            func format_seconds_to_string(seconds: float):
+                var minutes = floor(seconds / 60)
+                var remaining_seconds = seconds - (minutes * 60)
+                return str(minutes) + ":" + ("%02d" % floor(remaining_seconds))
+            </code></pre>
+            
+            <pre id="axeAbility" class="code-snippet"><code>
+            // AxeAbility.gd - Handles axe movement and attack logic
+            extends Node2D
+            
+            const MAX_RADIUS = 100
+            
+            @onready var hitbox_component = $HitboxComponent
+            
+            var base_rotation = Vector2.RIGHT
+            
+            func _ready():
+                base_rotation = Vector2.RIGHT.rotated(randf_range(0, TAU))
+                
+                var tween = create_tween()
+                tween.tween_method(tween_method, 0.0, 2.0, 3)
+                tween.tween_callback(queue_free)
+            
+            func tween_method(rotations: float):
+                var percent = rotations / 2
+                var current_radius = percent * MAX_RADIUS
+                var current_direction = base_rotation.rotated(rotations * TAU)
+                
+                var player = get_tree().get_first_node_in_group("player")
+                if player == null:
+                    return
+            
+                global_position = player.global_position + (current_direction * current_radius)
+            </code></pre>
+            
+            <pre id="axeAbilityController" class="code-snippet"><code>
+            // AxeAbilityController.gd - Controls the spawning and upgrades of Axe ability
+            extends Node
+            
+            @export var axe_ability_scene: PackedScene
+            
+            var base_damage = 10
+            var additional_damage_percent = 1
+            
+            func _ready():
+                $Timer.timeout.connect(on_timer_timeout)
+                GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
+            
+            func on_timer_timeout():
+                var player = get_tree().get_first_node_in_group("player") as Node2D
+                if player == null:
+                    return
+            
+                var foreground = get_tree().get_first_node_in_group("foreground_layer") as Node2D
+                if foreground == null:
+                    return
+            
+                var axe_instance = axe_ability_scene.instantiate() as Node2D
+                foreground.add_child(axe_instance)
+                axe_instance.global_position = player.global_position
+                axe_instance.hitbox_component.damage = base_damage * additional_damage_percent
+            
+            func on_ability_upgrade_added(upgrade: AbilityUpgrade, current_upgrades: Dictionary):
+                if upgrade.id == "axe_damage":
+                    additional_damage_percent = 1 + (current_upgrades["axe_damage"]["quantity"] * .1)
+            </code></pre>
+            
+            <pre id="basicEnemy" class="code-snippet"><code>
+            // BasicEnemy.gd - Handles basic enemy movement and behavior
+            extends CharacterBody2D
+            
+            @onready var visuals = $Visuals
+            @onready var velocity_component = $VelocityComponent
+            
+            func _ready():
+                $HurtboxComponent.hit.connect(on_hit)
+            
+            func _process(delta):
+                velocity_component.accelerate_to_player()
+                velocity_component.move(self)
+                
+                var move_sign = sign(velocity.x)
+                if move_sign != 0:
+                    visuals.scale = Vector2(-move_sign, 1)
+            
+            func on_hit():
+                $HitRandomAudioPlayerComponent.play_random()
+            </code></pre>
+            
+            <pre id="batEnemy" class="code-snippet"><code>
+            // BatEnemy.gd - Handles bat enemy movement and interactions
+            extends CharacterBody2D
+            
+            @onready var velocity_component = $VelocityComponent
+            @onready var visuals = $Visuals
+            
+            func _ready():
+                $HurtboxComponent.hit.connect(on_hit)
+            
+            func _process(delta):
+                velocity_component.accelerate_to_player()
+                velocity_component.move(self)
+            
+                var move_sign = sign(velocity.x)
+                if move_sign != 0:
+                    visuals.scale = Vector2(move_sign, 1)
+            
+            func on_hit():
+                $HitRandomAudioPlayerComponent.play_random()
+            </code></pre>
+        <pre id="deathComponent" class="code-snippet"><code>
+            // DeathComponent.gd - Handles enemy death animation and sound effects
+            extends Node2D
+            
+            @export var health_component: Node
+            @export var sprite: Sprite2D
+            
+            func _ready():
+                $GPUParticles2D.texture = sprite.texture
+                health_component.died.connect(on_died)
+            
+            func on_died():
+                if owner == null or not owner is Node2D:
+                    return
+            
+                var spawn_position = owner.global_position
+            
+                var entities = get_tree().get_first_node_in_group("entities_layer")
+                get_parent().remove_child(self)
+                entities.add_child(self)
+            
+                global_position = spawn_position
+                $AnimationPlayer.play("default")
+                $HitRandomAudioPlayerComponent.play_random()
+            </code></pre>
+            
+            <pre id="endScreen" class="code-snippet"><code>
+            // EndScreen.gd - Manages victory and defeat screens
+            extends CanvasLayer
+            
+            @onready var panel_container = $%PanelContainer
+            
+            func _ready():
+                panel_container.pivot_offset = panel_container.size / 2
+                var tween = create_tween()
+                tween.tween_property(panel_container, "scale", Vector2.ZERO, 0)
+                tween.tween_property(panel_container, "scale", Vector2.ONE, .3)
+                    .set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+            
+                get_tree().paused = true
+                $%ContinueButton.pressed.connect(on_continue_button_pressed)
+                $%QuitButton.pressed.connect(on_quit_button_pressed)
+            
+            func set_defeat():
+                $%TitleLabel.text = "Defeat"
+                $%DescriptionLabel.text = "You lost!"
+                play_jingle(true)
+            
+            func play_jingle(defeat: bool = false):
+                if defeat:
+                    $DefeatStreamPlayer.play()
+                else:
+                    $VictoryStreamPlayer.play()
+            
+            func on_continue_button_pressed():
+                ScreenTransition.transition()
+                await ScreenTransition.transitioned_halfway
+                get_tree().paused = false
+                get_tree().change_scene_to_file("res://scenes/ui/meta_menu.tscn")
+            
+            func on_quit_button_pressed():
+                if get_tree() and get_tree().root:
+                    print("Transitioning to main menu")
+                    get_tree().paused = false  
+                    await get_tree().create_timer(0.1).timeout  
+                    ScreenTransition.transition_to_scene("res://scenes/ui/main_menu.tscn")
+                else:
+                    print("get_tree() error")
+            </code></pre>
+            
+            <pre id="experienceBar" class="code-snippet"><code>
+            // ExperienceBar.gd - Displays the player's XP progress
+            extends CanvasLayer
+            
+            @export var experience_manager: Node
+            @onready var progress_bar = $MarginContainer/ProgressBar
+            
+            func _ready():
+                progress_bar.value = 0
+                if experience_manager:
+                    experience_manager.experience_updated.connect(on_experience_updated)
+            
+            func on_experience_updated(current_experience: float, target_experience: float):
+                var percent = current_experience / target_experience
+                progress_bar.value = percent
+            </code></pre>
+            
+            <pre id="experienceVial" class="code-snippet"><code>
+            // ExperienceVial.gd - Handles collectible XP items
+            extends Node2D
+            
+            @onready var collision_shape_2d = $Area2D/CollisionShape2D
+            @onready var sprite = $Sprite2D
+            
+            func _ready():
+                $Area2D.area_entered.connect(on_area_entered)
+            
+            func tween_collect(percent: float, start_position: Vector2):
+                var player = get_tree().get_first_node_in_group("player")
+                if player == null:
+                    return
+            
+                global_position = start_position.lerp(player.global_position, percent)
+                var direction_from_start = player.global_position - start_position
+            
+                var target_rotation = direction_from_start.angle() + deg_to_rad(90)
+                rotation = lerp_angle(rotation, target_rotation, 1 - exp(-2 * get_process_delta_time()))
+            
+            func collect():
+                GameEvents.emit_experience_vial_collected(1)
+                queue_free()
+            
+            func disable_collision():
+                collision_shape_2d.disabled = true
+            
+            func on_area_entered(other_area: Area2D):
+                Callable(disable_collision).call_deferred()
+                
+                var tween = create_tween()
+                tween.set_parallel()
+                tween.tween_method(tween_collect.bind(global_position), 0.0, 1.0, .5)
+                    .set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BACK)
+                tween.tween_property(sprite, "scale", Vector2.ZERO, .05).set_delay(.45)
+                tween.chain()
+                tween.tween_callback(collect)
+            
+                $RandomStreamPlayer2DComponent.play_random()
+            </code></pre>
+            
+            <pre id="floatingText" class="code-snippet"><code>
+            // FloatingText.gd - Displays damage or XP text
+            extends Node2D
+            
+            func _ready():
+                pass
+            
+            func start(text: String):
+                $Label.text = text
+            
+                scale = Vector2.ZERO
+            
+                var tween = create_tween()
+                tween.set_parallel()
+            
+                tween.tween_property(self, "global_position", global_position + (Vector2.UP * 16), .3)
+                    .set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+                tween.chain()
+            
+                tween.tween_property(self, "global_position", global_position + (Vector2.UP * 48), .5)
+                    .set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
+                tween.tween_property(self, "scale", Vector2.ZERO, .5)
+                    .set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
+                tween.chain()
+            
+                tween.tween_callback(queue_free)
+            
+                var scale_tween = create_tween()
+                scale_tween.tween_property(self, "scale", Vector2.ONE * 1.5, .15)
+                    .set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
+                scale_tween.tween_property(self, "scale", Vector2.ONE, .15)
+                    .set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
+            </code></pre>
+        <pre id="gameCamera" class="code-snippet"><code>
+            // GameCamera.gd - Controls camera movement and tracking
+            extends Camera2D
+            
+            var target_position = Vector2.ZERO
+            
+            func _ready():
+                make_current()
+            
+            func _process(delta):
+                acquire_target()
+                global_position = global_position.lerp(target_position, 1.0 - exp(-delta * 20))
+            
+            func acquire_target():
+                var player_nodes = get_tree().get_nodes_in_group("player")
+                if player_nodes.size() > 0:
+                    var player = player_nodes[0] as Node2D
+                    target_position = player.global_position
+            </code></pre>
+            
+            <pre id="hitFlashComponent" class="code-snippet"><code>
+            // HitFlashComponent.gd - Handles flashing effect when damaged
+            extends Node
+            
+            @export var health_component: Node
+            @export var sprite: Sprite2D
+            @export var hit_flash_material: ShaderMaterial
+            
+            var hit_flash_tween: Tween
+            
+            func _ready():
+                health_component.health_decreased.connect(on_health_decreased)
+                sprite.material = hit_flash_material
+            
+            func on_health_decreased():
+                if hit_flash_tween != null && hit_flash_tween.is_valid():
+                    hit_flash_tween.kill()
+                    
+                (sprite.material as ShaderMaterial).set_shader_parameter("lerp_percent", 1.0)
+                hit_flash_tween = create_tween()
+                hit_flash_tween.tween_property(sprite.material, "shader_parameter/lerp_percent", 0.0, .25)
+                    .set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
+            </code></pre>
+            
+            <pre id="hurtboxComponent" class="code-snippet"><code>
+            // HurtboxComponent.gd - Handles damage reception
+            extends Area2D
+            class_name HurtboxComponent
+            
+            signal hit
+            
+            @export var health_component: Node
+            
+            var floating_text_scene = preload("res://scenes/ui/floating_text.tscn")
+            
+            func _ready():
+                area_entered.connect(on_area_entered)
+            
+            func on_area_entered(other_area: Area2D):
+                if not other_area is HitboxComponent:
+                    return
+                
+                if health_component == null:
+                    return
+            
+                var hitbox_component = other_area as HitboxComponent
+                health_component.damage(hitbox_component.damage)
+            
+                var floating_text = floating_text_scene.instantiate() as Node2D
+                get_tree().get_first_node_in_group("foreground_layer").add_child(floating_text)
+            
+                floating_text.global_position = global_position + (Vector2.UP * 16)
+            
+                var format_string = "%0.1f"
+                if round(hitbox_component.damage) == hitbox_component.damage:
+                    format_string = "%0.0f"
+                floating_text.start(format_string % hitbox_component.damage)
+            
+                hit.emit(hitbox_component.damage)
+            </code></pre>
+            
+            <pre id="main" class="code-snippet"><code>
+            // Main.gd - Core game logic and event handling
+            extends Node
+            
+            @export var end_screen_scene: PackedScene
+            
+            var pause_menu_scene = preload("res://scenes/ui/pause_menu.tscn")
+            
+            func _ready():
+                call_deferred("setup_game")
+            
+            func setup_game():
+                print("Main.gd: Current selected level:", GlobalState.selected_level)
+            
+                var time_manager = get_node_or_null("%ArenaTimeManager")
+                if time_manager:
+                    time_manager.set_timer_for_level()
+                else:
+                    print("Warning: ArenaTimeManager not found!")
+            
+                connect_player_signals()
+            
+            func connect_player_signals():
+                var player = get_node_or_null("%Player")
+                if player and player.health_component:
+                    print("Main.gd: Player found, connecting health component")
+                    player.health_component.died.connect(on_player_died)
+                    print("Main.gd: Connected 'died' signal to on_player_died")
+                else:
+                    print("Error: Player or health_component is null")
+            
+            func _unhandled_input(event):
+                if event.is_action_pressed("pause"):
+                    add_child(pause_menu_scene.instantiate())
+                    get_tree().root.set_input_as_handled()
+            
+            func on_player_died():
+                var end_screen_instance = end_screen_scene.instantiate()
+                add_child(end_screen_instance)
+                end_screen_instance.set_defeat()
+                MetaProgression.save()
+            </code></pre>
+            
+            <pre id="mainMenu" class="code-snippet"><code>
+            // MainMenu.gd - Manages main menu interactions
+            extends CanvasLayer
+            
+            var options_scene = preload("res://scenes/ui/options_menu.tscn")
+            
+            func _ready():
+                connect_button("%PlayButtonPlains", on_play_plains)
+                connect_button("%PlayButtonArena", on_play_arena)
+                connect_button("%PlayButtonDungeon", on_play_dungeon)
+                connect_button("%PlayButton", on_play_pressed)
+                connect_button("%UpgradesButton", on_upgrades_pressed)
+                connect_button("%OptionsButton", on_options_pressed)
+                connect_button("%QuitButton", on_quit_pressed)
+                connect_button("%BackButton", on_back_button_pressed)
+            
+            func connect_button(node_path: String, callback: Callable):
+                var button = get_node_or_null(node_path)
+                if button:
+                    button.pressed.connect(callback)
+                else:
+                    print("Warning: Button not found ", node_path)
+            
+            func on_play_pressed():
+                transition_to_scene("res://scenes/main/level_selector.tscn")
+            
+            func on_upgrades_pressed():
+                transition_to_scene("res://scenes/ui/meta_menu.tscn")
+            
+            func on_options_pressed():
+                transition_to_scene_with_instance(options_scene, on_options_closed)
+            
+            func on_quit_pressed():
+                get_tree().quit()
+            </code></pre>
+            
+            <pre id="metaMenu" class="code-snippet"><code>
+            // MetaMenu.gd - Displays upgrade options in the meta progression system
+            extends CanvasLayer
+            
+            @export var upgrades: Array[MetaUpgrade] = []
+            
+            @onready var grid_container = $%GridContainer
+            @onready var back_button = $%BackButton
+            
+            var meta_upgrade_card_scene = preload("res://scenes/ui/meta_upgrade_card.tscn")
+            
+            func _ready():
+                back_button.pressed.connect(on_back_pressed)
+                for child in grid_container.get_children():
+                    child.queue_free()
+            
+                for upgrade in upgrades:
+                    var meta_upgrade_card_instance = meta_upgrade_card_scene.instantiate()
+                    grid_container.add_child(meta_upgrade_card_instance)
+                    meta_upgrade_card_instance.set_meta_upgrade(upgrade)
+            
+            func on_back_pressed():
+                ScreenTransition.transition_to_scene("res://scenes/main/level_selector.tscn")
+            </code></pre>
+            
+            <pre id="metaUpgrade" class="code-snippet"><code>
+            // MetaUpgrade.gd - Defines attributes of permanent upgrades
+            extends Resource
+            class_name MetaUpgrade
+            
+            @export var id: String
+            @export var max_quantity: int = 1
+            @export var experience_cost: int = 10
+            @export var title: String
+            @export_multiline var description: String
+            </code></pre>
+            
+            <pre id="metaUpgradeCard" class="code-snippet"><code>
+            // MetaUpgradeCard.gd - Displays and interacts with meta upgrades
+            extends PanelContainer
+            
+            @onready var name_label: Label = $%NameLabel
+            @onready var description_label: Label = $%DescriptionLabel
+            @onready var progress_bar = $%ProgressBar
+            @onready var purchase_button = $%PurchaseButton
+            @onready var progress_label = %ProgressLabel
+            @onready var count_label = $%CountLabel
+            
+            var upgrade: MetaUpgrade
+            
+            func _ready():
+                purchase_button.pressed.connect(on_purchase_pressed)
+            
+            func set_meta_upgrade(upgrade: MetaUpgrade):
+                self.upgrade = upgrade
+                name_label.text = upgrade.title
+                description_label.text = upgrade.description
+                update_progress()
+            </code></pre>
+            
+            <pre id="musicPlayer" class="code-snippet"><code>
+            // MusicPlayer.gd - Handles background music playback
+            extends AudioStreamPlayer
+            
+            func _ready():
+                finished.connect(on_finished)
+                $Timer.timeout.connect(on_timer_timeout)
+            
+            func on_finished():
+                $Timer.start()
+            
+            func on_timer_timeout():
+                play()
+            </code></pre> 
+            <pre id="optionsMenu" class="code-snippet"><code>
+                // OptionsMenu.gd - Handles in-game settings like audio and display
+                extends CanvasLayer
+                
+                signal back_pressed
+                
+                @onready var window_button: Button = $%WindowButton
+                @onready var sfx_slider = %SfxSlider
+                @onready var music_slider = %MusicSlider
+                @onready var back_button = $%BackButton
+                
+                func _ready():
+                    back_button.pressed.connect(on_back_pressed)
+                    window_button.pressed.connect(on_window_button_pressed)
+                    sfx_slider.value_changed.connect(on_audio_slider_changed.bind("sfx"))
+                    music_slider.value_changed.connect(on_audio_slider_changed.bind("music"))
+                    update_display()
+                
+                func update_display():
+                    window_button.text = "Windowed"
+                    if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+                        window_button.text = "Fullscreen"
+                    sfx_slider.value = get_bus_volume_percent("sfx")
+                    music_slider.value = get_bus_volume_percent("music")
+                
+                func get_bus_volume_percent(bus_name: String):
+                    var bus_index = AudioServer.get_bus_index(bus_name)
+                    var volume_db = AudioServer.get_bus_volume_db(bus_index)
+                    return db_to_linear(volume_db)
+                
+                func set_bus_volume_percent(bus_name: String, percent: float):
+                    var bus_index = AudioServer.get_bus_index(bus_name)
+                    var volume_db = linear_to_db(percent)
+                    AudioServer.set_bus_volume_db(bus_index, volume_db)
+                
+                func on_window_button_pressed():
+                    var mode = DisplayServer.window_get_mode()
+                    if mode != DisplayServer.WINDOW_MODE_FULLSCREEN:
+                        DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+                    else:
+                        DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+                    update_display()
+                
+                func on_audio_slider_changed(value: float, bus_name: String):
+                    set_bus_volume_percent(bus_name, value)
+                
+                func on_back_pressed():
+                    ScreenTransition.transition()
+                    await ScreenTransition.transitioned_halfway
+                    back_pressed.emit()
+                </code></pre>
+                
+                <pre id="pauseMenu" class="code-snippet"><code>
+                // PauseMenu.gd - Handles pause menu functionality
+                extends CanvasLayer
+                
+                @onready var panel_container = %PanelContainer
+                
+                var options_menu_scene = preload("res://scenes/ui/options_menu.tscn")
+                var is_closing
+                
+                func _ready():
+                    get_tree().paused = true
+                    panel_container.pivot_offset = panel_container.size / 2
+                
+                    $%ResumeButton.pressed.connect(on_resume_pressed)
+                    $%OptionsButton.pressed.connect(on_options_pressed)
+                    $%QuitButton.pressed.connect(on_quit_pressed)
+                
+                    $AnimationPlayer.play("default")
+                    var tween = create_tween()
+                    tween.tween_property(panel_container, "scale", Vector2.ZERO, 0)
+                    tween.tween_property(panel_container, "scale", Vector2.ONE, .3)
+                        .set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+                
+                func _unhandled_input(event):
+                    if event.is_action_pressed("pause"):
+                        close()
+                        get_tree().root.set_input_as_handled()
+                
+                func close():
+                    if is_closing:
+                        return
+                
+                    is_closing = true
+                    $AnimationPlayer.play_backwards("default")
+                
+                    var tween = create_tween()
+                    tween.tween_property(panel_container, "scale", Vector2.ONE, 0)
+                    tween.tween_property(panel_container, "scale", Vector2.ZERO, .3)
+                        .set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BACK)
+                
+                    await tween.finished
+                    get_tree().paused = false
+                    queue_free()
+                
+                func on_resume_pressed():
+                    close()
+                
+                func on_options_pressed():
+                    ScreenTransition.transition()
+                    await ScreenTransition.transitioned_halfway
+                    var options_menu_instance = options_menu_scene.instantiate()
+                    add_child(options_menu_instance)
+                    options_menu_instance.back_pressed.connect(on_options_back_pressed.bind(options_menu_instance))
+                
+                func on_quit_pressed():
+                    get_tree().paused = false
+                    get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
+                
+                func on_options_back_pressed(options_menu: Node):
+                    options_menu.queue_free()
+                </code></pre>
+                
+                <pre id="randomStreamPlayer" class="code-snippet"><code>
+                // RandomStreamPlayer.gd - Plays randomized audio clips
+                extends AudioStreamPlayer
+                
+                @export var streams: Array[AudioStream]
+                @export var randomize_pitch = true
+                @export var min_pitch = .9
+                @export var max_pitch = 1.1
+                
+                func play_random():
+                    if streams.is_empty():
+                        return
+                
+                    if randomize_pitch:
+                        pitch_scale = randf_range(min_pitch, max_pitch)
+                    else:
+                        pitch_scale = 1
+                
+                    stream = streams.pick_random()
+                    play()
+                </code></pre>
+                
+                <pre id="randomStreamPlayer2D" class="code-snippet"><code>
+                // RandomStreamPlayer2D.gd - Plays randomized audio clips in 2D space
+                extends AudioStreamPlayer2D
+                
+                @export var streams: Array[AudioStream]
+                @export var randomize_pitch = true
+                @export var min_pitch = .9
+                @export var max_pitch = 1.1
+                
+                func play_random():
+                    if streams.is_empty():
+                        return
+                
+                    if randomize_pitch:
+                        pitch_scale = randf_range(min_pitch, max_pitch)
+                    else:
+                        pitch_scale = 1
+                
+                    stream = streams.pick_random()
+                    play()
+                </code></pre>
+                
+                <pre id="swordAbilityController" class="code-snippet"><code>
+                // SwordAbilityController.gd - Manages sword attack frequency and targeting
+                extends Node
+                
+                const MAX_RANGE = 150
+                
+                @export var sword_ability: PackedScene
+                
+                var base_damage = 5
+                var additional_damage_percent = 1
+                var base_wait_time
+                
+                func _ready():
+                    base_wait_time = $Timer.wait_time
+                    $Timer.timeout.connect(on_timer_timeout)
+                    GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
+                
+                func on_timer_timeout():
+                    var player = get_tree().get_first_node_in_group("player") as Node2D
+                    if player == null:
+                        return
+                
+                    var enemies = get_tree().get_nodes_in_group("enemy")
+                    enemies = enemies.filter(func(enemy: Node2D):
+                        return enemy.global_position.distance_squared_to(player.global_position) < pow(MAX_RANGE, 2)
+                    )
+                
+                    if enemies.size() == 0:
+                        return
+                
+                    enemies.sort_custom(func(a: Node2D, b: Node2D):
+                        var a_distance = a.global_position.distance_squared_to(player.global_position)
+                        var b_distance = b.global_position.distance_squared_to(player.global_position)
+                        return a_distance < b_distance
+                    )
+                
+                    var sword_instance = sword_ability.instantiate() as Node2D
+                    var foreground_layer = get_tree().get_first_node_in_group("foreground_layer")
+                    foreground_layer.add_child(sword_instance)
+                    sword_instance.hitbox_component.damage = base_damage * additional_damage_percent
+                
+                    sword_instance.global_position = enemies[0].global_position
+                    sword_instance.global_position += Vector2.RIGHT.rotated(randf_range(0, TAU)) * 4
+                
+                    var enemy_direction = enemies[0].global_position - sword_instance.global_position
+                    sword_instance.rotation = enemy_direction.angle()
+                </code></pre>
+                
+                <pre id="upgradeScreen" class="code-snippet"><code>
+                // UpgradeScreen.gd - Displays upgrade choices on level-up
+                extends CanvasLayer
+                
+                signal upgrade_selected(upgrade: AbilityUpgrade)
+                
+                @export var upgrade_card_scene: PackedScene
+                
+                @onready var card_container: HBoxContainer = $%CardContainer
+                
+                func _ready():
+                    get_tree().paused = true
+                
+                func set_ability_upgrades(upgrades: Array[AbilityUpgrade]):
+                    var delay = 0
+                    for upgrade in upgrades:
+                        var card_instance = upgrade_card_scene.instantiate()
+                        card_container.add_child(card_instance)
+                        card_instance.set_ability_upgrade(upgrade)
+                        card_instance.play_in(delay)
+                        card_instance.selected.connect(on_upgrade_selected.bind(upgrade))
+                        delay += .2
+                
+                func on_upgrade_selected(upgrade: AbilityUpgrade):
+                    upgrade_selected.emit(upgrade)
+                    $AnimationPlayer.play("out")
+                    await $AnimationPlayer.animation_finished
+                    get_tree().paused = false
+                    queue_free()
+                </code></pre>
+                
+                <pre id="weightedTable" class="code-snippet"><code>
+                // WeightedTable.gd - Handles weighted random selection for upgrades/enemies
+                class_name WeightedTable
+                
+                var items: Array[Dictionary] = []
+                var weight_sum = 0
+                
+                func add_item(item, weight: int):
+                    items.append({ "item": item, "weight": weight })
+                    weight_sum += weight
+                
+                func remove_item(item_to_remove):
+                    items = items.filter(func (item): return item["item"] != item_to_remove)
+                    weight_sum = 0
+                    for item in items:
+                        weight_sum += item["weight"]
+                
+                func pick_item(exclude: Array = []):
+                    var chosen_weight = randi_range(1, weight_sum)
+                    var iteration_sum = 0
+                    for item in items:
+                        iteration_sum += item["weight"]
+                        if chosen_weight <= iteration_sum:
+                            return item["item"]
+                </code></pre>                
                 </div>
+
+                <button id="toggleCodeButtons" class="view-all-button" style="display: none;">View All</button>
+                
             </section>            
         </section>
-
 
 
 

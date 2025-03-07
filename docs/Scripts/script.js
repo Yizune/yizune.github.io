@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 setTimeout(() => {
                     window.location.href = href;
-                }, 100); 
+                }, 100);
             });
         }
     });
@@ -66,7 +66,45 @@ document.addEventListener("DOMContentLoaded", function () {
         body.classList.remove("lightmode");
         modeIcon.src = "Images/LightMode.svg";
     }
+
+    const toggleButton = document.getElementById("toggleCodeButtons");
+    const codeButtons = document.querySelectorAll(".code-toggle");
+    const MAX_VISIBLE = 5;
+    let expanded = false;
+
+    if (codeButtons.length > MAX_VISIBLE) {
+        for (let i = MAX_VISIBLE; i < codeButtons.length; i++) {
+            codeButtons[i].style.display = "none";
+        }
+        toggleButton.style.display = "flex"; 
+    }
+
+    // Create SVG arrow icon separately - didn't work in html?!
+    const arrowIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    arrowIcon.setAttribute("width", "24");
+    arrowIcon.setAttribute("height", "24");
+    arrowIcon.setAttribute("viewBox", "0 0 24 24");
+    arrowIcon.innerHTML = `<path d="M5 9l7 7 7-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+
+    toggleButton.appendChild(arrowIcon);
+
+    toggleButton.addEventListener("click", function () {
+        expanded = !expanded;
+
+        if (expanded) {
+            codeButtons.forEach(button => button.style.display = "block");
+            toggleButton.firstChild.textContent = "View Less ";
+            arrowIcon.style.transform = "rotate(180deg)";
+        } else {
+            for (let i = MAX_VISIBLE; i < codeButtons.length; i++) {
+                codeButtons[i].style.display = "none";
+            }
+            toggleButton.firstChild.textContent = "View All ";
+            arrowIcon.style.transform = "rotate(0deg)";
+        }
+    });
 });
+
 
 function toggleMode() {
     const body = document.getElementById("body");

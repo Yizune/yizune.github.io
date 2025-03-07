@@ -338,6 +338,36 @@ body::before {
   background: #3B82F6;
   color: white;
 }
+.project-description .project-code .view-all-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 180px;
+  padding: 14px 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+  background: #3B82F6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 40px;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.project-description .project-code .view-all-button:hover {
+  background: #1E50C3;
+}
+.project-description .project-code .view-all-button .arrow-icon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+.project-description .project-code .view-all-button.expanded .arrow-icon {
+  transform: rotate(180deg);
+}
 .project-description .project-code .code-container {
   text-align: left;
   width: 100%;
@@ -595,26 +625,29 @@ html, body {
 .lightmode .project-description h2, .lightmode .project-description h3 {
   color: #1E88A8;
 }
-.lightmode .project-description .download-button {
+.lightmode .project-description .download-button, .lightmode .project-description .view-all-button {
   background: #1E88A8;
 }
-.lightmode .project-description .download-button:hover {
+.lightmode .project-description .download-button:hover, .lightmode .project-description .view-all-button:hover {
   background: #16657d;
 }
 .lightmode .project-description .project-code p {
   color: #1E201E;
 }
-.lightmode .project-description .project-code .code-toggle {
+.lightmode .project-description .project-code .code-buttons .code-toggle {
   color: #1E88A8;
   border-color: #1E88A8;
 }
-.lightmode .project-description .project-code .code-toggle:hover, .lightmode .project-description .project-code .code-toggle.active {
+.lightmode .project-description .project-code .code-buttons .code-toggle:hover, .lightmode .project-description .project-code .code-buttons .code-toggle.active {
   background: #1E88A8;
   color: #FFFFFF;
 }
+.lightmode .project-description .project-code .code-container {
+  border-left: 4px solid #1E88A8;
+}
 .lightmode .project-description .project-code .code-snippet {
-  background: rgba(0, 0, 0, 0.05);
-  color: #1E201E;
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #1E201E !important;
 }
 .lightmode .project-info .info-box {
   background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgb(200, 210, 215) 100%);

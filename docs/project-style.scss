@@ -354,7 +354,7 @@ body {
         margin-top: 20px;
     }
     
-    .download-button {
+    .download-button{
         display: inline-block;
         background: #3B82F6; 
         color: white;
@@ -365,10 +365,10 @@ body {
         text-decoration: none;
         transition: background 0.3s ease-in-out;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    }
-    
-    .download-button:hover {
-        background: #1E50C3;
+
+        &:hover{
+            background: #1E50C3;
+        }
     }
 
     // Code Section Adjustments
@@ -413,6 +413,41 @@ body {
                 }
             }
         }
+
+        .view-all-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 180px; 
+            padding: 14px 0;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-align: center;
+            background: #3B82F6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 40px;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        
+            &:hover {
+                background: #1E50C3; 
+            }
+
+            .arrow-icon {
+                width: 18px;
+                height: 18px;
+                transition: transform 0.3s ease;
+            }
+        
+            &.expanded .arrow-icon {
+                transform: rotate(180deg);
+            }
+        }
+        
 
         .code-container {
             text-align: left;
@@ -725,7 +760,7 @@ html, body {
             color: $light-accent;
         }
 
-        .download-button {
+        .download-button, .view-all-button {
             background: $light-accent;
 
             &:hover {
@@ -733,24 +768,32 @@ html, body {
             }
         }
 
+
         .project-code {
             p {
                 color: $light-text;
             }
-            .code-toggle {
-                color: $light-accent;
-                border-color: $light-accent;
-
-                &:hover, &.active {
-                    background: $light-accent;
-                    color: $light-primary;
+            .code-buttons {
+                .code-toggle {
+                    color: $light-accent;
+                    border-color: $light-accent;
+    
+                    &:hover, &.active {
+                        background: $light-accent;
+                        color: $light-primary;
+                    }
                 }
             }
 
-            .code-snippet {
-                background: rgba(0, 0, 0, 0.05);
-                color: $light-text;
+            .code-container {
+                border-left: 4px solid $light-accent;
             }
+
+            .code-snippet{
+                background: rgba(0, 0, 0, 0.05) !important;
+                color: $light-text !important;
+            }
+
         }
     }
 
