@@ -1053,6 +1053,10 @@ $light-link-hover: #125E75;
 
 
 @media (min-width: 769px) {
+    body {
+        position: fixed;
+    }
+    
     .menu {
         position: static;
         width: auto;
