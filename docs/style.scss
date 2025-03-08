@@ -1056,7 +1056,7 @@ $light-link-hover: #125E75;
     body {
         position: fixed;
     }
-    
+
     .menu {
         position: static;
         width: auto;
@@ -1326,6 +1326,11 @@ $light-link-hover: #125E75;
 }
 
 
+
+@media (min-width: 320px){
+    //soon
+    // if not 320 go @media (min-width: 360px)
+}
 
 // @media (max-width: 430px) {
 //     .about-container {
