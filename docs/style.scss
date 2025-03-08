@@ -10,6 +10,58 @@ $something: #243d66;
 
 
 
+
+
+/* Hamburger menu styles */
+
+.menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    height: 100vh;
+    background-color: rgba(30, 41, 59, 0.95);
+    transition: all 0.3s ease-in-out;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#menu-toggle:checked ~ .nav-container .menu {
+    right: 0;
+}
+
+.open-menu, .close-menu {
+    display: block;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 101;
+}
+
+.close-menu {
+    top: 20px;
+    right: 20px;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
 body {
     background-color: $background-light;
     color: $text-light;
@@ -1044,7 +1096,34 @@ $light-link-hover: #125E75;
 
 
 
+
+@media (min-width: 769px) {
+    .menu {
+        position: static;
+        width: auto;
+        height: auto;
+        background: none;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        right: 0;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
+
+    .open-menu, .close-menu {
+        display: none;
+    }
+}
+
+
+
+
 @media (max-width: 768px) {
+
     .projects-grid, .contact-grid {
         grid-template-columns: repeat(1, 1fr) !important; 
     }
@@ -1144,6 +1223,63 @@ $light-link-hover: #125E75;
 
     .icon-btn:hover img {
         filter: brightness(0) invert(1) !important;
+    }
+
+
+
+
+
+
+    
+    // Ham menu
+
+
+    .nav-container {
+        position: relative;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background-color: rgba(30, 41, 59, 0.95); /* Adjust color */
+        transition: all 0.3s ease-in-out;
+        z-index: 100;
+        display: flex;
+    }
+
+    .menu .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .menu a {
+        font-size: 1.5rem;
+    }
+
+    .open-menu, .close-menu {
+        display: block;
+        z-index: 101;
+    }
+
+    #menu-toggle:checked ~ .menu {
+        right: 0;
+    }
+
+    .mode-button {
+        margin-right: 15px; 
+    }
+
+    #mode-icon {
+        margin-right: 15px;
+        width: 35px;
+        height: 35px;
     }
 }
 
