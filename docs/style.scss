@@ -1324,10 +1324,66 @@ $light-link-hover: #125E75;
 
 
 
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2) {
+// @media only screen 
+//   and (min-device-width: 320px) 
+//   and (max-device-width: 480px)
+//   and (-webkit-min-device-pixel-ratio: 2) {
+
+//     .about-section {
+//         .about-content {
+//             p {
+//                 font-size:16px;
+//             }
+//         }
+//     }
+
+//     .about-section {
+//         .about-links {
+//             width: 70% !important;
+
+//             .icon-group{
+//                 width: 90% !important;
+//             }
+//         }
+//     }
+
+
+//     // .icon-group {
+//     //     padding-right: 23px;
+//     // }
+
+//     .site-title {
+//         top: 5px;
+//     }
+
+//     .open-menu,
+//     .close-menu {
+//         top: 20px;
+//     }
+//         //soon
+//     // if not 320 go @media (min-width: 360px)
+// }
+
+
+
+@media (max-width: 480px) {
+    .about-section {
+        .about-content {
+            p {
+                font-size:16px;
+            }
+        }
+    }
+
+    .about-section {
+        .about-links {
+            width: 70% !important;
+
+            // .icon-group{
+            //     width: 85% !important;
+            // }
+        }
+    }
 
     .site-title {
         top: 5px;
@@ -1335,43 +1391,6 @@ $light-link-hover: #125E75;
 
     .open-menu,
     .close-menu {
-        top: 25px;
+        top: 20px;
     }
-        //soon
-    // if not 320 go @media (min-width: 360px)
 }
-
-
-
-// @media (max-width: 430px) {
-//     .about-container {
-//         width: 95% !important;
-//         padding: 15px !important;
-//     }
-
-//     .about-text {
-//         text-align: center !important;
-//     }
-
-//     .profile-pic {
-//         width: 100% !important;
-//         max-width: 250px !important;
-//         margin-bottom: 15px !important;
-//     }
-
-//     .about-content {
-//         max-width: 350px !important;
-//         text-align: center !important;
-//     }
-
-//     .about-links {
-//         flex-direction: column !important;
-//         align-items: center !important;
-//         gap: 10px !important;
-//     }
-
-//     .about-links a {
-//         width: 100% !important;
-//         max-width: 250px !important;
-//     }
-// }

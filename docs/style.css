@@ -1055,12 +1055,18 @@ html, body {
     height: 35px;
   }
 }
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+@media (max-width: 480px) {
+  .about-section .about-content p {
+    font-size: 16px;
+  }
+  .about-section .about-links {
+    width: 70% !important;
+  }
   .site-title {
     top: 5px;
   }
   .open-menu,
   .close-menu {
-    top: 25px;
+    top: 20px;
   }
 }/*# sourceMappingURL=style.css.map */
