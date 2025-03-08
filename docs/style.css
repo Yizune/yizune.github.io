@@ -538,6 +538,15 @@ html, body {
 .lightmode .mode-button:hover img {
   filter: brightness(50%);
 }
+.lightmode .open-menu, .lightmode .close-menu {
+  color: black;
+}
+.lightmode .open-menu:hover {
+  color: #1E88A8;
+}
+.lightmode .menu {
+  background-color: rgb(255, 255, 255);
+}
 .lightmode .welcome .welcome-divider .line {
   background-color: #1E293B;
 }
@@ -579,13 +588,18 @@ html, body {
 .lightmode .about-section .about-links .icon-btn {
   background: #FFFFFF;
   border: 2px solid #1E88A8;
+  transition: all 0.3s ease-in-out;
 }
 .lightmode .about-section .about-links .icon-btn:hover {
   background: #1E88A8;
   border-color: #4dbddf;
 }
 .lightmode .about-section .about-links .icon-btn img {
-  filter: invert(0);
+  filter: invert(1) brightness(20%);
+  transition: filter 0.3s ease;
+}
+.lightmode .about-section .about-links .icon-btn:hover img {
+  filter: brightness(0) invert(1);
 }
 .lightmode .projects h2, .lightmode .projects h4 {
   color: #1E293B;
@@ -846,6 +860,13 @@ html, body {
   }
 }
 @media (max-width: 768px) {
+  .lightmode .menu .nav-links a {
+    color: #1E201E;
+    background: rgba(0, 0, 0, 0.1);
+  }
+  .lightmode .menu .nav-links a:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
   .projects-grid, .contact-grid {
     grid-template-columns: repeat(1, 1fr) !important;
   }
@@ -916,13 +937,10 @@ html, body {
     align-items: center !important;
     justify-content: center !important;
     border-radius: 50% !important;
-    background-color: #1E293B !important;
-    border: 2px solid #3B82F6 !important;
     flex-shrink: 0 !important;
     transition: all 0.3s ease !important;
   }
   .icon-btn:hover {
-    background: #3B82F6 !important;
     border-color: #9dc0fa !important;
   }
   .icon-btn img {

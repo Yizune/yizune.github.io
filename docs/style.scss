@@ -594,14 +594,13 @@ html, body {
 
 
 // Core color palette for light mode
-$light-bg: #F4F4F4; 
+$light-bg: #F4F4F4;
 $light-text: #1E201E;
 $light-primary: #FFFFFF;
 $light-secondary: rgba(#E2E8F0, 0.7);
 $light-accent: #1E88A8;
 $light-link: #1E293B;
 $light-link-hover: #125E75;
-
 
 .lightmode {
     background-color: $light-bg;
@@ -637,28 +636,39 @@ $light-link-hover: #125E75;
         filter: brightness(50%);
     }
 
+    .open-menu, .close-menu {
+        color: black;
+    }
+
+    .open-menu {
+        &:hover {
+            color: $light-accent;
+        }
+    }
+
+    .menu {
+        background-color: rgba(255, 255, 255);
+    }
+
     .welcome {
         .welcome-divider {
             .line {
                 background-color: $light-link;
             }
-    
+
             .sword-icon {
-                filter: none; 
+                filter: none;
             }
         }
+
         h2 {
             color: $light-link;
         }
+
         p {
             color: $light-text;
         }
     }
-
-
-
-
-
 
     .about-section {
         .about-container {
@@ -669,12 +679,12 @@ $light-link-hover: #125E75;
             background: $light-primary;
 
             p {
-                color: darken($light-text, 10%); 
+                color: darken($light-text, 10%);
                 text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
             }
 
             p strong {
-                color: $light-link-hover; 
+                color: $light-link-hover;
             }
         }
 
@@ -698,22 +708,24 @@ $light-link-hover: #125E75;
             .icon-btn {
                 background: $light-primary;
                 border: 2px solid $light-accent;
-
+                transition: all 0.3s ease-in-out;
+    
                 &:hover {
                     background: $light-accent;
                     border-color: lighten($light-accent, 20%);
                 }
-
+    
                 img {
-                    filter: invert(0);
+                    filter: invert(1) brightness(20%); 
+                    transition: filter 0.3s ease;
+                }
+    
+                &:hover img {
+                    filter: brightness(0) invert(1); 
                 }
             }
         }
     }
-
-
-
-
 
     .projects {
         h2, h4 {
@@ -732,39 +744,32 @@ $light-link-hover: #125E75;
             background: $light-primary;
             color: $light-text;
 
-            .project-content{
+            .project-content {
                 background-color: $light-primary;
             }
 
             .main-title h3 {
                 color: $light-accent;
-                transition: color 0.3s ease; 
+                transition: color 0.3s ease;
             }
 
             &:hover .project-content .main-title h3 {
                 color: darken($light-accent, 20%) !important;
             }
 
-            p{
+            p {
                 color: $light-text;
             }
         }
     }
 
-
-
-
-
-
-
     .skills {
-
-        .skills-container{
+        .skills-container {
             background-color: $light-secondary;
         }
 
-        .skills-category{
-            h3{
+        .skills-category {
+            h3 {
                 color: $light-link;
                 border-bottom: 2px solid rgba(0, 0, 0, 0.2);
             }
@@ -779,15 +784,11 @@ $light-link-hover: #125E75;
         }
     }
 
-
-
-
-
     .contact {
-
-        .contact-container{
+        .contact-container {
             background-color: $light-secondary;
-            .contact-item{
+
+            .contact-item {
                 background-color: $light-bg;
                 color: $light-text;
 
@@ -798,7 +799,8 @@ $light-link-hover: #125E75;
                 &:hover {
                     background: $primary-color;
                     color: $text-light;
-                    img{
+
+                    img {
                         filter: invert(1);
                     }
                 }
@@ -817,6 +819,7 @@ $light-link-hover: #125E75;
         padding: 10px 0;
     }
 }
+
 
 
 
@@ -1076,6 +1079,17 @@ $light-link-hover: #125E75;
 
 @media (max-width: 768px) {
 
+    .lightmode {
+        .menu .nav-links a {
+            color: $light-text;
+            background: rgba(0, 0, 0, 0.1);
+    
+            &:hover {
+                background: rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
+
     .projects-grid, .contact-grid {
         grid-template-columns: repeat(1, 1fr) !important; 
     }
@@ -1155,14 +1169,14 @@ $light-link-hover: #125E75;
         align-items: center !important;
         justify-content: center !important;
         border-radius: 50% !important;
-        background-color: $primary-color !important;
-        border: 2px solid $accent-color !important;
+        // background-color: $primary-color !important;
+        // border: 2px solid $accent-color !important;
         flex-shrink: 0 !important;
         transition: all 0.3s ease !important;
     }
 
     .icon-btn:hover {
-        background: $accent-color !important;
+        //background: $accent-color !important;
         border-color: lighten($accent-color, 20%) !important;
     }
 
