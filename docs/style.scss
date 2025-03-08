@@ -1324,10 +1324,24 @@ $light-link-hover: #125E75;
 
 
 
-@media (min-width: 320px){
-    //soon
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+    .site-title {
+        top: 5px;
+    }
+
+    .open-menu,
+    .close-menu {
+        top: 25px;
+    }
+        //soon
     // if not 320 go @media (min-width: 360px)
 }
+
+
 
 // @media (max-width: 430px) {
 //     .about-container {

@@ -1054,4 +1054,13 @@ html, body {
     width: 35px;
     height: 35px;
   }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  .site-title {
+    top: 5px;
+  }
+  .open-menu,
+  .close-menu {
+    top: 25px;
+  }
 }/*# sourceMappingURL=style.css.map */
