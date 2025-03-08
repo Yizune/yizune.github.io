@@ -1375,18 +1375,36 @@ $light-link-hover: #125E75;
         }
     }
 
-    .about-section {
-        .about-links {
-            width: 70% !important;
+    // THIS ENTIRE THING DOES NOT WORK?!
+    // .projects .project-card .project-content .main-title h3 {
+    //     font-size: 16px !important;
+    // }
 
-            // .icon-group{
-            //     width: 85% !important;
-            // }
-        }
-    }
+    // .projects .project-card .project-content .main-title p {
+    //     font-size: 8px !important;
+    // }
+
+    // .projects .project-card .project-content p {
+    //     font-size: 6px !important;
+    //     border: 5px solid red !important;
+    // }
+
+    // .about-section .about-links {
+    //     width: 100% !important;
+    // }
+
+    // .about-section .about-links .icon-group {
+    //     width: 100% !important;
+    //     display: flex !important;
+    //     justify-content: center !important;
+    // }
+
+    // .contact .contact-item {
+    //     font-size: 1rem !important;
+    // }
 
     .site-title {
-        top: 5px;
+        top: 10px;
     }
 
     .open-menu,

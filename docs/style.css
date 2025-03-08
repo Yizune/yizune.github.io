@@ -1059,11 +1059,8 @@ html, body {
   .about-section .about-content p {
     font-size: 16px;
   }
-  .about-section .about-links {
-    width: 70% !important;
-  }
   .site-title {
-    top: 5px;
+    top: 10px;
   }
   .open-menu,
   .close-menu {
