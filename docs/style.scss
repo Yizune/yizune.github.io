@@ -1309,92 +1309,35 @@ $light-link-hover: #125E75;
 
 
 
-@media (max-width: 430px) {
-    .about-container {
-        width: 95% !important;
-        padding: 15px !important;
-    }
-
-    .about-text {
-        text-align: center !important;
-    }
-
-    .profile-pic {
-        width: 100% !important;
-        max-width: 250px !important;
-        margin-bottom: 15px !important;
-    }
-
-    .about-content {
-        max-width: 350px !important;
-        text-align: center !important;
-    }
-
-    .about-links {
-        flex-direction: column !important;
-        align-items: center !important;
-        gap: 10px !important;
-    }
-
-    .about-links a {
-        width: 100% !important;
-        max-width: 250px !important;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-// @media (max-width: 768px) {
+// @media (max-width: 430px) {
 //     .about-container {
-//         width: 90% !important; /* Reduce the width so it's not full screen */
-//         max-width: 600px !important; /* Prevent it from becoming too wide */
-//         padding: 20px !important; /* Add padding for spacing */
-//         margin-top: 20px !important; /* Give space from the top */
+//         width: 95% !important;
+//         padding: 15px !important;
 //     }
 
 //     .about-text {
-//         display: flex !important;
-//         flex-direction: column !important;
-//         align-items: center !important;
-//         justify-content: center !important;
-//         width: 100% !important;
 //         text-align: center !important;
 //     }
 
 //     .profile-pic {
-//         width: 80% !important;  
-//         max-width: 280px !important;  
-//         margin-right: 0 !important; /* Remove previous spacing */
-//         margin-bottom: 20px !important;
-//         align-self: center !important;  
+//         width: 100% !important;
+//         max-width: 250px !important;
+//         margin-bottom: 15px !important;
 //     }
 
 //     .about-content {
-//         width: 100% !important;
-//         max-width: 600px !important;
+//         max-width: 350px !important;
 //         text-align: center !important;
-//         margin-top: 20px !important;
-//         order: 2 !important; /* Ensures text comes after image */
 //     }
 
 //     .about-links {
-//         display: flex !important;
 //         flex-direction: column !important;
 //         align-items: center !important;
-//         justify-content: center !important;
+//         gap: 10px !important;
+//     }
+
+//     .about-links a {
 //         width: 100% !important;
-//         gap: 15px !important;
-//         margin-top: 20px !important;
-//         order: 3 !important; /* Ensures buttons come last */
+//         max-width: 250px !important;
 //     }
 // }
-
