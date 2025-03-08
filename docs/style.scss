@@ -1201,34 +1201,34 @@ $light-link-hover: #125E75;
         z-index: 110;
         display: flex;
         flex-direction: column;
-        align-items: stretch; // Ensure everything aligns to the full width
-        padding-top: 75px; // Move the items upwards
-        box-sizing: border-box; // Prevents width overflow
+        align-items: stretch; 
+        padding-top: 75px; 
+        box-sizing: border-box; 
         overflow: hidden;
     }
     
     .menu .nav-links {
         display: flex;
         flex-direction: column;
-        gap: 10px; // Reduce gap for better separation
-        width: 100%; // Full width of menu
+        gap: 10px; 
+        width: 100%; 
     }
     
     .menu .nav-links a {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         font-weight: bold;
         color: $text-light;
         text-decoration: none;
-        background: rgba(255, 255, 255, 0.1); // Semi-transparent background
-        width: 100%; // Make it stretch fully
-        padding: 20px; // Increase padding for a larger section feel
+        background: rgba(255, 255, 255, 0.1);
+        width: 100%;
+        padding: 20px; 
         text-align: center;
         transition: background 0.3s ease-in-out;
-        border-radius: 0; // Remove rounded edges
+        border-radius: 0; 
     }
     
     .menu .nav-links a:hover {
-        background: rgba(255, 255, 255, 0.2); // Slightly brighter on hover
+        background: rgba(255, 255, 255, 0.2); 
     }
     
     .menu .close-menu {
@@ -1236,10 +1236,6 @@ $light-link-hover: #125E75;
         right: 24px;
         font-size: 2rem;
         cursor: pointer;
-    }
-
-    .menu a {
-        font-size: 1.5rem;
     }
 
     .open-menu,
@@ -1250,7 +1246,17 @@ $light-link-hover: #125E75;
         font-size: 2rem;
         color: white;
         cursor: pointer;
-        transition: transform 0.3s ease, opacity 0.3s ease;
+        transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+    }
+
+    .open-menu:hover {
+        transform: scale(1.1); 
+        color: #60A5FA; 
+    }
+
+    .close-menu:hover {
+        transform: rotate(90deg) scale(1.1); 
+        color: #E11D48; 
     }
 
     .open-menu {

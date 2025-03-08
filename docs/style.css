@@ -960,7 +960,7 @@ html, body {
     width: 100%;
   }
   .menu .nav-links a {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: #F1F5F9;
     text-decoration: none;
@@ -980,9 +980,6 @@ html, body {
     font-size: 2rem;
     cursor: pointer;
   }
-  .menu a {
-    font-size: 1.5rem;
-  }
   .open-menu,
   .close-menu {
     position: absolute;
@@ -991,7 +988,15 @@ html, body {
     font-size: 2rem;
     color: white;
     cursor: pointer;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+  }
+  .open-menu:hover {
+    transform: scale(1.1);
+    color: #60A5FA;
+  }
+  .close-menu:hover {
+    transform: rotate(90deg) scale(1.1);
+    color: #E11D48;
   }
   .open-menu {
     display: block;
