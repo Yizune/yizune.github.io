@@ -841,9 +841,6 @@ html, body {
   }
 }
 @media (min-width: 769px) {
-  body {
-    position: fixed;
-  }
   .menu {
     position: static;
     width: auto;
