@@ -943,18 +943,42 @@ html, body {
     right: -100%;
     width: 40%;
     height: 100vh;
-    background-color: rgba(30, 41, 59, 0.95);
+    background-color: rgb(30, 41, 59);
     transition: all 0.3s ease-in-out;
     z-index: 110;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: stretch;
+    padding-top: 75px;
+    box-sizing: border-box;
+    overflow: hidden;
   }
   .menu .nav-links {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
+    width: 100%;
+  }
+  .menu .nav-links a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #F1F5F9;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+    border-radius: 0;
+  }
+  .menu .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  .menu .close-menu {
+    position: absolute;
+    right: 24px;
+    font-size: 2rem;
+    cursor: pointer;
   }
   .menu a {
     font-size: 1.5rem;
