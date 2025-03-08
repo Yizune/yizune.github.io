@@ -194,8 +194,17 @@ body::before {
 }
 .about-section .about-links {
   display: flex;
-  gap: 15px;
+  gap: 20px;
+  flex-wrap: wrap;
   margin-top: 15px;
+}
+.about-section .about-links .button-group {
+  display: flex;
+  gap: 20px;
+}
+.about-section .about-links .icon-group {
+  display: flex;
+  gap: 20px;
 }
 .about-section .about-links .text-btn {
   width: 100px;
@@ -814,10 +823,7 @@ html, body {
   }
 }
 @media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: repeat(1, 1fr) !important;
-  }
-  .contact-grid {
+  .projects-grid, .contact-grid {
     grid-template-columns: repeat(1, 1fr) !important;
   }
   .about-container {
@@ -850,38 +856,60 @@ html, body {
   }
   .about-links {
     display: flex !important;
-    flex-direction: wrap !important;
+    flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
+    gap: 20px !important;
+    margin-top: 15px !important;
     width: 100% !important;
-    gap: 15px !important;
-    margin-top: 20px !important;
-    order: 3 !important;
-    /* First Row: About Me & Resume Buttons */
-    /* Second Row: Icons */
   }
-  .about-links .button-group {
+  .button-group {
     display: flex !important;
+    flex-direction: column !important;
     justify-content: center !important;
-    gap: 15px !important;
+    align-items: center !important;
+    gap: 20px !important;
     width: 100% !important;
   }
-  .about-links #button {
-    width: 45% !important;
-    max-width: 200px !important;
+  #button {
+    width: 80% !important;
+    max-width: 250px !important;
     text-align: center !important;
   }
-  .about-links .icon-group {
+  .icon-group {
     display: flex !important;
-    justify-content: center !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
     gap: 10px !important;
-    flex-basis: 100% !important; /* Forces this group to the next line */
-    margin-top: 10px !important;
+    margin-top: 15px !important;
+    width: 80% !important;
+    max-width: 250px !important;
   }
-  .about-links #iconbutton {
-    width: 30% !important;
-    max-width: 60px !important;
-    text-align: center !important;
+  .icon-btn {
+    width: 50px !important;
+    height: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+    background-color: #1E293B !important;
+    border: 2px solid #3B82F6 !important;
+    flex-shrink: 0 !important;
+    transition: all 0.3s ease !important;
+  }
+  .icon-btn:hover {
+    background: #3B82F6 !important;
+    border-color: #9dc0fa !important;
+  }
+  .icon-btn img {
+    width: 24px !important;
+    height: 24px !important;
+    filter: invert(1);
+    transition: all 0.3s ease !important;
+  }
+  .icon-btn:hover img {
+    filter: brightness(0) invert(1) !important;
   }
 }
 @media (max-width: 430px) {
@@ -901,7 +929,6 @@ html, body {
     max-width: 350px !important;
     text-align: center !important;
   }
-  /* Stack everything vertically for phones */
   .about-links {
     flex-direction: column !important;
     align-items: center !important;
