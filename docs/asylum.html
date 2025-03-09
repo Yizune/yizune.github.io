@@ -87,7 +87,8 @@
             <div class="info-box">
                 <h3>Project Details</h3>
                 <ul>
-                    <li><img src="Images/person_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Role Icon"> <strong>My Role:</strong> Gameplay Programmer (Movement, Sound Implementation, Gameplay Mechanics)</li>
+                    <li><img src="Images/person_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg" alt="Role Icon"> <strong>My Role:</strong> Gameplay Programmer 
+                        (Movement, Sound Implementation, Gameplay Mechanics)</li>
                     <li><img src="Images/group.svg" alt="Team Icon"> <strong>Team Size:</strong> 15</li>
                     <li><img src="Images/tool.svg" alt="Engine Icon"> <strong>Engine:</strong> Unreal Engine 5 (Blueprints)</li>
                     <li><img src="Images/time.svg" alt="Time Icon"> <strong>Development Time:</strong> 7 weeks</li>
@@ -118,15 +119,15 @@
             <h3>Development Process, My Contributions & Lessons Learned</h3>
             <p>
                 As a gameplay programmer for <strong>Project Asylum</strong>, I was responsible for implementing key systems 
-                that enhanced immersion and gameplay. Here's a breakdown of my specific contributions:
+                that enhanced immersion and gameplay. Besides all the smaller ones, here's a breakdown of my biggest contributions:
             </p>
             
             <ul>
                 <li><strong>Movement Mechanics:</strong> Developed smooth movement functions, including sprinting, crouching, 
                 and backwards movement. Integrated camera effects to heighten immersion during sprinting or crouching.</li>
                 
-                <li><strong>Sound Implementation:</strong> Designed and implemented a comprehensive sound system including 
-                footsteps, flashlight sounds, door slams, and environmental cues to increase tension and atmosphere.</li>
+                <li><strong>Sound Implementation:</strong> Implemented a comprehensive sound system including 
+                footsteps, flashlight sounds, door slams, and environmental cues to increase tension and atmosphere, and many more!</li>
 
                 <li><strong>Prompt System Adjustments:</strong> Enhanced the interaction system, allowing players to engage 
                 with objects like flashlights, doors, and notes, providing dynamic gameplay feedback.</li>
@@ -157,15 +158,15 @@
             
                 <!-- Toggle Buttons -->
                 <div class="code-buttons">
-                    <button class="code-toggle" data-target="crouch">Crouching Function</button>
-                    <button class="code-toggle" data-target="sprint">Sprint Function</button>
-                    <button class="code-toggle" data-target="movement">Movement and Backwards Movement Function</button>
-                    <button class="code-toggle" data-target="sound">Footsteps & Flashlight Sound Effects</button>
-                    <button class="code-toggle" data-target="furniture">Furniture Sound Effect</button>
+                    <button class="code-toggle" data-target="movement">Movement Functionality</button>
+                    <button class="code-toggle" data-target="systems">Player Interaction & Equipment System</button>
+                    <button class="code-toggle" data-target="flashlight">Flashlight Component</button>
+                    <button class="code-toggle" data-target="flicker">Flashlight Flickering</button>
+                    <button class="code-toggle" data-target="furniture">Furniture Drag & Sound Effect</button>
                     <button class="code-toggle" data-target="doorslam">Door Slam Implementation on the Trigger Box</button>
-                    <button class="code-toggle" data-target="slammeddoor">Slammed Door Function and Sound Effect</button>
+                    <button class="code-toggle" data-target="hallway">Closing Hallway</button>
+                    <button class="code-toggle" data-target="cabinet">Falling Cabinet</button>
                     <button class="code-toggle" data-target="prompts">Prompts System Adjustment</button>
-                    <button class="code-toggle" data-target="footsteps">Implementation of Footsteps Sound Effect</button>
                     <button class="code-toggle" data-target="endScreen">End Game Screen</button>
                 </div>
 
@@ -173,66 +174,77 @@
             
                 <!-- Blueprint Display Area -->
                 <div class="code-container">
-            
-                    <!-- Crouching Function -->
-                    <div id="crouch" class="code-snippet">
-                        <p><strong>Crouching Function:</strong> Blueprint for crouching mechanics with smooth transitions and sound effects to enhance stealth gameplay.</p>
-                        <img src="Code-Images/Crouching  function - Blueprints.png" alt="Crouching Function Blueprint">
-                    </div>
-            
-                    <!-- Sprint Function -->
-                    <div id="sprint" class="code-snippet">
-                        <p><strong>Sprint Function:</strong> Sprinting system with dynamic FOV changes and stamina management, increasing player tension during escape sequences.</p>
-                        <img src="Code-Images/Sprint function - Blueprints.png" alt="Sprint Function Blueprint">
-                    </div>
-            
-                    <!-- Movement and Backwards Movement -->
+
+                    <!-- Movement Functionality -->
                     <div id="movement" class="code-snippet">
-                        <p><strong>Movement and Backwards Movement Function:</strong> Comprehensive movement controls, including backwards walking with unique speed and camera adjustments for suspenseful gameplay.</p>
-                        <img src="Code-Images/Movement and Backwards movement function - Blueprints.png" alt="Movement Function Blueprint">
+                        <p><strong>Movement Functionality:</strong> Blueprint for all movement mechanics, they include walking, sprinting, crouching, and also adjusted walking speed when walking backwards, smooth transitions and sound effects to enhance stealth gameplay.</p>
+                        <p><strong>NOTE: </strong>Due to possible issues in rendering, in case you can not see the lines connecting the nodes, simply try moving the nodes and the lines will appear.</p>
+                        <iframe src="https://blueprintue.com/render/z3l8czvz/" width="1000" height="400" scrolling="no" allowfullscreen></iframe>
+                        <!-- <img src="Code-Images/Crouching  function - Blueprints.png" alt="Crouching Function Blueprint"> -->
+                    </div>
+
+                    <!-- Player Interaction & Equipment System -->
+                    <div id="systems" class="code-snippet">
+                        <p><strong>Player Interaction & Equipment System:</strong> Blueprint handling player interactions, including detecting objects via sphere trace and executing default interact actions. Also manages flashlight and UV light switching to prevent simultaneous activation, ensuring smooth gameplay flow and immersive feedback.</p>
+                        <p><strong>NOTE: </strong>Due to possible issues in rendering, in case you can not see the lines connecting the nodes, simply try moving the nodes and the lines will appear.</p>
+                        <iframe src="https://blueprintue.com/render/bzvr12ey/" width="1000" height="400" scrolling="no" allowfullscreen></iframe>
                     </div>
             
-                    <!-- Footsteps & Flashlight Sound Effects -->
-                    <div id="sound" class="code-snippet">
-                        <p><strong>Footsteps & Flashlight Sound Effects:</strong> Dynamic sound design for footsteps and flashlight toggles, reacting to player movement and environmental interactions.</p>
-                        <img src="Code-Images/Footsteps sound effect  - Blueprints.png" alt="Footsteps Sound Effect Blueprint">
-                        <img src="Code-Images/Flashlight sound effect - Blueprints.png" alt="Flashlight Sound Effect Blueprint">
+                    <!-- Flashlight Component -->
+                    <div id="flashlight" class="code-snippet">
+                        <p><strong>Flashlight Component: </strong> Dynamic sound design that handles flashlight toggles, and the equip system that handles spawning the flashlight in players hands.</p>
+                        <p><strong>NOTE: </strong>Due to possible issues in rendering, in case you can not see the lines connecting the nodes, simply try moving the nodes and the lines will appear.</p>
+                        <iframe src="https://blueprintue.com/render/slhs9w8v/" width="1000" height="400" scrolling="no" allowfullscreen></iframe>
+                    </div>
+
+                    <!-- Flashlight Flickering -->
+                    <div id="flicker" class="code-snippet">
+                        <p><strong>Flashlight Flickering: </strong> A trigger volume that causes the player's flashlight to flicker and emit flickering sounds when entered, enhancing the horror atmosphere. It detects player overlap, starts the flickering effect, and stops it when the player exits.</p>
+                        <p><strong>NOTE: </strong>Due to possible issues in rendering, in case you can not see the lines connecting the nodes, simply try moving the nodes and the lines will appear.</p>
+                        <iframe src="https://blueprintue.com/render/ibdrvce_/" width="1000" height="400" scrolling="no" allowfullscreen></iframe>
                     </div>
             
-                    <!-- Furniture Sound Effect -->
+                    <!-- Furniture Drag abd Sound Effect -->
                     <div id="furniture" class="code-snippet">
-                        <p><strong>Furniture Sound Effect:</strong> Implemented sound effects for moving or interacting with furniture, adding immersion and environmental feedback.</p>
-                        <img src="Code-Images/Furniture sound effect - Blueprints.png" alt="Furniture Sound Effect Blueprint">
+                        <p><strong>Furniture Drag & Sound Effect:</strong> Implemented the drag that relocates the furnitures current location to the desired location, and sound effects for moving or interacting with furniture, adding immersion and environmental feedback.</p>
+                        <p><strong>NOTE: </strong>Due to possible issues in rendering, in case you can not see the lines connecting the nodes, simply try moving the nodes and the lines will appear.</p>
+                        <iframe src="https://blueprintue.com/render/f6u3w7kq/" width="1000" height="400" scrolling="no" allowfullscreen></iframe>
                     </div>
             
                     <!-- Door Slam on Trigger Box -->
                     <div id="doorslam" class="code-snippet">
-                        <p><strong>Door Slam Implementation on the Trigger Box:</strong> Created a trigger-based door slamming mechanic to surprise and unsettle players, paired with sound cues.</p>
-                        <img src="Code-Images/Door slam implementation on the trigger box - Blueprints.png" alt="Door Slam Trigger Blueprint">
+                        <p><strong>Door Slam Functionality: </strong>Created a trigger-based door slamming mechanic to surprise and unsettle players, paired with sound cues.</p>
+                        <p><strong>NOTE: </strong>Due to possible issues in rendering, in case you can not see the lines connecting the nodes, simply try moving the nodes and the lines will appear.</p>   
+                        <iframe src="https://blueprintue.com/render/sqtgpkbm/" width="1000" height="400" scrolling="no" allowfullscreen></iframe>
                     </div>
-            
-                    <!-- Slammed Door Function and Sound Effect -->
-                    <div id="slammeddoor" class="code-snippet">
-                        <p><strong>Slammed Door Function and Sound Effect:</strong> Detailed door slamming mechanics with corresponding sound design to increase atmospheric tension.</p>
-                        <img src="Code-Images/Slammed door function and sound effect - Blueprints.png" alt="Slammed Door Function Blueprint">
+
+                    <!-- Door Slam on Trigger Box -->
+                    <div id="hallway" class="code-snippet">
+                        <p><strong>Closing Hallway: </strong>Created a trigger-based door slamming mechanic to surprise and unsettle players, paired with sound cues.</p>
+                        <p><strong>NOTE: </strong>Due to possible issues in rendering, in case you can not see the lines connecting the nodes, simply try moving the nodes and the lines will appear.</p>   
+                        <iframe src="https://blueprintue.com/render/cbsb8a-j/" width="1000" height="400" scrolling="no" allowfullscreen></iframe>
+                    </div>
+
+                    <!-- Falling Cabinet -->
+                    <div id="cabinet" class="code-snippet">
+                        <p><strong>Falling Cabinet: </strong>Blueprint responsible for managing a hallway that progressively closes, creating a tense gameplay sequence. The Blueprint includes mechanics for detecting player entry, triggering closing sequences, and handling post-event interactions such as displaying a death screen.</p>
+                        <p><strong>NOTE: </strong>Due to possible issues in rendering, in case you can not see the lines connecting the nodes, simply try moving the nodes and the lines will appear.</p>   
+                        <iframe src="https://blueprintue.com/render/gw4d38b1/" width="1000" height="400" scrolling="no" allowfullscreen></iframe>
                     </div>
             
                     <!-- Prompts System Adjustment -->
                     <div id="prompts" class="code-snippet">
                         <p><strong>Prompts System Adjustment:</strong> Enhanced interaction prompts for engaging with objects like flashlights, doors, and environmental elements.</p>
-                        <img src="Code-Images/Prompts system adjustment - Blueprints.png" alt="Prompts System Blueprint">
-                    </div>
-            
-                    <!-- Implementation of Footsteps Sound Effect -->
-                    <div id="footsteps" class="code-snippet">
-                        <p><strong>Implementation of Footsteps Sound Effect:</strong> Detailed sound effect system for footsteps that reacts dynamically to player actions and surface types.</p>
-                        <img src="Code-Images/Implementation of Footsteps sound effect  - Blueprints.png" alt="Footsteps Sound Implementation Blueprint">
+                        <p><strong>NOTE: </strong>Due to possible issues in rendering, in case you can not see the lines connecting the nodes, simply try moving the nodes and the lines will appear.</p>
+                        <iframe src="https://blueprintue.com/render/4r1o1zx5/" width="1000" height="400" scrolling="no" allowfullscreen></iframe>
                     </div>
             
                     <!-- End Game Screen -->
                     <div id="endScreen" class="code-snippet">
-                        <p><strong>End Game Screen:</strong> Developed the game's end screen UI, displaying player stats and outcomes upon completing the game.</p>
-                        <img src="Code-Images/End Game screen  - Blueprints.png" alt="End Game Screen Blueprint">
+                        <p><strong>End Game Screen:</strong> Developed the system to trigger the End Game Screen when reaching the end of the game.</p>
+                        <p><strong>NOTE: </strong>Due to possible issues in rendering, in case you can not see the lines connecting the nodes, simply try moving the nodes and the lines will appear.</p>
+                        <iframe src="https://blueprintue.com/render/oh49h6av/" width="1000" height="400" scrolling="no" allowfullscreen></iframe>
+                        <iframe src="https://blueprintue.com/render/togyckw7/" width="1000" height="400" scrolling="no" allowfullscreen></iframe>
                     </div>
             
                 </div>
