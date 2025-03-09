@@ -7,6 +7,8 @@ $secondary-color: rgba(100, 116, 139, 0.7);
 $accent-color: #3B82F6; 
 $dark-accent-color: #0e2a86;
 $something: #243d66;
+$new-text-color: #b8c4e2;
+$new-text-color2: #8a9cc0;
 
 
 #menu-toggle {
@@ -21,7 +23,7 @@ $something: #243d66;
 
 
 // Highlighted Project Card
-.featured-design6 {
+.featured-design {
     margin: 0 20px 100px 20px;
     position: relative;
     background-color: $primary-color;
@@ -29,37 +31,53 @@ $something: #243d66;
     border-radius: 8px;
     border: 3px dashed $accent-color;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out; 
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards 0.2s;
+
+    &:hover {
+        //transform: scale(1.02); 
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+        background-color: lighten($primary-color, 3%);
+    }
 
     ul {
         list-style: none;
         padding: 0;
-        margin: 10px 0 0 0; // Reduce unnecessary space
+        margin: 0px 0 20px 0; 
         display: flex;
-        flex-wrap: wrap; // Ensures proper alignment for responsiveness
-        gap: 15px; // Space between items
-        align-items: center;
+        flex-wrap: wrap; 
+        gap: 15px; 
+        align-items: left;
+        flex-direction: column;
 
         li {
             display: flex;
             align-items: center;
-            gap: 8px; // Space between icon and text
+            gap: 8px; 
             font-size: 16px;
             color: #b8c4e2;
-            white-space: nowrap; // Prevents line breaks for cleaner alignment
-        }
+            white-space: nowrap; 
 
-        img {
-            width: 20px; 
-            height: 20px;
+            span {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                img {
+                    margin-right: 5px;
+                    width: 20px; 
+                    height: 20px;
+                }
+            }
         }
     }
 
-    .design6-banner {
+    .design-banner {
         position: absolute;
         top: -15px;
-        //left: 20px;
         background-color: $accent-color;
-        color: #333;
+        color: white;
         font-weight: bold;
         padding: 5px 15px;
         font-size: 14px;
@@ -90,13 +108,13 @@ $something: #243d66;
         }
     }
 
-    .design6-content {
+    .design-content {
         display: flex;
         gap: 20px;
         margin-top: 10px;
     }
 
-    // .design6-image {
+    // .design-image {
     //     flex: 0 0 180px;
     //     border-radius: 6px;
     //     overflow: hidden;
@@ -110,7 +128,7 @@ $something: #243d66;
     //     }
     // }
 
-    .design6-image {
+    .design-image {
         border-radius: 8px;
         overflow: hidden;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -126,46 +144,70 @@ $something: #243d66;
         }
     }
 
-    .design6-details {
+    .design-details {
         flex: 1;
         margin-left: 10px;
     }
 
-    .design6-title {
+    .design-title {
         margin: 0 0 8px 0;
         font-size: 36px;
         color: $accent-color;
         text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
     }
 
-    .design6-category {
+    .design-category {
         font-size: 24px;
         color: #8a9cc0;
         margin-bottom: 12px;
     }
 
-    .design6-description {
+    .design-description {
         margin-top: 30px;
         font-size: 16px;
         color: #b8c4e2;
         line-height: 1.5;
-        text-align: left; // Ensures text isn't center-aligned
+        text-align: left; 
+        margin-bottom: 30px;
     }
 
-    .design6-button {
+    .design-list{
+        margin-bottom: 40px;
+    }
+
+    .design-button {
         display: inline-block;
-        background-color: #ffd54f;
-        color: #333;
+        background-color: $accent-color;
+        color: white;
         border: none;
-        padding: 8px 16px;
-        border-radius: 4px;
-        font-size: 14px;
-        margin-top: 15px;
+        padding: 12px 24px;
+        border-radius: 6px;
+        font-size: 16px;
+        margin-top: 30px;
         cursor: pointer;
         text-decoration: none;
         font-weight: bold;
         box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
+        width: 310px; 
+        height: 20px; 
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        &:hover {
+            background-color: #236be0; 
+            transform: scale(1.05);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+    
+        &:active {
+            transform: scale(0.95); 
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
     }
+    
 }
 
 
@@ -520,6 +562,8 @@ body {
         text-align: center;
         font-size: 2.5rem;
         margin-bottom: 80px;
+        opacity: 0;
+        animation: fadeIn 1s ease-in-out forwards;
     }
 
     h4 {
@@ -799,6 +843,8 @@ $light-secondary: rgba(#E2E8F0, 0.7);
 $light-accent: #1E88A8;
 $light-link: #1E293B;
 $light-link-hover: #125E75;
+$light-new-text-color: #2c2e31;
+$light-new-text-color2: #44474b;
 
 .lightmode {
     background-color: $light-bg;
@@ -815,6 +861,53 @@ $light-link-hover: #125E75;
         background-size: cover;
         z-index: -1;
         filter: brightness(80%);
+    }
+
+    .featured-design {
+        background-color: $light-bg;
+        border: 3px dashed $light-accent;
+
+        .design-banner {
+            background-color: $light-accent;
+
+            &::after {
+                border-top: 5px solid $light-link-hover;
+            }
+    
+            &::before {
+                border-top: 5px solid $light-link-hover;
+            }
+        }
+
+        .design-details {
+            .design-title {
+                color: $light-accent;
+            }
+
+            .design-category {
+                color: $light-new-text-color;
+            }
+
+            .design-description {
+                color: $light-new-text-color2;
+            }
+
+            .design-list li{
+                color: $light-new-text-color2;
+            }
+
+            .design-list img{
+                filter: invert(1);
+            }
+
+            .design-button { 
+                background-color: $light-accent;
+
+                &:hover {
+                    background-color: $light-link-hover;
+                }
+            }
+        }
     }
 
     .header {
@@ -937,6 +1030,21 @@ $light-link-hover: #125E75;
         .projects-container {
             background-color: $light-secondary;
         }
+
+        .divider {
+            .line {
+                background-color: $light-link;
+            }
+
+            .sword-icon {
+                filter: invert(1);
+            }
+        }
+
+        .project-title {
+            color: $light-link;
+        }
+
 
         .project-card {
             background: $light-primary;

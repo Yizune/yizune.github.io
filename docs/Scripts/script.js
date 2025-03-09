@@ -122,5 +122,5 @@ function toggleMode() {
 }
 
 function showWIPPopup() {
-    alert("The game 'Brave Little One' is finished, the page is still in progress and it will be uploaded soon!");
+    alert("The game 'Battle Wizards' is not finished, but the page is still in progress and it will be uploaded soon with all the content made so far!");
 }
