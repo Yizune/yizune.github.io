@@ -217,9 +217,6 @@ $new-text-color2: #8a9cc0;
 
 
 
-
-
-
 body {
     background-color: $background-light;
     color: $text-light;
@@ -228,13 +225,16 @@ body {
 
     &::before {
         content: "";
+        //position: fixed;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         background: url('Images/DarkSouls.png') no-repeat center center fixed;
-        background-size: fixed;
+        //background-size: fixed;
+        background-size: cover;
+        background-attachment: fixed; 
         // background-attachment: fixed;
         // background-position: fixed;
         z-index: -1;
@@ -613,7 +613,7 @@ body {
 
             img {
                 width: 100%;
-                height: 350px;
+                //height: 350px;
                 object-fit: cover;
                 display: block;
             }
@@ -1812,7 +1812,6 @@ $light-new-text-color2: #44474b;
         // ===== PROJECTS SECTION =====
     .projects {
         .projects-container {
-            //padding: 20px !important;
             h2{
                 font-size: 2rem;
             }
@@ -1822,16 +1821,21 @@ $light-new-text-color2: #44474b;
 
             .project-title {
                 font-size: 1.5rem !important;
-                //text-align: center !important;
             }
 
             .projects-grid {
                 grid-template-columns: 1fr !important;
                 gap: 20px !important;
+
+                .project-image {
+                    .project-overlay {
+                        padding: 5px !important;
+                        font-size: 0.6rem !important;
+                    }
+                }
             }
 
             .project-card {
-                padding: 15px !important;
                 text-align: center !important;
 
                 .project-content {
@@ -1839,16 +1843,17 @@ $light-new-text-color2: #44474b;
 
                     .main-title {
                         h3 {
-                            font-size: 1.4rem !important;
+                            font-size: 1.2rem !important;
                         }
 
                         p {
-                            font-size: 1rem !important;
+                            font-size: 0.9rem !important;
                         }
                     }
 
                     p {
-                        font-size: 1rem !important;
+                        font-size: 0.7rem !important;
+                        margin-bottom: 10px !important;
                     }
                 }
             }
@@ -1859,42 +1864,60 @@ $light-new-text-color2: #44474b;
     .featured-design {
         padding: 15px !important;
 
+        .design-banner {
+            top: -12px;
+            padding: 3px 10px;
+            font-size: 10px;
+        }
+
         .design-title {
-            font-size: 2rem !important;
+            font-size: 18px !important;
         }
 
         .design-category {
-            font-size: 1.4rem !important;
+            font-size: 14px !important;
         }
 
         .design-description {
-            font-size: 1rem !important;
+            font-size: 12px !important;
         }
 
         .design-list {
             li {
-                font-size: 0.9rem !important;
+                font-size: 12px !important;
+            }
+            span {
+                img {
+                    margin-right: 3px;
+                    width: 15px;
+                    height: 15px;
+                }
             }
         }
 
         .design-button {
-            font-size: 1rem !important;
+            width: 70%;
+            font-size: 0.8rem !important;
         }
     }
 
     // ===== SKILLS SECTION =====
     .skills {
         .skills-container {
-            padding: 20px !important;
+            padding: 15px !important;
+
+            h2 {
+                font-size: 2rem;
+            }
 
             .skills-category {
                 h3 {
-                    font-size: 1.6rem !important;
+                    font-size: 1.2rem !important;
                 }
 
                 ul {
                     li {
-                        font-size: 1.1rem !important;
+                        font-size: 0.9rem !important;
                     }
                 }
             }
@@ -1904,6 +1927,8 @@ $light-new-text-color2: #44474b;
     // ===== CONTACT SECTION =====
     .contact {
         .contact-container {
+            padding: 10px !important;
+            padding-bottom: 20px !important;
             h2 {
                 font-size: 2rem !important;
             }
@@ -1911,10 +1936,16 @@ $light-new-text-color2: #44474b;
             .contact-grid {
                 grid-template-columns: 1fr !important;
                 gap: 15px !important;
+                display: flex !important;
+                flex-direction: column !important; 
+                align-items: center !important; 
+                justify-content: center !important; 
             }
 
             .contact-item {
-                font-size: 1rem !important;
+                font-size: 0.9rem !important;
+                width: 80% !important;
+                min-width: 100px !important;
             }
         }
     }

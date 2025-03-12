@@ -169,7 +169,8 @@ body::before {
   width: 100%;
   height: 100%;
   background: url("Images/DarkSouls.png") no-repeat center center fixed;
-  background-size: fixed;
+  background-size: cover;
+  background-attachment: fixed;
   z-index: -1;
   filter: brightness(50%);
 }
@@ -504,7 +505,6 @@ body::before {
 }
 .projects .project-card .project-image img {
   width: 100%;
-  height: 350px;
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
@@ -1412,48 +1412,70 @@ html, body {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
   }
+  .projects .projects-container .projects-grid .project-image .project-overlay {
+    padding: 5px !important;
+    font-size: 0.6rem !important;
+  }
   .projects .projects-container .project-card {
-    padding: 15px !important;
     text-align: center !important;
   }
   .projects .projects-container .project-card .project-content {
     padding: 10px !important;
   }
   .projects .projects-container .project-card .project-content .main-title h3 {
-    font-size: 1.4rem !important;
+    font-size: 1.2rem !important;
   }
   .projects .projects-container .project-card .project-content .main-title p {
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
   }
   .projects .projects-container .project-card .project-content p {
-    font-size: 1rem !important;
+    font-size: 0.7rem !important;
+    margin-bottom: 10px !important;
   }
   .featured-design {
     padding: 15px !important;
   }
+  .featured-design .design-banner {
+    top: -12px;
+    padding: 3px 10px;
+    font-size: 10px;
+  }
   .featured-design .design-title {
-    font-size: 2rem !important;
+    font-size: 18px !important;
   }
   .featured-design .design-category {
-    font-size: 1.4rem !important;
+    font-size: 14px !important;
   }
   .featured-design .design-description {
-    font-size: 1rem !important;
+    font-size: 12px !important;
   }
   .featured-design .design-list li {
-    font-size: 0.9rem !important;
+    font-size: 12px !important;
+  }
+  .featured-design .design-list span img {
+    margin-right: 3px;
+    width: 15px;
+    height: 15px;
   }
   .featured-design .design-button {
-    font-size: 1rem !important;
+    width: 70%;
+    font-size: 0.8rem !important;
   }
   .skills .skills-container {
-    padding: 20px !important;
+    padding: 15px !important;
+  }
+  .skills .skills-container h2 {
+    font-size: 2rem;
   }
   .skills .skills-container .skills-category h3 {
-    font-size: 1.6rem !important;
+    font-size: 1.2rem !important;
   }
   .skills .skills-container .skills-category ul li {
-    font-size: 1.1rem !important;
+    font-size: 0.9rem !important;
+  }
+  .contact .contact-container {
+    padding: 10px !important;
+    padding-bottom: 20px !important;
   }
   .contact .contact-container h2 {
     font-size: 2rem !important;
@@ -1461,9 +1483,15 @@ html, body {
   .contact .contact-container .contact-grid {
     grid-template-columns: 1fr !important;
     gap: 15px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
   .contact .contact-container .contact-item {
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
+    width: 80% !important;
+    min-width: 100px !important;
   }
   .footer p {
     font-size: 0.9rem !important;
