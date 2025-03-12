@@ -182,11 +182,14 @@ body::before {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  right: 0;
+  bottom: 0;
   background: url("Images/DarkSouls.png") no-repeat center center;
   background-size: cover;
+  background-attachment: fixed;
   z-index: -1;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .container {
