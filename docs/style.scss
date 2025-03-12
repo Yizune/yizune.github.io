@@ -243,7 +243,7 @@ body::before {
     background-attachment: fixed;
     z-index: -1;
     // Uncomment if you want the darkening effect
-    // filter: brightness(50%);
+    filter: brightness(50%);
     
     // This will prevent any potential transform or translate issues
     transform: translateZ(0);
