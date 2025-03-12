@@ -212,17 +212,13 @@ $new-text-color2: #8a9cc0;
 
 
 
+// Fix for the scrolling background issue
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    min-height: 100%;
-    overflow-x: hidden;   
-}
-
-html {
-    height: auto;
-    overflow-y: auto; 
+    height: 100%;
+    overflow-x: hidden;
 }
 
 body {
