@@ -160,6 +160,8 @@ body {
   color: #F1F5F9;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
+  background: url("Images/DarkSouls.png") no-repeat center center fixed;
+  background-size: cover;
 }
 body::before {
   content: "";
@@ -168,7 +170,6 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("Images/DarkSouls.png") no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
   z-index: -1;
