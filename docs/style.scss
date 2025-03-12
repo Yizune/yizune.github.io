@@ -214,35 +214,42 @@ $new-text-color2: #8a9cc0;
 
 
 
-
-
-
 body {
     background-color: $background-light;
     color: $text-light;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
-    background: url('Images/DarkSouls.png') no-repeat center center fixed;
+    
+    //background: url('Images/DarkSouls.png') no-repeat center center fixed;
+    background: url('Images/brave.png') no-repeat center center fixed;
     background-size: cover;
-
-    &::before {
-        content: "";
-        //position: fixed;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        //background: url('Images/DarkSouls.png') no-repeat center center fixed;
-        //background-size: fixed;
-        background-size: cover;
-        background-attachment: fixed; 
-        // background-attachment: fixed;
-        // background-position: fixed;
-        z-index: -1;
-        filter: brightness(50%);
-    }
+    background-attachment: fixed;
 }
+
+
+
+// body {
+//     background-color: $background-light;
+//     color: $text-light;
+//     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+//     transition: background-color 0.3s ease, color 0.3s ease;
+
+//     &::before {
+//         content: "";
+//         position: fixed;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//         background: url('Images/DarkSouls.png') no-repeat center center fixed;
+//         background-size: cover;
+//         background-attachment: fixed; 
+//         z-index: -1;
+//         filter: brightness(50%);
+//     }
+// }
+
+
 
 .container {
     max-width: 1300px;
