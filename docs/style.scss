@@ -1502,6 +1502,59 @@ $light-new-text-color2: #44474b;
 
 
 
+    .featured-design {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+
+        .design-content {
+            flex-direction: column;
+            display: flex;
+            align-items: center; 
+            text-align: center;
+            gap: 0px;
+        }
+
+        .design-banner {
+            align-self: center;
+        }
+
+        .design-image {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            margin-bottom: 20px;
+        }
+
+        .design-details {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; 
+            margin-left: 0px;
+        }
+
+        .design-description {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .design-list {
+            margin-bottom: 0px;
+        }
+        
+        .design-button {
+            align-self: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+        }
+    }
+
+
+
+
 
     
     // Ham menu
