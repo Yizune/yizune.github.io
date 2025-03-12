@@ -184,7 +184,7 @@ body::before {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: url("Images/brave.png") no-repeat center center;
+  background: url("Images/DarkSouls.png") no-repeat center center;
   background-size: cover;
   z-index: -1;
 }
