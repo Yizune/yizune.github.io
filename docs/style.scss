@@ -217,7 +217,7 @@ html, body {
     padding: 0;
     width: 100%;
     min-height: 100%;
-    overflow-x: hidden; 
+    overflow-x: hidden;   
 }
 
 html {
@@ -241,7 +241,7 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: url('Images/DarkSouls.png') no-repeat center center;
+    background: url('Images/brave.png') no-repeat center center;
     background-size: cover;
     z-index: -1;
     //filter: brightness(50%);
