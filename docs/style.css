@@ -341,7 +341,6 @@ body::before {
 }
 .about-section .profile-pic {
   width: 350px;
-  height: 350px;
   border-radius: 20px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -1026,9 +1025,9 @@ html, body {
 
 @media (max-width: 1280px) {
   .about-container {
-    width: 90% !important;
+    width: 100% !important;
     max-width: 1200px !important;
-    padding: 20px !important;
+    padding: 40px !important;
     margin-top: 20px !important;
   }
   .about-text {
@@ -1147,6 +1146,7 @@ html, body {
     width: 80% !important;
     max-width: 250px !important;
     text-align: center !important;
+    margin-right: 0px !important;
   }
   .icon-group {
     display: flex !important;
@@ -1327,13 +1327,61 @@ html, body {
 }
 @media (max-width: 480px) {
   .about-section .about-content p {
-    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
   }
-  .site-title {
-    top: 10px;
+  .about-section .about-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
-  .open-menu,
-  .close-menu {
-    top: 20px;
+  .about-section .about-links .icon-group {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+  }
+  .about-section .about-links .icon-group .icon-btn {
+    width: 100% !important;
+    height: 45px !important;
+    padding: 0 20px;
+    background: #1E293B;
+    border: 2px solid #3B82F6;
+    border-radius: 10px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  .about-section .about-links .icon-group .icon-btn img {
+    width: 24px;
+    height: 24px;
+    filter: invert(1);
+  }
+  .about-section .about-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .about-section .about-links .icon-group {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .project-card {
+    padding: 15px;
+    text-align: center;
   }
 }/*# sourceMappingURL=style.css.map */
