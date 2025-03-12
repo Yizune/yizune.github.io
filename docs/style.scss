@@ -235,7 +235,8 @@ body {
         height: 100%;
         background: url('Images/DarkSouls.png') no-repeat center center fixed;
         background-size: cover;
-        background-attachment: fixed;
+        //background-attachment: fixed;
+        background-position: fixed;
         z-index: -1;
         filter: brightness(50%);
     }
