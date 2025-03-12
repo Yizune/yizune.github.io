@@ -155,14 +155,33 @@
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%; /* Ensure it grows with content */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 body {
-  background-color: #dbdbdb;
+  background: none;
+  position: relative; /* Ensure it remains positioned correctly */
   color: #F1F5F9;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
-  background: url("Images/brave.png") no-repeat center center fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed; /* Keeps the background in place */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url("Images/DarkSouls.png") no-repeat center center fixed;
   background-size: cover;
-  background-attachment: fixed;
+  z-index: -1;
+  filter: brightness(50%);
 }
 
 .container {
@@ -674,13 +693,6 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .lightmode {
