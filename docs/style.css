@@ -159,29 +159,34 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  min-height: 100%; /* Ensure it grows with content */
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  height: auto;
+  overflow-y: auto;
 }
 
 body {
   background: none;
-  position: relative; /* Ensure it remains positioned correctly */
+  position: relative;
   color: #F1F5F9;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
 }
 
 body::before {
   content: "";
-  position: fixed; /* Keeps the background in place */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: url("Images/DarkSouls.png") no-repeat center center fixed;
+  background: url("Images/DarkSouls.png") no-repeat center center;
   background-size: cover;
   z-index: -1;
-  filter: brightness(50%);
 }
 
 .container {
