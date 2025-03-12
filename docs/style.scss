@@ -1688,6 +1688,28 @@ $light-new-text-color2: #44474b;
 
 @media (max-width: 480px) {
 
+    .lightmode {
+
+        .about-section {
+    
+            .about-links {
+
+                .icon-group {
+
+                    .icon-btn {
+
+                        background: white;
+                        border: 2px solid $light-accent;
+    
+                        img {
+                            filter: invert(0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 
     .welcome {
         .welcome-divider {

@@ -1326,6 +1326,13 @@ html, body {
   }
 }
 @media (max-width: 480px) {
+  .lightmode .about-section .about-links .icon-group .icon-btn {
+    background: white;
+    border: 2px solid #1E88A8;
+  }
+  .lightmode .about-section .about-links .icon-group .icon-btn img {
+    filter: invert(0);
+  }
   .welcome .welcome-divider {
     margin-bottom: 30px;
   }
