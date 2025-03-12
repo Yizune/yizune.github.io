@@ -170,6 +170,7 @@ body::before {
   height: 100%;
   background: url("Images/DarkSouls.png") no-repeat center center fixed;
   background-size: cover;
+  background-attachment: fixed;
   z-index: -1;
   filter: brightness(50%);
 }
@@ -1326,7 +1327,30 @@ html, body {
   }
 }
 @media (max-width: 480px) {
+  .welcome .welcome-divider {
+    margin-bottom: 30px;
+  }
+  .welcome .welcome-divider .line {
+    height: 2px;
+  }
+  .welcome .welcome-divider .sword-icon {
+    width: 30px;
+  }
+  .welcome h2 {
+    font-size: 2rem;
+  }
+  .welcome p {
+    font-size: 1rem;
+  }
+  .site-title {
+    top: 10px;
+  }
+  .open-menu,
+  .close-menu {
+    top: 20px;
+  }
   .about-section .about-content p {
+    font-size: 16px;
     line-height: 1.5;
     text-align: center;
   }
@@ -1376,12 +1400,73 @@ html, body {
     flex-wrap: wrap;
     gap: 10px;
   }
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  .projects .projects-container h2 {
+    font-size: 2rem;
   }
-  .project-card {
-    padding: 15px;
-    text-align: center;
+  .projects .projects-container h4 {
+    font-size: 1.2rem;
+  }
+  .projects .projects-container .project-title {
+    font-size: 1.5rem !important;
+  }
+  .projects .projects-container .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .projects .projects-container .project-card {
+    padding: 15px !important;
+    text-align: center !important;
+  }
+  .projects .projects-container .project-card .project-content {
+    padding: 10px !important;
+  }
+  .projects .projects-container .project-card .project-content .main-title h3 {
+    font-size: 1.4rem !important;
+  }
+  .projects .projects-container .project-card .project-content .main-title p {
+    font-size: 1rem !important;
+  }
+  .projects .projects-container .project-card .project-content p {
+    font-size: 1rem !important;
+  }
+  .featured-design {
+    padding: 15px !important;
+  }
+  .featured-design .design-title {
+    font-size: 2rem !important;
+  }
+  .featured-design .design-category {
+    font-size: 1.4rem !important;
+  }
+  .featured-design .design-description {
+    font-size: 1rem !important;
+  }
+  .featured-design .design-list li {
+    font-size: 0.9rem !important;
+  }
+  .featured-design .design-button {
+    font-size: 1rem !important;
+  }
+  .skills .skills-container {
+    padding: 20px !important;
+  }
+  .skills .skills-container .skills-category h3 {
+    font-size: 1.6rem !important;
+  }
+  .skills .skills-container .skills-category ul li {
+    font-size: 1.1rem !important;
+  }
+  .contact .contact-container h2 {
+    font-size: 2rem !important;
+  }
+  .contact .contact-container .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+  .contact .contact-container .contact-item {
+    font-size: 1rem !important;
+  }
+  .footer p {
+    font-size: 0.9rem !important;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -235,6 +235,7 @@ body {
         height: 100%;
         background: url('Images/DarkSouls.png') no-repeat center center fixed;
         background-size: cover;
+        background-attachment: fixed;
         z-index: -1;
         filter: brightness(50%);
     }
@@ -1686,21 +1687,42 @@ $light-new-text-color2: #44474b;
 
 @media (max-width: 480px) {
 
-    // .site-title {
-    //     top: 10px;
-    // }
 
-    // .open-menu,
-    // .close-menu {
-    //     top: 20px;
-    // }
+    .welcome {
+        .welcome-divider {
+            margin-bottom: 30px;
+        
+            .line {
+                height: 2px;
+            }
+        
+            .sword-icon {
+                width: 30px;
+            }
+        }
+        h2 {
+            font-size: 2rem;
+        }
+        p{
+            font-size: 1rem;
+        }
+    }
+
+    .site-title {
+        top: 10px;
+    }
+
+    .open-menu,
+    .close-menu {
+        top: 20px;
+    }
 
 
     .about-section {
 
         .about-content {
             p {
-                //font-size: 20px; 
+                font-size: 16px; 
                 line-height: 1.5;
                 text-align: center;
             }
@@ -1776,14 +1798,131 @@ $light-new-text-color2: #44474b;
         }
     }
 
-    .projects-grid {
-        grid-template-columns: 1fr; 
-        gap: 20px;
+    // .projects-grid {
+    //     grid-template-columns: 1fr; 
+    //     gap: 20px;
+    // }
+
+    // .project-card {
+    //     padding: 15px;
+    //     text-align: center; 
+    // }
+
+        // ===== PROJECTS SECTION =====
+    .projects {
+        .projects-container {
+            //padding: 20px !important;
+            h2{
+                font-size: 2rem;
+            }
+            h4 {
+                font-size: 1.2rem;
+            }
+
+            .project-title {
+                font-size: 1.5rem !important;
+                //text-align: center !important;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+
+            .project-card {
+                padding: 15px !important;
+                text-align: center !important;
+
+                .project-content {
+                    padding: 10px !important;
+
+                    .main-title {
+                        h3 {
+                            font-size: 1.4rem !important;
+                        }
+
+                        p {
+                            font-size: 1rem !important;
+                        }
+                    }
+
+                    p {
+                        font-size: 1rem !important;
+                    }
+                }
+            }
+        }
     }
 
-    .project-card {
-        padding: 15px;
-        text-align: center; 
+    // ===== HIGHLIGHTED PROJECT =====
+    .featured-design {
+        padding: 15px !important;
+
+        .design-title {
+            font-size: 2rem !important;
+        }
+
+        .design-category {
+            font-size: 1.4rem !important;
+        }
+
+        .design-description {
+            font-size: 1rem !important;
+        }
+
+        .design-list {
+            li {
+                font-size: 0.9rem !important;
+            }
+        }
+
+        .design-button {
+            font-size: 1rem !important;
+        }
+    }
+
+    // ===== SKILLS SECTION =====
+    .skills {
+        .skills-container {
+            padding: 20px !important;
+
+            .skills-category {
+                h3 {
+                    font-size: 1.6rem !important;
+                }
+
+                ul {
+                    li {
+                        font-size: 1.1rem !important;
+                    }
+                }
+            }
+        }
+    }
+
+    // ===== CONTACT SECTION =====
+    .contact {
+        .contact-container {
+            h2 {
+                font-size: 2rem !important;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+            }
+
+            .contact-item {
+                font-size: 1rem !important;
+            }
+        }
+    }
+
+    // ===== FOOTER =====
+    .footer {
+        p {
+            font-size: 0.9rem !important;
+        }
     }
 }
 
