@@ -164,6 +164,7 @@ body {
   background: url("Images/DarkSouls.png") no-repeat center center;
   background-size: cover;
   background-attachment: scroll;
+  filter: brightness(20%);
 }
 
 .container {
