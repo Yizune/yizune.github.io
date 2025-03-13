@@ -215,12 +215,26 @@ body {
     color: $text-light;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0;
+    padding: 0;
 
-    &::before {
-        background: url('Images/DarkSouls.png') no-repeat center center;
-        background-size: cover;
-        background-attachment: scroll; /* Avoids mobile fixed issues */
-        filter: brightness(50%);
+    background: url('Images/DarkSouls.png') no-repeat center center;
+    background-size: cover;
+    background-attachment: scroll;
+    //filter: brightness(50%);
+}
+
+
+// body {
+//     color: $text-light;
+//     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+//     transition: background-color 0.3s ease, color 0.3s ease;
+
+//     &::before {
+//         background: url('Images/DarkSouls.png') no-repeat center center;
+//         background-size: cover;
+//         background-attachment: scroll; /* Avoids mobile fixed issues */
+//         filter: brightness(50%);
         // content: "";
         // position: fixed;
         // top: 0;
@@ -232,8 +246,8 @@ body {
         // background-attachment: fixed;
         // z-index: -1;
         // filter: brightness(50%);
-    }
-}
+//     }
+// }
 
 
 

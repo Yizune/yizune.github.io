@@ -159,12 +159,11 @@ body {
   color: #F1F5F9;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
-}
-body::before {
+  margin: 0;
+  padding: 0;
   background: url("Images/DarkSouls.png") no-repeat center center;
   background-size: cover;
-  background-attachment: scroll; /* Avoids mobile fixed issues */
-  filter: brightness(50%);
+  background-attachment: scroll;
 }
 
 .container {
