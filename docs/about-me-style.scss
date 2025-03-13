@@ -1156,16 +1156,114 @@ $light-link-hover: #125E75;
 }
 
 @media (max-width: 480px) {
-    .header-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+
+
+    .lightmode {
+
+        .about-section {
     
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
+            .about-links {
+
+                .icon-group {
+
+                    .icon-btn {
+
+                        background: white;
+                        border: 2px solid $light-accent;
+    
+                        img {
+                            filter: invert(0);
+                        }
+                    }
+                }
+            }
+        }
     }
+
+
+    .welcome {
+        .welcome-divider {
+            margin-bottom: 30px;
+        
+            .line {
+                height: 2px;
+            }
+        
+            .sword-icon {
+                width: 30px;
+            }
+        }
+        h2 {
+            font-size: 2rem;
+        }
+        p{
+            font-size: 1rem;
+        }
+    }
+
+    .site-title {
+        top: 10px;
+    }
+
+    .open-menu,
+    .close-menu {
+        top: 20px;
+    }
+
+
+    .contact {
+        .contact-container {
+            padding: 10px !important;
+            padding-bottom: 20px !important;
+            h2 {
+                font-size: 2rem !important;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+                display: flex !important;
+                flex-direction: column !important; 
+                align-items: center !important; 
+                justify-content: center !important; 
+            }
+
+            .contact-item {
+                font-size: 0.9rem !important;
+                width: 80% !important;
+                min-width: 100px !important;
+            }
+        }
+    }
+
+    .footer {
+        p {
+            font-size: 0.9rem !important;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // .header-container {
+    //     flex-direction: column;
+    //     align-items: center;
+    //     text-align: center;
+    // }
+    
+    // .nav-links {
+    //     flex-direction: column;
+    //     gap: 10px;
+    // }
     
     .hero-container {
         padding: 15px;

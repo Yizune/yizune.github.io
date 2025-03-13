@@ -1321,6 +1321,13 @@ body::before {
   }
 }
 @media (max-width: 480px) {
+  .site-title {
+    top: 10px;
+  }
+  .open-menu,
+  .close-menu {
+    top: 0px !important;
+  }
   .lightmode .about-section .about-links .icon-group .icon-btn {
     background: white;
     border: 2px solid #1E88A8;
@@ -1342,13 +1349,6 @@ body::before {
   }
   .welcome p {
     font-size: 1rem;
-  }
-  .site-title {
-    top: 10px;
-  }
-  .open-menu,
-  .close-menu {
-    top: 20px;
   }
   .about-section .about-content p {
     font-size: 16px;

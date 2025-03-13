@@ -31,7 +31,6 @@ $new-text-color2: #8a9cc0;
     animation: fadeIn 1s ease-in-out forwards 0.2s;
 
     &:hover {
-        //transform: scale(1.02); 
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
         background-color: lighten($primary-color, 3%);
     }
@@ -1451,14 +1450,11 @@ $light-new-text-color2: #44474b;
         align-items: center !important;
         justify-content: center !important;
         border-radius: 50% !important;
-        // background-color: $primary-color !important;
-        // border: 2px solid $accent-color !important;
         flex-shrink: 0 !important;
         transition: all 0.3s ease !important;
     }
 
     .icon-btn:hover {
-        //background: $accent-color !important;
         border-color: lighten($accent-color, 20%) !important;
     }
 
@@ -1660,6 +1656,15 @@ $light-new-text-color2: #44474b;
 
 @media (max-width: 480px) {
 
+    .site-title {
+        top: 10px;  
+    }
+
+    .open-menu,
+    .close-menu {
+        top: 0px !important;
+    }
+
     .lightmode {
 
         .about-section {
@@ -1703,14 +1708,7 @@ $light-new-text-color2: #44474b;
         }
     }
 
-    .site-title {
-        top: 10px;
-    }
 
-    .open-menu,
-    .close-menu {
-        top: 20px;
-    }
 
 
     .about-section {
