@@ -17,11 +17,6 @@ $new-text-color2: #8a9cc0;
 
 
 
-
-
-
-
-
 // Highlighted Project Card
 .featured-design {
     margin: 0 20px 100px 20px;
@@ -113,20 +108,6 @@ $new-text-color2: #8a9cc0;
         gap: 20px;
         margin-top: 10px;
     }
-
-    // .design-image {
-    //     flex: 0 0 180px;
-    //     border-radius: 6px;
-    //     overflow: hidden;
-    //     border: 3px solid #333;
-    //     box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
-
-    //     img {
-    //         width: 100%;
-    //         height: auto;
-    //         display: block;
-    //     }
-    // }
 
     .design-image {
         border-radius: 8px;
@@ -237,28 +218,6 @@ body {
 }
 
 
-
-
-// body {
-//     background-color: $background-light;
-//     color: $text-light;
-//     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-//     transition: background-color 0.3s ease, color 0.3s ease;
-
-//     &::before {
-//         content: "";
-//         position: fixed;
-//         top: 0;
-//         left: 0;
-//         width: 100%;
-//         height: 100%;
-//         background: url('Images/DarkSouls.png') no-repeat center center fixed;
-//         background-size: cover;
-//         background-attachment: fixed; 
-//         z-index: -1;
-//         filter: brightness(50%);
-//     }
-// }
 
 
 
@@ -1775,26 +1734,11 @@ $light-new-text-color2: #44474b;
                 width: 100%;
                 display: flex;
                 flex-wrap: nowrap !important;
-                flex-direction: column !important; // Stack icons vertically
-                align-items: center !important; // Center them
+                flex-direction: column !important;
+                align-items: center !important;
                 gap: 20px !important;
 
                 .icon-btn {
-                    // width: 100px;
-                    // height: 45px; 
-                    // background: $accent-color;
-                    // border-radius: 10px;
-                    // padding: 0 20px;
-                    // margin-right: 10px;
-                    // display: flex;
-                    // align-items: center;
-                    // justify-content: center;
-                    // font-size: 1rem;
-                    // font-weight: bold;
-                    // color: $text-light;
-                    // text-decoration: none;
-                    // border: 2px solid lighten($accent-color, 20%);
-                    // transition: all 0.3s ease;
                     width: 100% !important;
                     height: 45px !important; 
                     padding: 0 20px;
@@ -1834,17 +1778,6 @@ $light-new-text-color2: #44474b;
         }
     }
 
-    // .projects-grid {
-    //     grid-template-columns: 1fr; 
-    //     gap: 20px;
-    // }
-
-    // .project-card {
-    //     padding: 15px;
-    //     text-align: center; 
-    // }
-
-        // ===== PROJECTS SECTION =====
     .projects {
         .projects-container {
             h2{
@@ -1936,7 +1869,6 @@ $light-new-text-color2: #44474b;
         }
     }
 
-    // ===== SKILLS SECTION =====
     .skills {
         .skills-container {
             padding: 15px !important;
@@ -1959,7 +1891,6 @@ $light-new-text-color2: #44474b;
         }
     }
 
-    // ===== CONTACT SECTION =====
     .contact {
         .contact-container {
             padding: 10px !important;
@@ -1985,7 +1916,6 @@ $light-new-text-color2: #44474b;
         }
     }
 
-    // ===== FOOTER =====
     .footer {
         p {
             font-size: 0.9rem !important;

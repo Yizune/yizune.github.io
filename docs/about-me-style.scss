@@ -96,7 +96,6 @@ body {
     
         &:hover {
             background: rgba(255, 255, 255, 0.2);
-            //transform: translateY(-50%) scale(1.05);
         }
     
         &:active {
@@ -212,24 +211,10 @@ body {
     }
 }
 
-
-// .container {
-//     max-width: 1200px;
-//     width: 100%;
-//     margin: 20px auto;
-//     padding: 40px;
-//     box-sizing: border-box;
-
-//     background-color: $secondary-color;
-//     border-radius: 15px;
-//     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-//     //overflow: hidden;
-// }
-
 .container {
     max-width: 1200px;
-    width: calc(100% - 60px); // Responsive width
-    margin: 20px auto; // Centering
+    width: calc(100% - 60px); 
+    margin: 20px auto; 
     padding: 40px;
     box-sizing: border-box;
     background-color: $secondary-color;
@@ -241,7 +226,6 @@ body {
 
 
 
-// HERO SECTION (About Me)
 .hero {
     display: flex;
     justify-content: center;
@@ -250,7 +234,6 @@ body {
 }
 
 .hero-container {
-    //background: rgba(20, 30, 50, 0.95); 
     background: linear-gradient(135deg, rgb(20, 31, 49) 0%, rgb(37, 60, 100) 100%);
     padding: 40px;
     border-radius: 15px;
@@ -260,7 +243,6 @@ body {
     justify-content: space-between;
     gap: 30px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    //margin-bottom: 60px;
 }
 
 .hero-image {
@@ -338,9 +320,7 @@ body {
 
 
 
-// HOBBIES & INTERESTS SECTION
 .hobbies-container {
-    //background: rgba(30, 41, 59, 0.9);
     background: linear-gradient(135deg, rgb(20, 31, 49) 0%, rgb(37, 60, 100) 100%);
     border-radius: 15px;
     padding: 40px;
@@ -396,8 +376,6 @@ body {
 
 
 
-
-// STRENGTHS & WEAKNESSES
 .strengths-weaknesses {
     background: linear-gradient(135deg, rgb(20, 31, 49) 0%, rgb(37, 60, 100) 100%);
     border-radius: 15px;
@@ -465,7 +443,6 @@ body {
 }
 
 
-// CONTACT
 .contact {
     background: linear-gradient(135deg, rgb(20, 31, 49) 0%, rgb(37, 60, 100) 100%);
     border-radius: 15px;
@@ -499,6 +476,10 @@ body {
         align-items: center;
         justify-content: center;
         width: 350px; 
+        max-width: 100%; 
+        padding: 12px 20px;
+        text-align: center;
+        white-space: nowrap;
         padding: 15px 20px;
         font-size: 1.3rem;
         font-weight: bold;
@@ -513,7 +494,7 @@ body {
         img {
             width: 28px;
             height: auto;
-            filter: invert(1); // Inverts icon color
+            filter: invert(1); 
             margin-right: 12px;
         }
 
