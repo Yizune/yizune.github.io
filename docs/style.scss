@@ -208,6 +208,7 @@ body {
         background-size: cover;
         z-index: -1;
         filter: brightness(50%);
+        pointer-events: none; 
     }
 }
 
