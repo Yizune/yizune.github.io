@@ -329,7 +329,7 @@ body::before {
 .strengths-weaknesses .strength-weakness-container {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 40px;
   align-items: stretch;
 }
 .strengths-weaknesses .strength-weakness-container .strengths, .strengths-weaknesses .strength-weakness-container .weaknesses {
