@@ -1660,14 +1660,16 @@ $light-new-text-color2: #44474b;
 
 @media (max-width: 480px) {
 
-    .site-title {
-        top: 10px;  
+    .header {
+        .site-title {
+            top: 10px !important;
+        }
     }
 
-    // .open-menu,
-    // .close-menu {
-    //     top:10px !important;
-    // }
+    .open-menu,
+    .close-menu {
+        top:10px !important;
+    }
 
     .lightmode {
 
