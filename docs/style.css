@@ -1398,6 +1398,9 @@ html, body {
     height: 24px;
     filter: invert(1);
   }
+  .projects .projects-container {
+    padding: 0px !important;
+  }
   .projects .projects-container h2 {
     font-size: 2rem;
   }
@@ -1409,7 +1412,6 @@ html, body {
   }
   .projects .projects-container .projects-grid {
     grid-template-columns: 1fr !important;
-    gap: 20px !important;
   }
   .projects .projects-container .projects-grid .project-image .project-overlay {
     padding: 5px !important;

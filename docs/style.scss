@@ -1774,6 +1774,7 @@ $light-new-text-color2: #44474b;
 
     .projects {
         .projects-container {
+            padding: 0px !important;
             h2{
                 font-size: 2rem;
             }
@@ -1787,7 +1788,6 @@ $light-new-text-color2: #44474b;
 
             .projects-grid {
                 grid-template-columns: 1fr !important;
-                gap: 20px !important;
 
                 .project-image {
                     .project-overlay {
