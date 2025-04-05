@@ -1325,8 +1325,12 @@ html, body {
   }
 }
 @media (max-width: 480px) {
-  .site-title {
-    top: 10px;
+  .header .site-title {
+    top: 10px !important;
+  }
+  .open-menu,
+  .close-menu {
+    top: 10px !important;
   }
   .lightmode .about-section .about-links .icon-group .icon-btn {
     background: white;
@@ -1350,19 +1354,26 @@ html, body {
   .welcome p {
     font-size: 1rem;
   }
-  .about-section .about-content p {
+  .about-section .about-container {
+    width: 100% !important;
+    padding: 20px !important;
+  }
+  .about-section .about-container .about-text {
+    padding: 20px !important;
+  }
+  .about-section .about-container .about-content p {
     font-size: 16px;
     line-height: 1.5;
     text-align: center;
   }
-  .about-section .about-links {
+  .about-section .about-container .about-links {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
   }
-  .about-section .about-links .icon-group {
+  .about-section .about-container .about-links .icon-group {
     width: 100%;
     display: flex;
     flex-wrap: nowrap !important;
@@ -1370,7 +1381,7 @@ html, body {
     align-items: center !important;
     gap: 20px !important;
   }
-  .about-section .about-links .icon-group .icon-btn {
+  .about-section .about-container .about-links .icon-group .icon-btn {
     width: 100% !important;
     height: 45px !important;
     padding: 0 20px;
@@ -1382,24 +1393,10 @@ html, body {
     justify-content: center;
     transition: all 0.3s ease;
   }
-  .about-section .about-links .icon-group .icon-btn img {
+  .about-section .about-container .about-links .icon-group .icon-btn img {
     width: 24px;
     height: 24px;
     filter: invert(1);
-  }
-  .about-section .about-links {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-  .about-section .about-links .icon-group {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
   }
   .projects .projects-container h2 {
     font-size: 2rem;
