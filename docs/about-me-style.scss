@@ -22,14 +22,10 @@ $max-width: 1200px;
     padding: 0 !important;
 }
 
-
-
-
-
-
-
 body {
-    background-color: $background-light;
+    background: url(Images/DarkSouls.png) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
     color: $text-light;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -40,11 +36,11 @@ body {
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
-        background: url('Images/DarkSouls.png') no-repeat center center fixed;
+        height: 100vh;
         background-size: cover;
+        background-color: black;
+        opacity: 0.4;
         z-index: -1;
-        filter: brightness(50%);
     }
 }
 
@@ -715,12 +711,6 @@ $light-link-hover: #125E75;
     }
 }
 
-
-
-
-
-
-
 // Animations
 @keyframes fadeIn {
     from {
@@ -778,24 +768,6 @@ $light-link-hover: #125E75;
     }
 }
 
-.welcome {
-    h2, p {
-        animation: fadeIn 1s ease-in-out;
-    }
-}
-
-
-
-
-
-
-
-
-
-.header {
-    animation: slideInDown 1s ease-in-out;
-}
-
 @keyframes slideInDown {
     from {
         opacity: 0;
@@ -807,9 +779,10 @@ $light-link-hover: #125E75;
     }
 }
 
-
-.footer {
-    animation: slideInUp 1s ease-in-out;
+.welcome {
+    h2, p {
+        animation: fadeIn 1s ease-in-out;
+    }
 }
 
 @keyframes slideInUp {
@@ -823,14 +796,18 @@ $light-link-hover: #125E75;
     }
 }
 
+.header {
+    animation: slideInDown 1s ease-in-out;
+}
 
+.footer {
+    animation: slideInUp 1s ease-in-out;
+}
 
-
-
-
-
-
-
+@keyframes glowing-line {
+    0% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
+    100% { box-shadow: 0 0 15px rgba(59, 130, 246, 1); }
+}
 
 .section-divider {
     width: 100%;
@@ -840,16 +817,6 @@ $light-link-hover: #125E75;
     border-radius: 10px;
     animation: glowing-line 2s infinite alternate;
 }
-
-@keyframes glowing-line {
-    0% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
-    100% { box-shadow: 0 0 15px rgba(59, 130, 246, 1); }
-}
-
-
-
-
-
 
 .hero-container {
     animation: fadeIn 1s ease-in-out;
@@ -862,9 +829,6 @@ $light-link-hover: #125E75;
 .hero-image {
     animation: slideInRight 1s ease-in-out;
 }
-
-
-
 
 .hobbies-container {
     animation: fadeSlideIn 1s ease-in-out;
@@ -879,10 +843,6 @@ $light-link-hover: #125E75;
 .hobby-item:nth-child(2) { animation-delay: 0.4s; }
 .hobby-item:nth-child(3) { animation-delay: 0.6s; }
 .hobby-item:nth-child(4) { animation-delay: 0.8s; }
-
-
-
-
 
 .strengths-weaknesses {
     animation: fadeSlideIn 1s ease-in-out;
@@ -905,8 +865,6 @@ $light-link-hover: #125E75;
 .strengths li:nth-child(2), .weaknesses li:nth-child(2) { animation-delay: 0.4s; }
 .strengths li:nth-child(3), .weaknesses li:nth-child(3) { animation-delay: 0.6s; }
 
-
-
 .contact {
     animation: fadeIn 1s ease-in-out;
 }
@@ -915,15 +873,7 @@ $light-link-hover: #125E75;
     animation: slideInUp 1s ease-in-out;
 }
 
-
-
-
-
-
-
-
-
-
+// Media
 @media (max-width: 1280px) {
     .hero-container {
         flex-direction: column;
@@ -950,10 +900,7 @@ $light-link-hover: #125E75;
     }
 }
 
-
-
 @media (min-width: 769px) {
-    // Hide hamburger menu on desktop
     .menu {
         position: static;
         width: auto;
@@ -977,7 +924,6 @@ $light-link-hover: #125E75;
 }
 
 @media (max-width: 768px) {
-
     .lightmode {
         .menu .nav-links a {
             color: $light-text;
@@ -989,7 +935,6 @@ $light-link-hover: #125E75;
         }
     }
 
-    // Hide normal nav bar on mobile
     .nav-container {
         position: relative;
     }
@@ -1113,17 +1058,7 @@ $light-link-hover: #125E75;
         width: 35px;
         height: 35px;
     }
-
-
-
-
-
-
-
-
-
-
-
+    
     .hero-container {
         padding: 20px;
     }
@@ -1161,6 +1096,11 @@ $light-link-hover: #125E75;
         .site-title {
             top: 10px !important;
         }
+    }
+
+    .open-menu,
+    .close-menu {
+        top: 20px !important;
     }
 
     .lightmode {
@@ -1241,56 +1181,5 @@ $light-link-hover: #125E75;
         p {
             font-size: 0.9rem !important;
         }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // .header-container {
-    //     flex-direction: column;
-    //     align-items: center;
-    //     text-align: center;
-    // }
-    
-    // .nav-links {
-    //     flex-direction: column;
-    //     gap: 10px;
-    // }
-    
-    .hero-container {
-        padding: 15px;
-    }
-    
-    .hero-text h1 {
-        font-size: 1.5rem;
-    }
-    
-    .hero-text p {
-        font-size: 1rem;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-    }
-    
-    .contact-container {
-        width: 100%;
-    }
-    
-    .hobby-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .strength-weakness-container {
-        flex-direction: column;
     }
 }
