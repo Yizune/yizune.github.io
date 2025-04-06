@@ -643,10 +643,6 @@ html, body {
     transform: translateY(0);
   }
 }
-.welcome h2, .welcome p {
-  animation: fadeIn 1s ease-in-out;
-}
-
 @keyframes slideInUp {
   from {
     opacity: 0;
@@ -657,6 +653,10 @@ html, body {
     transform: translateY(0);
   }
 }
+.welcome h2, .welcome p {
+  animation: fadeIn 1s ease-in-out;
+}
+
 .header {
   animation: slideInDown 1s ease-in-out;
 }

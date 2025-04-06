@@ -50,7 +50,6 @@ body {
     z-index: 1000;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
 
-
     .header-container {
         display: flex;
         align-items: center;
@@ -94,9 +93,7 @@ body {
             transform: translateY(-50%) scale(0.95);
         }
     }
-    
-
-    
+       
     .site-title {
         font-size: 1.5rem;
         font-weight: bold;
@@ -126,7 +123,6 @@ body {
     }
 }
 
-
 .mode-button {
     margin-left: 20px;
     margin-left: 0px;
@@ -155,7 +151,6 @@ body {
         transform: scale(0.95); 
     }
 }
-
 
 .welcome {
     height: 100vh;
@@ -203,9 +198,6 @@ body {
     }
 }
 
-
-
-
 .container {
     max-width: $max-width;
     width: 100%;
@@ -216,7 +208,6 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     overflow: hidden;
 }
-
 
 .project-banner {
     width: 100%;
@@ -294,8 +285,6 @@ body {
         }
     }
 }
-
-
 
 .project-description {
     max-width: 1200px;
@@ -475,8 +464,6 @@ body {
     }
 }
 
-
-
 .project-info {
     display: flex;
     justify-content: space-between;
@@ -565,7 +552,6 @@ body {
     }
 }
 
-
 .project-links {
     max-width: 1200px;
     width: 100%;
@@ -643,13 +629,7 @@ html, body {
     box-sizing: border-box;
 }
 
-
-
-
-
-
-
-
+//Lightmode 
 .lightmode {
     background-color: $light-bg;
     color: $light-text;
@@ -709,7 +689,6 @@ html, body {
         }
     }
 
-
     .nav-links a {
         color: $light-link;
         &:hover {
@@ -768,7 +747,6 @@ html, body {
             }
         }
 
-
         .project-code {
             p {
                 color: $light-text;
@@ -793,7 +771,6 @@ html, body {
                 background: rgba(0, 0, 0, 0.05) !important;
                 color: $light-text !important;
             }
-
         }
     }
 
@@ -842,18 +819,6 @@ html, body {
         border-top: 1px solid $light-secondary;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Animations
 @keyframes fadeIn {
@@ -912,19 +877,6 @@ html, body {
     }
 }
 
-
-.welcome {
-    h2, p {
-        animation: fadeIn 1s ease-in-out;
-    }
-}
-
-
-
-.header {
-    animation: slideInDown 1s ease-in-out;
-}
-
 @keyframes slideInDown {
     from {
         opacity: 0;
@@ -934,11 +886,6 @@ html, body {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-
-.footer {
-    animation: slideInUp 1s ease-in-out;
 }
 
 @keyframes slideInUp {
@@ -952,7 +899,24 @@ html, body {
     }
 }
 
+@keyframes glowing-line {
+    0% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
+    100% { box-shadow: 0 0 15px rgba(59, 130, 246, 1); }
+}
 
+.welcome {
+    h2, p {
+        animation: fadeIn 1s ease-in-out;
+    }
+}
+
+.header {
+    animation: slideInDown 1s ease-in-out;
+}
+
+.footer {
+    animation: slideInUp 1s ease-in-out;
+}
 
 .section-divider {
     width: 100%;
@@ -962,15 +926,6 @@ html, body {
     border-radius: 10px;
     animation: glowing-line 2s infinite alternate;
 }
-
-@keyframes glowing-line {
-    0% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.5); }
-    100% { box-shadow: 0 0 15px rgba(59, 130, 246, 1); }
-}
-
-
-
-
 
 .project-banner {
     animation: slideInLeft 1.2s ease-in-out;
@@ -988,6 +943,156 @@ html, body {
     animation: fadeSlideIn 1.4s ease-in-out;
 }
 
-// .footer {
-//     animation: fadeIn 1.5s ease-in-out;
-// }
+// Media
+@media (max-width: 1280px) {
+    .header {
+        .site-title {
+            font-size: 1.4rem; 
+        }
+    }
+
+    .welcome {
+        h2 {
+            font-size: 2.8rem; 
+        }
+        p {
+            font-size: 1.4rem; 
+        }
+    }
+
+    .container {
+        max-width: 90%;
+        padding: 30px;
+    }
+
+    .project-banner {
+        .project-image {
+            img {
+                height: 500px; 
+            }
+        }
+    }
+
+    .project-description {
+        h3 {
+            font-size: 1.8rem; 
+        }
+        p, ul {
+            font-size: 1.1rem; 
+        }
+    }
+
+    .project-code {
+        .code-snippet {
+            max-height: 300px; 
+        }
+    }
+
+    .footer {
+        p {
+            font-size: 0.9rem; 
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        .site-title {
+            font-size: 1.2rem;
+        }
+    }
+
+    .welcome {
+        h2 {
+            font-size: 2.4rem; 
+        }
+        p {
+            font-size: 1.2rem;
+        }
+    }
+
+    .container {
+        max-width: 95%;
+        padding: 20px;
+    }
+
+    .project-banner {
+        .project-image {
+            img {
+                height: 400px;
+            }
+        }
+    }
+
+    .project-description {
+        h3 {
+            font-size: 1.6rem;
+        }
+        p, ul {
+            font-size: 1rem;
+        }
+    }
+
+    .project-code {
+        .code-snippet {
+            max-height: 250px;
+        }
+    }
+
+    .footer {
+        p {
+            font-size: 0.8rem;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        .site-title {
+            font-size: 1rem; 
+        }
+    }
+
+    .welcome {
+        h2 {
+            font-size: 2rem; 
+        }
+        p {
+            font-size: 1rem; 
+        }
+    }
+
+    .container {
+        max-width: 100%; 
+        padding: 15px;
+    }
+
+    .project-banner {
+        .project-image {
+            img {
+                height: 300px; 
+            }
+        }
+    }
+
+    .project-description {
+        h3 {
+            font-size: 1.4rem;
+        }
+        p, ul {
+            font-size: 0.9rem; 
+        }
+    }
+
+    .project-code {
+        .code-snippet {
+            max-height: 200px; 
+        }
+    }
+
+    .footer {
+        p {
+            font-size: 0.7rem; 
+        }
+    }
+}

@@ -118,8 +118,6 @@ body {
         }
     }
     
-
-    
     .site-title {
         font-size: 1.5rem;
         font-weight: bold;
@@ -149,7 +147,6 @@ body {
     }
 }
 
-
 .mode-button {
     margin-left: 20px;
     margin-left: 0px;
@@ -178,7 +175,6 @@ body {
         transform: scale(0.95); 
     }
 }
-
 
 .welcome {
     height: 100vh;
@@ -236,10 +232,6 @@ body {
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-
-
-
-
 
 .hero {
     display: flex;
@@ -300,8 +292,6 @@ body {
     }
 }
 
-
-
 .contact-button {
     display: flex;
     align-items: center;
@@ -329,11 +319,6 @@ body {
         background: darken($accent-color, 10%);
     }
 }
-
-
-
-
-
 
 .hobbies-container {
     background: linear-gradient(135deg, rgb(20, 31, 49) 0%, rgb(37, 60, 100) 100%);
@@ -386,10 +371,6 @@ body {
         transform: scale(1.05);
     }
 }
-
-
-
-
 
 .strengths-weaknesses {
     background: linear-gradient(135deg, rgb(20, 31, 49) 0%, rgb(37, 60, 100) 100%);
@@ -456,7 +437,6 @@ body {
         }
     }
 }
-
 
 .contact {
     background: linear-gradient(135deg, rgb(20, 31, 49) 0%, rgb(37, 60, 100) 100%);
@@ -542,11 +522,6 @@ html, body {
     box-sizing: border-box;
 }
 
-
-
-
-
-
 //Light palette 
 $light-bg: #F4F4F4; 
 $light-text: #1E201E;
@@ -555,7 +530,6 @@ $light-secondary: rgba(#E2E8F0, 0.7);
 $light-accent: #1E88A8;
 $light-link: #1E293B;
 $light-link-hover: #125E75;
-
 
 .lightmode {
     background-color: $light-bg;
@@ -702,7 +676,6 @@ $light-link-hover: #125E75;
     
     }
 
-
     .contact {
         background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgb(200, 210, 215) 100%);
 
@@ -798,12 +771,6 @@ $light-link-hover: #125E75;
     }
 }
 
-.welcome {
-    h2, p {
-        animation: fadeIn 1s ease-in-out;
-    }
-}
-
 @keyframes slideInUp {
     from {
         opacity: 0;
@@ -812,6 +779,12 @@ $light-link-hover: #125E75;
     to {
         opacity: 1;
         transform: translateY(0); 
+    }
+}
+
+.welcome {
+    h2, p {
+        animation: fadeIn 1s ease-in-out;
     }
 }
 
