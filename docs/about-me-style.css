@@ -942,7 +942,7 @@ html, body {
   }
   .open-menu,
   .close-menu {
-    top: 20px !important;
+    top: 0px !important;
   }
   .lightmode .about-section .about-links .icon-group .icon-btn {
     background: white;
@@ -953,7 +953,6 @@ html, body {
   }
   .container {
     padding: 20px !important;
-    margin: auto 20px !important;
   }
   .welcome .welcome-divider {
     margin-bottom: 30px;
@@ -970,25 +969,81 @@ html, body {
   .welcome p {
     font-size: 1rem;
   }
+  .hobbies .hobbies-container {
+    padding: 20px;
+  }
+  .hobbies .hobbies-container h2 {
+    font-size: 1.5rem;
+  }
+  .hobbies .hobbies-container .hobby-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .hobbies .hobbies-container .hobby-grid .hobby-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hobbies .hobbies-container .hobby-grid .hobby-item img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+  }
+  .hobbies .hobbies-container .hobby-grid .hobby-item p {
+    font-size: 0.9rem;
+  }
+  .strengths-weaknesses {
+    padding: 20px;
+  }
+  .strengths-weaknesses h2 {
+    font-size: 1.5rem;
+  }
+  .strengths-weaknesses .strength-weakness-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .strengths-weaknesses .strength-weakness-container .strengths,
+  .strengths-weaknesses .strength-weakness-container .weaknesses {
+    padding: 15px;
+  }
+  .strengths-weaknesses .strength-weakness-container .strengths h3,
+  .strengths-weaknesses .strength-weakness-container .weaknesses h3 {
+    font-size: 1.2rem;
+    gap: 5px;
+  }
+  .strengths-weaknesses .strength-weakness-container .strengths h3 .icon img,
+  .strengths-weaknesses .strength-weakness-container .weaknesses h3 .icon img {
+    width: 20px;
+    height: 20px;
+  }
+  .strengths-weaknesses .strength-weakness-container .strengths ul,
+  .strengths-weaknesses .strength-weakness-container .weaknesses ul {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  .strengths-weaknesses .strength-weakness-container .strengths ul li,
+  .strengths-weaknesses .strength-weakness-container .weaknesses ul li {
+    margin-bottom: 10px;
+  }
+  .contact {
+    padding: 20px;
+  }
+  .contact h2 {
+    font-size: 1.5rem;
+  }
+  .contact p {
+    font-size: 0.9rem;
+  }
   .contact .contact-container {
-    padding: 10px !important;
-    padding-bottom: 20px !important;
-  }
-  .contact .contact-container h2 {
-    font-size: 2rem !important;
-  }
-  .contact .contact-container .contact-grid {
-    grid-template-columns: 1fr !important;
-    gap: 15px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
+    gap: 10px;
   }
   .contact .contact-container .contact-button {
-    font-size: 0.9rem !important;
-    width: 80% !important;
-    min-width: 100px !important;
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  .contact .contact-container .contact-button img {
+    width: 18px;
+    height: 18px;
   }
   .footer p {
     font-size: 0.9rem !important;

@@ -1100,7 +1100,7 @@ $light-link-hover: #125E75;
 
     .open-menu,
     .close-menu {
-        top: 20px !important;
+        top: 0px !important;
     }
 
     .lightmode {
@@ -1127,7 +1127,6 @@ $light-link-hover: #125E75;
 
     .container {
         padding: 20px !important;
-        margin: auto 20px !important;
     }
 
     .welcome {
@@ -1150,29 +1149,94 @@ $light-link-hover: #125E75;
         }
     }
 
-    
+    .hobbies {
+        .hobbies-container {
+            padding: 20px;
+
+            h2 {
+                font-size: 1.5rem; // Adjust heading size
+            }
+
+            .hobby-grid {
+                grid-template-columns: 1fr; // Single-column layout
+                gap: 15px;
+
+                .hobby-item {
+                    flex-direction: column; // Stack content vertically
+                    text-align: center;
+
+                    img {
+                        width: 30px; // Adjust icon size
+                        height: 30px;
+                        margin-bottom: 10px;
+                    }
+
+                    p {
+                        font-size: 0.9rem; // Adjust paragraph size
+                    }
+                }
+            }
+        }
+    }
+
+    .strengths-weaknesses {
+        padding: 20px;
+
+        h2 {
+            font-size: 1.5rem; // Adjust heading size
+        }
+
+        .strength-weakness-container {
+            flex-direction: column; // Stack strengths and weaknesses vertically
+            gap: 20px;
+
+            .strengths,
+            .weaknesses {
+                padding: 15px;
+                h3 {
+                    font-size: 1.2rem; // Adjust subheading size
+                    gap: 5px;
+
+                    .icon img {
+                        width: 20px; // Adjust icon size
+                        height: 20px;
+                    }
+                }
+
+                ul {
+                    font-size: 0.9rem; // Adjust list item size
+                    line-height: 1.4;
+
+                    li {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
 
     .contact {
-        .contact-container {
-            padding: 10px !important;
-            padding-bottom: 20px !important;
-            h2 {
-                font-size: 2rem !important;
-            }
+        padding: 20px;
 
-            .contact-grid {
-                grid-template-columns: 1fr !important;
-                gap: 15px !important;
-                display: flex !important;
-                flex-direction: column !important; 
-                align-items: center !important; 
-                justify-content: center !important; 
-            }
+        h2 {
+            font-size: 1.5rem; // Adjust heading size
+        }
+
+        p {
+            font-size: 0.9rem; // Adjust paragraph size
+        }
+
+        .contact-container {
+            gap: 10px;
 
             .contact-button {
-                font-size: 0.9rem !important;
-                width: 80% !important;
-                min-width: 100px !important;
+                width: 100%; // Full width for buttons
+                font-size: 0.9rem;
+                padding: 10px;
+                img {
+                    width: 18px; // Adjust icon size
+                    height: 18px;
+                }
             }
         }
     }
