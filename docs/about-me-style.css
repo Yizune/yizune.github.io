@@ -935,12 +935,23 @@ html, body {
   }
 }
 @media (max-width: 480px) {
+  .header .site-title {
+    top: 10px !important;
+  }
+  .open-menu,
+  .close-menu {
+    top: 10px !important;
+  }
   .lightmode .about-section .about-links .icon-group .icon-btn {
     background: white;
     border: 2px solid #1E88A8;
   }
   .lightmode .about-section .about-links .icon-group .icon-btn img {
     filter: invert(0);
+  }
+  .container {
+    padding: 20px !important;
+    margin: auto 20px !important;
   }
   .welcome .welcome-divider {
     margin-bottom: 30px;
@@ -957,13 +968,6 @@ html, body {
   .welcome p {
     font-size: 1rem;
   }
-  .site-title {
-    top: 10px;
-  }
-  .open-menu,
-  .close-menu {
-    top: 20px;
-  }
   .contact .contact-container {
     padding: 10px !important;
     padding-bottom: 20px !important;
@@ -979,7 +983,7 @@ html, body {
     align-items: center !important;
     justify-content: center !important;
   }
-  .contact .contact-container .contact-item {
+  .contact .contact-container .contact-button {
     font-size: 0.9rem !important;
     width: 80% !important;
     min-width: 100px !important;

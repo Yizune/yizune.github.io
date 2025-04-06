@@ -1157,6 +1157,17 @@ $light-link-hover: #125E75;
 
 @media (max-width: 480px) {
 
+    .header {
+        .site-title {
+            top: 10px !important;
+        }
+    }
+
+    .open-menu,
+    .close-menu {
+        top:10px !important;
+    }
+
 
     .lightmode {
 
@@ -1180,6 +1191,10 @@ $light-link-hover: #125E75;
         }
     }
 
+    .container {
+        padding: 20px !important;
+        margin: auto 20px !important;
+    }
 
     .welcome {
         .welcome-divider {
@@ -1201,15 +1216,7 @@ $light-link-hover: #125E75;
         }
     }
 
-    .site-title {
-        top: 10px;
-    }
-
-    .open-menu,
-    .close-menu {
-        top: 20px;
-    }
-
+    
 
     .contact {
         .contact-container {
@@ -1228,7 +1235,7 @@ $light-link-hover: #125E75;
                 justify-content: center !important; 
             }
 
-            .contact-item {
+            .contact-button {
                 font-size: 0.9rem !important;
                 width: 80% !important;
                 min-width: 100px !important;

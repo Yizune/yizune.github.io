@@ -1475,7 +1475,7 @@ html, body {
     font-size: 0.9rem !important;
   }
   .contact .contact-container {
-    padding: 10px !important;
+    padding: 0px !important;
     padding-bottom: 20px !important;
   }
   .contact .contact-container h2 {
@@ -1493,6 +1493,7 @@ html, body {
     font-size: 0.9rem !important;
     width: 80% !important;
     min-width: 100px !important;
+    padding: 15px !important;
   }
   .footer p {
     font-size: 0.9rem !important;
